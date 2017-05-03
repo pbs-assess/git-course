@@ -4,6 +4,14 @@ A repository for teaching git
 Basically, **git** works on your computer and saves all versions of documents as you continually work on them ('version control'). **GitHUB** is a copy of everything on a website that allows users to share code with each other.
 
 
+## Random notes
+
+Potentially <a href="http://www.sciencedirect.com/science/article/pii/S0169534715002906">useful reference</a> about code in ecology.
+
+
+
+## Getting started
+
 Following notes are from Andy's https://github.com/andrew-edwards/empirical-dyn-mod  just copying here for now. Will require some editing. Most of it came originally from Chris's earlier workshop.
 
 
