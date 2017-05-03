@@ -13,5 +13,4 @@ del *.out
 del *.nav
 del *.snm
 del *.synctex.gz*
-del git-course-presentation.tex
 del git-course-presentation.pdf

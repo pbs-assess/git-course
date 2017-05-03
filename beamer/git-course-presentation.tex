@@ -1,0 +1,54 @@
+\documentclass[aspectratio=169]{beamer}
+%% For 4:3 aspect ratio:
+%% \documentclass{beamer}
+\mode<presentation>
+\usetheme[compress]{Singapore}
+
+\usepackage{graphicx}
+\usepackage{pgf}
+\usepackage{array}
+
+\setbeamersize{text margin left=0.1in}
+\setbeamersize{text margin right=0.1in}
+
+\setbeamertemplate{title page}
+{
+\hfill
+\includegraphics[height=0.5in]{images/dfo.eps}
+
+\vskip0pt plus 1filll
+\begin{center}
+{\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle}
+\vskip22pt
+\insertauthor
+\vskip22pt
+\insertdate
+\end{center}
+\vskip0pt plus 1filll
+}
+
+\newcommand{\bc}{\begin{center}}
+\newcommand{\ec}{\end{center}}
+\newcommand{\bn}{\begin{enumerate}}
+\newcommand{\en}{\end{enumerate}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+
+\title[Git version control course]{An introduction to GitHub and git}
+\author[Chris Grandin and Andy Edwards]{}
+\date{}
+
+\begin{document}
+
+\frame[plain]{
+\titlepage
+}
+
+\section{Why use git?}
+\frame{\frametitle{Why use git?}
+  \bi
+    \item Hello World!
+  \ei
+}
+
+\end{document}
