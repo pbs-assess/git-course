@@ -1,20 +1,19 @@
 # git-course
 A repository for teaching git
 
+Basically, **git** works on your computer and saves all versions of documents as you continually work on them ('version control'). **GitHUB** is a copy of everything on a website that allows users to share code with each other.
 
-From Andy's https://github.com/andrew-edwards/empirical-dyn-mod  just copying here for now. Will require some editing. Most of it came originally from Chris's earlier workshop.
 
+Following notes are from Andy's https://github.com/andrew-edwards/empirical-dyn-mod  just copying here for now. Will require some editing. Most of it came originally from Chris's earlier workshop.
 
 
 ### One time things to get started using git and GitHub
 
 Some of this is from <a href="https://github.com/andrew-edwards/git-workshop">my adapted version</a> of Chris Grandin's git workshop tutorial. Please keep a note of anything that didn't work or could be made clearer - once you get comfortable with using GitHub you'll be able to simply edit these notes and I can accept your changes so that others don't run into the same issues.
 
-Basically, **git** works on your computer and saves all versions of documents as you continually work on them ('version control'). **GitHUB** is a copy of everything on a website that allows users to share code with each other.
-
 **These are one-time steps and will not need to be done again**
 
-1. You will need to <a href="https://github.com/" target="_blank">sign up for GitHub</a>, which you've presumably already done as you're viewing this *private* 'repository' (only invited people can see it).
+1. You will need to <a href="https://github.com/" target="_blank">sign up for GitHub</a>.
 
 2. GitHub *requires* Microsoft .NET 4.5.1 as of February 2014. If you have a .NET version less than 4.5 ([Check version](https://github.com/downloads/shanselman/SmallestDotNet/CheckForDotNet45.exe "Which .NET version is on my machine?")), then upgrade it: <a href="http://go.microsoft.com/fwlink/p/?LinkId=310158" target="_blank">Microsoft .NET 4.5.1</a>.
 
@@ -24,7 +23,7 @@ Basically, **git** works on your computer and saves all versions of documents as
 
  - Go to [https://raw.githubusercontent.com/andrew-edwards/git-workshop/master/.gitconfig](https://raw.githubusercontent.com/andrew-edwards/git-workshop/master/.gitconfig)
 
- - Right-click anywhere on the main text, Save-As, and save it in your equivalent of **C:\Users\edwardsand\** (where you replace **edwardsand** with the username you use to log in to your computer). I think that's the defaul place, it's where I found it on on my computer.  
+ - Right-click anywhere on the main text, Save-As, and save it in your equivalent of **C:\Users\edwardsand\** (where you replace **edwardsand** with the username you use to log in to your computer). I think that's the default place, it's where I found it on on my computer.  
  
  - Open **C:\Users\edwardsand\.gitconfig** in a text editor and change the name and email address at the top from Chris's to yours.  
  
