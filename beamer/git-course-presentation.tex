@@ -2,30 +2,49 @@
 %% For 4:3 aspect ratio:
 %% \documentclass{beamer}
 \mode<presentation>
+
+\title[git-course]{An Introduction to GitHub and Git}
+\author{Chris Grandin \& Andy Edwards}
+\date{\today}
+
 \usetheme[compress]{Singapore}
+%%\usetheme{Darmstadt}
+\usecolortheme{seahorse}
+%%\usefonttheme{structureitalicserif}
+\usefonttheme{default}
+
+\setbeamertemplate{headline}[default]
+\setbeamercolor{mycolor}{fg=white,bg=structure!30}
+\setbeamertemplate{navigation symbols}{}
+\addtobeamertemplate{footline}{
+    \leavevmode
+    \hbox{
+      \begin{beamercolorbox}[wd=\paperwidth,
+          ht=2.75ex,
+          dp=.5ex,
+          right,
+          rightskip=1em]{mycolor}
+        \usebeamercolor[fg]{navigation symbols}
+        \insertslidenavigationsymbol
+        \insertframenavigationsymbol
+        \insertsubsectionnavigationsymbol
+        \insertsectionnavigationsymbol
+        \insertdocnavigationsymbol
+        \insertbackfindforwardnavigationsymbol
+    \end{beamercolorbox}
+    }
+    \vskip0.5pt
+}{}
+
+\addtobeamertemplate{navigation symbols}{}{
+    \usebeamerfont{footline}
+    \usebeamercolor[fg]{footline}
+    \hspace{1em}
+    \insertframenumber/\inserttotalframenumber
+}
 
 \usepackage{graphicx}
 \usepackage{pgf}
-\usepackage{array}
-
-\setbeamersize{text margin left=0.1in}
-\setbeamersize{text margin right=0.1in}
-
-\setbeamertemplate{title page}
-{
-\hfill
-\includegraphics[height=0.5in]{images/dfo.eps}
-
-\vskip0pt plus 1filll
-\begin{center}
-{\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle}
-\vskip22pt
-\insertauthor
-\vskip22pt
-\insertdate
-\end{center}
-\vskip0pt plus 1filll
-}
 
 \newcommand{\bc}{\begin{center}}
 \newcommand{\ec}{\end{center}}
@@ -33,10 +52,8 @@
 \newcommand{\en}{\end{enumerate}}
 \newcommand{\bi}{\begin{itemize}}
 \newcommand{\ei}{\end{itemize}}
-
-\title[Git version control course]{An introduction to GitHub and git}
-\author[Chris Grandin and Andy Edwards]{}
-\date{}
+\newcommand{\gh}{GitHub}
+\newcommand{\gs}{Git shell}
 
 \begin{document}
 
@@ -44,11 +61,36 @@
 \titlepage
 }
 
-\section{Why use git?}
+\section{Why use Git?}
 \frame{\frametitle{Why use git?}
   \bi
-    \item Hello World!
+    \item Collaboration
+    \item Version control
+    \item Organization
   \ei
+}
+
+\section{Git Workflow}
+\frame{\frametitle{Git Workflow}
+  Decide what kind of a project you are working on. Is it something that
+  people contribute small parts of sporadically, or is it something that
+  requires collaboration between people working closely on a project?
+
+  \bi
+    \item A project where collaborators work closely together
+      \bi
+        \item Fork
+        \item Merge other people's remote repositories using \gs
+      \ei
+    \item A project where people contribute small parts to a \emph{master}
+      \bi
+        \item Don't Fork
+        \item Pull request on the \gh\ site
+      \ei
+  \ei
+
+  We will focus on the first method, as we are mostly working on assessments
+  or other smallish projects closely with collaborators.
 }
 
 \end{document}
