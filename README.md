@@ -156,7 +156,7 @@ Generally we try and work on different files so that there are no conflicts when
 
 From <http://stackoverflow.com/questions/9069061/what-is-the-difference-between-git-merge-and-git-merge-no-ff> Andy found the command
 
-	git --no-ff
+	git merge --no-ff <branch name, or presumably e.g. cgrandin/master>
 
 which looks like in the Network Graph it retains a branch even if a fast-forward can occur (even if nothing else has happened and git can simply 'catch up'). Am testing by adding these notes in branch **mergeTest**. If it works then this side branch should show up on the Network Graph. Before I've gone back to **master** branch and just tweaked a file so that the side branch still shows up clearly on the Network Graph. This is obviously better. 
 
