@@ -86,6 +86,8 @@ with **master** in blue. This last bit tells you that you are in a directory tha
 	  git push							<Push your changes to GitHub>
 	  git fetch ****					<fetch changes that someone else has made>
 	  git merge							<merge the fetched changes with your local repository>
+	  git rm --cached filename			<remove the file from the git repo, but not from local directory>
+	  git rm filename					<remove the file from the git repo AND local directory>
 
 In more detail:
 
