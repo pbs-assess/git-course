@@ -4,10 +4,11 @@ A repository for teaching git
 Basically, **git** works on your computer and saves all versions of documents as you continually work on them ('version control'). **GitHUB** is a copy of everything on a website that allows users to share code with each other.
 
 
-## Random notes
+## Random notes/ideas - Andy just posting them here for now as think of them
 
 Potentially <a href="http://www.sciencedirect.com/science/article/pii/S0169534715002906">useful reference</a> about code in ecology.
 
+Interim-year Res Doc - use as example of i) having to rely on a lead author, ii) Track Changes becoming out of control. Could use a few recent POP emails as examples also (check with Rowan).
 
 
 ## Getting started
