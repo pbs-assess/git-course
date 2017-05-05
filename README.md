@@ -86,8 +86,9 @@ with **master** in blue. This last bit tells you that you are in a directory tha
 	  git push							<Push your changes to GitHub>
 	  git fetch ****					<fetch changes that someone else has made>
 	  git merge							<merge the fetched changes with your local repository>
+	  git merge --no-ff					<merge a branch (or fetched changes?) with your master - see below>
 	  git rm --cached filename			<remove the file from the git repo, but not from local directory>
-	  git rm filename					<remove the file from the git repo AND local directory>
+	  git rm filename					<remove the file from the git repo AND from local directory>
 
 In more detail:
 
@@ -152,6 +153,12 @@ When there is a conflict you will get a message. Then open the relevant file in 
 Then **git add <filename>** to confirm that's the one you want (that step is not completely obvious), then **git com "..."** as usual. See <https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line/>
 
 Generally we try and work on different files so that there are no conflicts when we merge.
+
+From <http://stackoverflow.com/questions/9069061/what-is-the-difference-between-git-merge-and-git-merge-no-ff> Andy found the command
+
+	git merge --no-ff <branch name, or presumably e.g. cgrandin/master>
+
+which looks like in the Network Graph it retains a branch even if a fast-forward can occur (even if nothing else has happened and git can simply 'catch up'). Am testing by adding these notes in branch **mergeTest**. If it works then this side branch should show up on the Network Graph. Before I've gone back to **master** branch and just tweaked a file so that the side branch still shows up clearly on the Network Graph. This is obviously better. 
 
 I've purposefully glossed over a few technical things to get you started, and haven't fully explained why things are done. When I started our I tried to read up about GitHub a bit, but it can be very technically described (requiring a strong computer science background) so not overly helpful, with lots of references to other 'version control systems' that you never used in the first place.
 
