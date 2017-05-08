@@ -182,8 +182,7 @@ If you have a MAC, skip this list and read below.
    choose *Options*. In *Configure Git*, fill in your name and the email address
    you used for your GitHub account, and change your *Clone Path* to
    **c:\github**. Make sure that for *Default Shell*, *PowerShell* is checked.
-   *pull behavior* should have *use rebase for pulls* checked. Click *Save*
-   and close the application. **This is a one-time step and you will not need
+   Click *Save* and close the application. **This is a one-time step and you will not need
    to do it again unless you want to sign in with a different user name.**
 5. Open the Git Shell, (not the GitHub application). The shortcut should be
    **C:\Users\your-computer-user-name\AppData\Local\GitHub\GitHub.appref-ms --open-shell**
