@@ -1,10 +1,8 @@
 # git-course
 A repository for teaching Git and GitHub
 
-To make everything in this repository work correctly, you will need to
-do a few things to get git up and running on your computer. This list
-is for Windows computers only, If you have a MAC, skip this list and
-read below.
+To use Git and GitHub on Windows, you will need to do the following things.
+If you have a MAC, skip this list and read below.
 
 1. <a href="https://github.com/" target="_blank">Get a GitHub account</a>.
 2. GitHub requires Microsoft .NET 4.5. If you have a .NET version less
@@ -13,12 +11,11 @@ read below.
    then upgrade it: <a href="http://go.microsoft.com/fwlink/p/?LinkId=310158"
    target="_blank">Microsoft .NET 4.5.1</a>.
 3. Install <a href="http://windows.github.com" target="_blank">GitHub Desktop</a>
-4. Once installed, open the GitHub Desktop Application. Choose Tools->Options
-   and under *configure git*, fill in your name, the email address you used
-   for signing up to GitHub, and change your *default storage directory* to
-   something simple that you will be able to find later. I recommend
-   **c:\github**. Make sure that for *default shell*, *PowerShell* is checked.
-   *pull behavior* should have *use rebase for pulls* checked. Click *Update*
+4. Once installed, open the GitHub Desktop Application. Press the gear icon and
+   choose *Options*. In *Configure Git*, fill in your name and the email address
+   you used for your GitHub account, and change your *Clone Path* to
+   **c:\github**. Make sure that for *Default Shell*, *PowerShell* is checked.
+   *pull behavior* should have *use rebase for pulls* checked. Click *Save*
    and close the application. **This is a one-time step and you will not need
    to do it again unless you want to sign in with a different user name.**
 5. Open the Git Shell, (not the GitHub application). The shortcut should be
