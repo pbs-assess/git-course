@@ -1,0 +1,57 @@
+[user]
+  # How you want your name to appear in GitHub logs.
+	name = Chris Grandin
+  # The email you used to sign up for GitHub goes here.
+	email = cgrandin@shaw.ca
+[alias]
+  # lg = Pretty output for git log, ascii representation of the merge tree
+  lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+  lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+  lg = !"git lg1"
+  # More nice outputs
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  # List one-line commits
+  lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+  # list one-line commits with reletive dates
+  ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+
+  # Show modified files in last commit
+  dl = "!git ll -1"
+  # Show diff of last commit
+  dlc = diff --cached HEAD^
+
+  # Simple commands you use all the time..
+  # The remote URLs
+  r = remote -v
+  # The repository status
+  s = status
+  # Change to the branch given as an argument
+  co = ! sh -c 'git checkout \"$1\"' -
+  # Create a branch given as an argument
+  cb = ! sh -c 'git checkout -b \"$1\"' -
+  # Commit all with a message given as an argument
+  com = ! sh -c 'git commit -a -m \"$1\"' -
+  # Highlight words in diffs
+  wdiff = diff --word-diff=plain
+
+[diff]
+    tool = DiffMerge
+[difftool "DiffMerge"]
+    cmd = 'C:/Program Files/SourceGear/Common/DiffMerge/sgdm.exe' "$LOCAL" "$REMOTE"
+[merge]
+    tool = DiffMerge
+[mergetool "DiffMerge"]
+    cmd = 'C:/Program Files/SourceGear/Common/DiffMerge/sgdm.exe' -merge -result="$PWD/$MERGED" "$PWD/$LOCAL" "$PWD/$BASE" "$PWD/$REMOTE"
+    trustExitCode = true
+[mergetool]
+    keepBackup = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[http]
+[credential]
+[credential]
+[credential]
