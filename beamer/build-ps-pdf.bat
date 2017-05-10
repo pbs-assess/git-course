@@ -1,1 +1,0 @@
-(@latex -synctex=1 "git-course-presentation.tex" && bibtex "git-course-presentation" && latex "git-course-presentation.tex" && latex "git-course-presentation.tex" && dvips "git-course-presentation.dvi" && ps2pdf "git-course-presentation.ps") 1> latexOutput.log 2>&1
