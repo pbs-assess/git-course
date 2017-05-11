@@ -11,35 +11,15 @@
 \usecolortheme{seahorse}
 \usefonttheme{default}
 
-\setbeamertemplate{headline}[default]
-\setbeamercolor{mycolor}{fg=white,bg=structure!30}
-\setbeamertemplate{navigation symbols}{}
-\addtobeamertemplate{footline}{
-    \leavevmode
-    \hbox{
-      \begin{beamercolorbox}[wd=\paperwidth,
-          ht=2.75ex,
-          dp=.5ex,
-          right,
-          rightskip=1em]{mycolor}
-        \usebeamercolor[fg]{navigation symbols}
-        \insertslidenavigationsymbol
-        \insertframenavigationsymbol
-        \insertsubsectionnavigationsymbol
-        \insertsectionnavigationsymbol
-        \insertdocnavigationsymbol
-        \insertbackfindforwardnavigationsymbol
-    \end{beamercolorbox}
-    }
-    \vskip0.5pt
-}{}
+\setbeamertemplate{footline}[frame number]
 
-\addtobeamertemplate{navigation symbols}{}{
-    \usebeamerfont{footline}
-    \usebeamercolor[fg]{footline}
-    \hspace{1em}
-    \insertframenumber/\inserttotalframenumber
-}
+%% \addtobeamertemplate{navigation symbols}{}{
+%%     \usebeamerfont{footline}
+%%     \usebeamercolor[fg]{footline}
+%%     \hspace{1em}
+%%     \insertframenumber/\inserttotalframenumber
+%% }
+\beamertemplatenavigationsymbolsempty
 
 \usepackage{url}
 \usepackage{hyperref}
@@ -65,14 +45,12 @@
 }
 
 \frame{\frametitle{Getting Started...}
-  Before we start using Git, you need to set up your computer to use it.
+  Before you start using Git, you need to set up your computer to use it.
   This is a one-time setup and once it is done, you can easily create
   new projects or join others in collaboration.
 }
 
 \frame{\frametitle{Get a \gh\ account}
-  Remember which email address you used to sign up, as you'll need to
-  enter it in the configuration later.
   \bigskip
   \bi
     \item \url{https://github.com}
@@ -81,11 +59,11 @@
 
 \frame{\frametitle{Windows only: Make sure you have .NET 4.5}
   \bi
-  \item The Windows \gh\ application requires Microsoft .NET 4.5. If you have
-    a .NET version less than 4.5 then upgrade it. Check your version of .NET
-    here:\\
+  \item The Windows \gh\ desktop application requires Microsoft .NET 4.5. If
+    you have a .NET version less than 4.5 then upgrade it. Check your version
+    of .NET here:\\
     \url{https://github.com/downloads/shanselman/SmallestDotNet/CheckForDotNet45.exe}
-  \item If you need to upgrade it to 4.5:\\
+  \item If you need to upgrade it 4.5:\\
     \url{http://go.microsoft.com/fwlink/p/?LinkId=310158}
   \ei
 }
@@ -96,7 +74,7 @@
       \url{http://windows.github.com}
     \item MAC: Type \emph{git} on the command line. You will either see that it
       is installed, or if you have OSX 10.9 or higher it will prompt you to
-      install it. If your OSX is less than 10.9, or for any pther reason, you
+      install it. If your OSX is less than 10.9, or for any other reason, you
       can install git from here:\\
       \url{https://git-scm.com/download/mac}
   \ei
@@ -138,7 +116,8 @@
   \bigskip
   \url{https://sourcegear.com/diffmerge/downloads.php}\\
   \bigskip
-  The configuration for directing git to use Diffmerge will be shown later.
+  The configuration for directing git to use Diffmerge will be done in a
+  later step.
 }
 
 \frame{\frametitle{Cloning the git-course repository}
@@ -150,7 +129,7 @@
     \item Navigate to your new forked repository (replace GITHUB-USER with
       your \gh\ account name):\\
       \url{https://github.com/GITHUB-USER/git-course}
-    \item Copy the URL for your repository
+    \item Copy the URL for your repository.
     \item Windows: Open the \gs\ and run the following command to clone the
       repository, you can paste the URL into the \gs\ by pressing the right
       mouse button:\\
