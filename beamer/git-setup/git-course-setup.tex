@@ -26,6 +26,9 @@
 \hypersetup{colorlinks=true,
             linkcolor=blue,
             urlcolor=blue}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small\color{purple}}
+
 \usepackage{graphicx}
 \usepackage{pgf}
 
@@ -84,22 +87,22 @@
   \bi
     \item Windows:
       \bn
-        \item Create the directory C:\textbackslash github.
+        \item Create the directory \lstinline[escapechar="\\"]{C:\\github}.
         \item Open the GitHub Desktop Application. Press the gear icon and
           choose \emph{Options}.
         \item In \emph{Configure Git}, fill in your name and the
           email address you used for your GitHub account.
-        \item Change your \emph{Clone Path} to C:\textbackslash github.
+        \item Change your \emph{Clone Path} to \lstinline[escapechar="\\"]{C:\\github}.
         \item Make sure that for \emph{Default Shell}, \emph{PowerShell} is
           checked.
         \item Click \emph{Save} and close the application.
         \item Check the configuration by opening the \gs, (not the \gh\
           application). The directory that it starts in should be
-          C:\textbackslash github.
+          \lstinline[escapechar="\\"]{C:\\github}.
       \en
       \item MAC:
         \bn
-          \item Create the directory \textasciitilde/github.
+          \item Create the directory \lstinline[escapechar="\~"]{\~/github}.
           \item Enjoy a beverage.
         \en
   \ei
@@ -121,23 +124,23 @@
 }
 
 \frame{\frametitle{Cloning the git-course repository}
+  For these instructions, replace GITHUB-USER with your \gh\ account name.
   \bi
     \item On the \gh\ webpage, sign into your account and navigate to:\\
       \url{https://github.com/cgrandin/git-course}
     \item Press the \emph{Fork} button. This will give you a copy of the
       git-course repository.
-    \item Navigate to your new forked repository (replace GITHUB-USER with
-      your \gh\ account name):\\
+    \item Navigate to your new forked repository:\\
       \url{https://github.com/GITHUB-USER/git-course}
     \item Copy the URL for your repository.
     \item Windows: Open the \gs\ and run the following command to clone the
       repository, you can paste the URL into the \gs\ by pressing the right
       mouse button:\\
-      git clone \url{https://github.com/GITHUB-USER/git-course} git-course
-    \item MAC: Open terminal and change to the github directory, then run
-      the clone command:\\
-      cd \textasciitilde/github\\
-      git clone \url{https://github.com/GITHUB-USER/git-course} git-course
+      \lstinline{git clone https://github.com/GITHUB-USER/git-course git-course}
+    \item MAC: Open terminal and change to the github directory:\\
+      \lstinline{cd ~/github}\\
+      then run the clone command:\\
+      \lstinline{git clone https://github.com/GITHUB-USER/git-course git-course}
   \ei
 }
 
@@ -147,18 +150,17 @@
       when committing, aliases for commands, and other things. We will start
       with one I use and modify it.
     \item Open up the \emph{contents} sub-directory in the \emph{git-course}
-      directory and copy the file \emph{.gitignore}
+      directory and copy the file \emph{.gitconfig}
     \item For Windows, copy this file to:\\
       \bigskip
-      C:\textbackslash Users\textbackslash YOUR-COMPUTER-USER-NAME\textbackslash
-      .gitconfig\\
+      \lstinline[escapechar="\\"]{C:\\Users\\YOUR-COMPUTER-USER-NAME\\.gitconfig}\\
       \bigskip
       where YOUR-COMPUTER-USER-NAME is your user name on your computer, not
       your \gh\ account name.
       \bigskip
     \item For MAC, copy this file to:\\
       \bigskip
-      \textasciitilde/.gitconfig
+      \lstinline[escapechar="\~"]{\~/.gitconfig}
       \bigskip
     \ei
 }
@@ -172,14 +174,23 @@
       the location where you have DiffMerge.
     \item For Windows the location should be:\\
       \bigskip
-      C:\textbackslash Program Files\textbackslash SourceGear\textbackslash
-      Common\textbackslash DiffMerge\textbackslash sgdm.exe
+      \lstinline[escapechar="\\"]{C:\\Program Files\\SourceGear\\Common\\DiffMerge\\sgdm.exe}
       \bigskip
     \item For MAC the location should be:\\
       \bigskip
-      /usr/local/bin/diffmerge
+      \lstinline{/usr/local/bin/diffmerge}
       \bigskip
     \ei
+}
+
+\frame{\frametitle{MAC only: Make your output pretty}
+  On the MAC, change to the \lstinline[escapechar="\~"]{\~/github} directory and run the
+  following command:\\
+  \bigskip
+  \lstinline{git config --global color.ui.auto}\\
+  \bigskip
+  This will make your git output colored in a similar way to the Windows
+  powershell version.
 }
 
 \frame{\frametitle{You're ready...}
