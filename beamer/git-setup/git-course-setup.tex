@@ -1,45 +1,11 @@
 \documentclass[aspectratio=169]{beamer}
 %% For 4:3 aspect ratio:
 %% \documentclass{beamer}
-\mode<presentation>
+\usepackage{../git-course}
 
 \title[git-course]{Setting up Git and \gh\ for use with this course}
 \author{Chris Grandin \& Andy Edwards}
 \date{\today}
-
-\usetheme[compress]{Singapore}
-\usecolortheme{seahorse}
-\usefonttheme{default}
-
-\setbeamertemplate{footline}[frame number]
-
-%% \addtobeamertemplate{navigation symbols}{}{
-%%     \usebeamerfont{footline}
-%%     \usebeamercolor[fg]{footline}
-%%     \hspace{1em}
-%%     \insertframenumber/\inserttotalframenumber
-%% }
-\beamertemplatenavigationsymbolsempty
-
-\usepackage{url}
-\usepackage{hyperref}
-\hypersetup{colorlinks=true,
-            linkcolor=blue,
-            urlcolor=blue}
-\usepackage{listings}
-\lstset{basicstyle=\ttfamily\small\color{purple}}
-
-\usepackage{graphicx}
-\usepackage{pgf}
-
-\newcommand{\bc}{\begin{center}}
-\newcommand{\ec}{\end{center}}
-\newcommand{\bn}{\begin{enumerate}}
-\newcommand{\en}{\end{enumerate}}
-\newcommand{\bi}{\begin{itemize}}
-\newcommand{\ei}{\end{itemize}}
-\newcommand{\gh}{GitHub}
-\newcommand{\gs}{Git shell}
 
 \begin{document}
 
@@ -213,71 +179,5 @@
 
   See you soon!
 }
-
-
-%% Maybe this will be a different presentation...
-%% \section{Why use Git?}
-%% \frame{\frametitle{Why use git?}
-%%   \bi
-%%     \item Collaboration
-%%     \item Version control
-%%     \item Organization
-%%   \ei
-%% }
-
-%% \section{Git Workflow}
-%% \frame{\frametitle{Git Workflow}
-%%   Decide what kind of a project you are working on. Is it something that
-%%   people contribute small parts of sporadically, or is it something that
-%%   requires collaboration between people working closely on a project?
-
-%%   \bi
-%%     \item A project where collaborators work closely together
-%%       \bi
-%%         \item Fork
-%%         \item Merge other people's remote repositories using \gs
-%%       \ei
-%%     \item A project where people contribute small parts to a \emph{master}
-%%       \bi
-%%         \item Don't Fork
-%%         \item Pull request on the \gh\ site
-%%       \ei
-%%   \ei
-
-%%   We will focus on the first method, as we are mostly working on assessments
-%%   or other smallish projects closely with collaborators.
-%% }
-
-%% \frame{\frametitle{Creating a new repository}
-%%   \bi
-%%     \item Once you have a \gh\ account, sign in, click on the
-%%       \emph{Repositories} tab, and press the \emph{New} button.
-%%     \item Give your repository a name. I like to use small letters and dashes
-%%       between words.
-%%     \item Check \emph{Initialize this repository with a README}.
-%%     \item Leave \emph{Add .gitignore} and \emph{Add a license}
-%%       set to \emph{None}.
-%%     \item Click \emph{Create repository}.
-%%   \ei
-%% }
-
-%% \frame{\frametitle{Cloning your new repository}
-%%   \bi
-%%     \item Once you have created a repository on \gh, copy the URL
-%%       of the repository. e.g. \url{https://github.com/cgrandin/git-course}
-%%     \item Open the \gs\ and run the following command to clone your repository,
-%%       you can paste the URL into the \gs\ by pressing the right mouse button:
-%%     \item \emph{git clone URL git-course}
-%%   \ei
-%% }
-
-
-%% \frame{\frametitle{Storing your credentials}
-%%   git config --global credential.helper wincred
-%% }
-
-%% \frame{\frametitle{A Great Git page}
-%%   \url{https://www.git-tower.com/learn/git/ebook/en/command-line}
-%% }
 
 \end{document}

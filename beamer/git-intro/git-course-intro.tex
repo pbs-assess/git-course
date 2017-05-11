@@ -1,62 +1,12 @@
 \documentclass[aspectratio=169]{beamer}
 %% For 4:3 aspect ratio:
 %% \documentclass{beamer}
-\mode<presentation>
+\usepackage{../git-course}
 
 \title[git-course]{Setting up Git and \gh\ for use with this course}
 \author{Chris Grandin \& Andy Edwards}
 \date{\today}
 
-\usetheme[compress]{Singapore}
-\usecolortheme{seahorse}
-\usefonttheme{default}
-
-\setbeamertemplate{headline}[default]
-\setbeamercolor{mycolor}{fg=white,bg=structure!30}
-\setbeamertemplate{navigation symbols}{}
-\addtobeamertemplate{footline}{
-    \leavevmode
-    \hbox{
-      \begin{beamercolorbox}[wd=\paperwidth,
-          ht=2.75ex,
-          dp=.5ex,
-          right,
-          rightskip=1em]{mycolor}
-        \usebeamercolor[fg]{navigation symbols}
-        \insertslidenavigationsymbol
-        \insertframenavigationsymbol
-        \insertsubsectionnavigationsymbol
-        \insertsectionnavigationsymbol
-        \insertdocnavigationsymbol
-        \insertbackfindforwardnavigationsymbol
-    \end{beamercolorbox}
-    }
-    \vskip0.5pt
-}{}
-
-\addtobeamertemplate{navigation symbols}{}{
-    \usebeamerfont{footline}
-    \usebeamercolor[fg]{footline}
-    \hspace{1em}
-    \insertframenumber/\inserttotalframenumber
-}
-
-\usepackage{url}
-\usepackage{hyperref}
-\hypersetup{colorlinks=true,
-            linkcolor=blue,
-            urlcolor=blue}
-\usepackage{graphicx}
-\usepackage{pgf}
-
-\newcommand{\bc}{\begin{center}}
-\newcommand{\ec}{\end{center}}
-\newcommand{\bn}{\begin{enumerate}}
-\newcommand{\en}{\end{enumerate}}
-\newcommand{\bi}{\begin{itemize}}
-\newcommand{\ei}{\end{itemize}}
-\newcommand{\gh}{GitHub}
-\newcommand{\gs}{Git shell}
 
 \begin{document}
 
@@ -119,14 +69,22 @@
   \ei
 }
 
-
 \frame{\frametitle{Storing your credentials}
   git config --global credential.helper wincred
 }
 
 \frame{\frametitle{Add collaborators}
-  If you want others to be able to set assignees to issues, the repo master needs to
-  add collaborators through Settings->Collaborators.
+  If your repository is public, anyone can post an issue. If you want someone to
+  be able to:
+  \bigskip
+  \bi
+    \item Set assignees to issues
+    \item Receive notifications when you reply to their issue
+  \ei
+  \bigskip
+  You need to add them as a collaborator. Select the \emph{Settings} tab and then
+  the \emph{Collaborators} button. Type their \gh\ username in and send them an
+  invitation to collaborate.
 }
 
 \frame{\frametitle{A Great Git page}
