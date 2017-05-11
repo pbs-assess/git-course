@@ -7,20 +7,10 @@
 \author{Chris Grandin \& Andy Edwards}
 \date{\today}
 
-
 \begin{document}
 
 \frame[plain]{
 \titlepage
-}
-
-\section{Why use Git?}
-\frame{\frametitle{Why use git?}
-  \bi
-    \item Collaboration
-    \item Version control
-    \item Organization
-  \ei
 }
 
 \section{Git Workflow}
@@ -48,7 +38,7 @@
 
 \frame{\frametitle{Creating a new repository}
   \bi
-    \item Once you have a \gh\ account, sign in, click on the
+    \item Sign into your \gh\ account, click on the
       \emph{Repositories} tab, and press the \emph{New} button.
     \item Give your repository a name. I like to use small letters and dashes
       between words.
@@ -62,16 +52,56 @@
 \frame{\frametitle{Cloning your new repository}
   \bi
     \item Once you have created a repository on \gh, copy the URL
-      of the repository. e.g. \url{https://github.com/cgrandin/git-course}
-    \item Open the \gs\ and run the following command to clone your repository,
-      you can paste the URL into the \gs\ by pressing the right mouse button:
-    \item \emph{git clone URL git-course}
+      of the repository.
+    \item Open the \gs\ and run the following command to clone your repository:
+      \lstinline{git clone URL REPO-NAME}\\
+      where:\\
+      \bi
+        \item URL is the url of your newly created repository. You can paste
+          the URL into the command line (on Windows) by pressing the right
+          mouse button.
+        \item REPO-NAME will be the name of the directory to be created.
+      \ei
   \ei
 }
 
-\frame{\frametitle{Storing your credentials}
-  git config --global credential.helper wincred
+\frame{\frametitle{Windows only: Storing your credentials}
+  When you push your changes to \gh, the \gs\ will ask you for your username
+  and password every time. This is annoying, so issue the following command,
+  and it will only ask you the first time. After that your credentials will be
+  stored and you won't need to enter them again. You need to do this for each
+  repository you have.\\
+  \bigskip
+  \lstinline{git config --global credential.helper wincred}
 }
+
+\begingroup
+\small
+\frame{\frametitle{Copy and commit \emph{.gitignore}}
+  \bi
+    \item Copy the \emph{.gitignore} file from the git-course directory and
+      paste it into your newly cloned directory. You can edit this to suit
+      the project, as there is a different \emph{.gitignore} file for each
+      project.
+    \item In the \gs, enter the new directory:\\
+      \lstinline{cd REPO-NAME}\\
+    \item Check the status of your repository:\\
+      \lstinline{git s}
+    \item You will see that the new file \emph{.gitignore} has not been
+      added for commit. You need to add any new files to the commit by
+      running the command:\\
+      \lstinline{git add FILENAME}
+    \item Make a commit for the changes:\\
+      \lstinline{git com "Commit message"}\\
+      where "Commit message" is a useful message saying what the commit
+      contains.
+    \item Push the commit to \gh:
+      \lstinline{git push}
+    \item Check the \gh\ webpage and see your commit and that the file
+      has been uploaded.
+  \ei
+}
+\endgroup
 
 \frame{\frametitle{Add collaborators}
   If your repository is public, anyone can post an issue. If you want someone to
