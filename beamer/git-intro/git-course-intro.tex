@@ -3,7 +3,7 @@
 %% \documentclass{beamer}
 \usepackage{../git-course}
 
-\title[git-course]{Setting up Git and \gh\ for use with this course}
+\title[git-course]{Using \gh\ and \gs}
 \author{Chris Grandin \& Andy Edwards}
 \date{\today}
 
@@ -13,7 +13,7 @@
 \titlepage
 }
 
-\section{Git Workflow}
+\section{Introduction}
 \frame{\frametitle{Git Workflow}
   Decide what kind of a project you are working on. Is it something that
   people contribute small parts of sporadically, or is it something that
@@ -36,6 +36,7 @@
   or other smallish projects closely with collaborators.
 }
 
+\section{Creating/Cloning}
 \frame{\frametitle{Creating a new repository}
   \bi
     \item Sign into your \gh\ account, click on the
@@ -75,6 +76,7 @@
   \lstinline{git config --global credential.helper wincred}
 }
 
+\section{Committing new files}
 \begingroup
 \small
 \frame{\frametitle{Copy and commit \emph{.gitignore}}
@@ -103,18 +105,52 @@
 }
 \endgroup
 
-\frame{\frametitle{Add collaborators}
-  If your repository is public, anyone can post an issue. If you want someone to
-  be able to:
+\frame{\frametitle{Adding multiple files at once - slide 1}
+  Often you add multiple files or a new directory with files in it. In
+  these cases, when you run \lstinline{git s}, you will see a large
+  listing of files including relative paths. Files can be added at once, by
+  using the \textbf{*} wildcard:
+  \bi
+    \item Add a new directory to your repository, using your normal method.
+      Call it \lstinline{test}.
+    \item Add a couple of new test files to that directory called
+      \lstinline{test1.txt} and \lstinline{test2.txt}. Put some example text
+      in each and save them.
+    \item On the command line, check the status:\\
+      \lstinline{git s}
+    \item You will see a listing showing \emph{Untracked files}. To add them in
+      preparation for a commit, issue the command:
+      \lstinline{git add test/*}
+  \ei
   \bigskip
+  Continued...
+}
+
+\frame{\frametitle{Adding multiple files at once - slide 2}
+  \bi
+    \item Check the status of the repository again:
+      \lstinline{git s}
+    \item It will now show a \emph{new file} in \emph{Changes to be committed}
+    \item Commit the changes:\\
+      \lstinline{git com "Added new files to test directory."}
+    \item Push the changes to \gh:\\
+      \lstinline{git push}
+    \item Check the \gh\ webpage and see your commit and that the files
+      have been uploaded.
+  \ei
+}
+
+\section{\gh\ - Adding collaborators}
+\frame{\frametitle{Add collaborators}
+  If your \gh\ repository is public, anyone can post an issue. If you want
+  someone to be able to:
   \bi
     \item Set assignees to issues
     \item Receive notifications when you reply to their issue
   \ei
-  \bigskip
-  You need to add them as a collaborator. Select the \emph{Settings} tab and then
-  the \emph{Collaborators} button. Type their \gh\ username in and send them an
-  invitation to collaborate.
+  You need to add them as a collaborator. Select the \emph{Settings} tab and
+  then the \emph{Collaborators} button. Type their \gh\ username in and send
+  them an invitation to collaborate.
 }
 
 \frame{\frametitle{A Great Git page}
