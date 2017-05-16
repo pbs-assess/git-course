@@ -145,7 +145,7 @@
   When you want to add some new code to your project, but don't want to break
   what is already there, you create a new branch. When creating a new branch,
   your starting point is identical to the branch you were in when you created
-  the new one.
+  the new one.\\
   \bigskip
   Once you have completed your work in the new branch and are satisfied that
   everything is working correctly, you merge the changes into your master
@@ -355,15 +355,50 @@
   If you have conflicts, you need to fix them before continuing work.
 }
 
+\begingroup
+\small
 \frame{\frametitle{Dealing with merge conflicts}
-  After merging either a remote or a local branch, you may have merge conflicts.
-  These are not something to fear, they are easy to fix and the messages are there
-  to help you.\\
+  The merge message will tell you which files are conflicting. Open those
+  files one by one, and you will see the conflicted section bracketed like the
+  following:\\
   \bigskip
-  The message will tell you which files are conflicting. Open those files, and you
-  will see the conflicted section bracketed by less-than and greater-than symbols
-  like this:\\
-  
+  \lstinline{<<<<<<< HEAD}\\
+  Line(s) of text/code which are currently in your file.\\
+  \lstinline{=======}\\
+  Line(s) of text/code which are trying to merge in, but conflict.\\
+  \lstinline{>>>>>>> BRANCH-NAME}\\
+  \bigskip
+  where BRANCH-NAME is the name branch you are trying to merge in from the
+  previously-issued command:\\
+  \lstinline{git merge BRANCH-NAME}\\
+  All you do is remove the bracketing lines, the ======= line, and choose
+  one of the line(s) of text/code to keep, or edit the line(s) to be
+  something else entirely. Once you are done fixing each conflicted file,
+  you need to commit the merge conflict and push the result:\\
+  \lstinline{git com "Merge conflict resolved."}\\
+  \lstinline{git push}
+}
+\endgroup
+
+\frame{\frametitle{Dealing with merge conflicts - mergetool}
+  You can also use a mergetool such as DiffMerge to fix the conflicts. It is
+  easier in the way that it will open a new session for each conflict and
+  place you at the correct place. You won't have to see the bracketing
+  markers and the files will be edited by the mergetool to what you want.
+  If you want to try the mergetool, after a merge conflict message, run:\\
+  \lstinline{git mergetool}\\
+  \bi
+    \item The left panel is what was in the branch when you called the merge
+      command.
+    \item The middle panel is what you will end up with once finished.
+    \item The right panel is what was in the branch you were trying to merge
+      in.
+  \ei
+  Once finished, click the X to close and the next conflicted file will pop
+  up in a new session of DiffMerge. Once all conflicts have been resolved,
+  issue a commit and push to complete to merge:\\
+  \lstinline{git com "Merge conflict resolved."}\\
+  \lstinline{git push}
 }
 
 \section{\gh\ - Adding collaborators}
