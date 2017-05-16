@@ -237,6 +237,45 @@
   \lstinline{git branch -d BRANCH-NAME}
 }
 
+\section{Remotes}
+\frame{\frametitle{Remotes overview}
+  Once you have created a repository on \gh\ and uploaded some files, you may
+  want to start collaboration with others. To do this, send them the URL of
+  your \gh\ repository, and ask them to \emph{Fork} it on \gh. Once they have
+  done that and cloned your repository, everyone involved will need to add
+  each other's repository as a \emph{remote} so that all changes can be merged.\\
+  \bigskip
+  Adding remotes has to be done once for each project. Once you have added
+  someone, their remote information remains on your local computer. \gh\ has
+  some smart programming, which detects merges between remotes and will keep
+  track of the project and all its contributions.\\
+  \bigskip
+  The network graph is a great place to look at what has happened on a given
+  repository.
+}
+
+\frame{\frametitle{Adding remotes}
+  \bi
+    \item Once everyone has \emph{Forked} on \gh, you must add each person as
+      a \emph{remote}. They must also add everyone as remotes. Everyone must
+      trade URLs, and add each person like this:\\
+      \lstinline{git remote add REMOTE-NAME REMOTE-URL}\\
+      where:\\
+      \bi
+        \item REMOTE-NAME is a name you make up that you will remember. I
+          use first initial followed by last name for everyone, so they have
+          the same syntax. e.g.: cgrandin, aedwards, rforrest.
+        \item REMOTE-URL is the URL on \gh\ where the person's repository
+          can be found. e.g.:\\
+          \url{https://github.com/cgrandin/git-course}.
+      \ei
+    \item To view all remotes you have set up:\\
+      \lstinline{git remote - v}\\
+      or the alias:\\
+      \lstinline{git r}
+  \ei
+}
+
 \section{\gh\ - Adding collaborators}
 \frame{\frametitle{Add collaborators}
   If your \gh\ repository is public, anyone can post an issue. If you want
