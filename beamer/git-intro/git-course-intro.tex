@@ -257,8 +257,8 @@
 \frame{\frametitle{Adding remotes}
   \bi
     \item Once everyone has \emph{Forked} on \gh, you must add each person as
-      a \emph{remote}. They must also add everyone as remotes. Everyone must
-      trade URLs, and add each person like this:\\
+      a \emph{remote}. They must also add everyone else as remotes. Everyone
+      must trade URLs, and add each other person like this:\\
       \lstinline{git remote add REMOTE-NAME REMOTE-URL}\\
       where:\\
       \bi
@@ -276,8 +276,93 @@
   \ei
 }
 
+\frame{\frametitle{Deleting or renaming remotes}
+  \bi
+    \item To delete someone as a remote:\\
+      \lstinline{git remote delete REMOTE-NAME}\\
+      where REMOTE-NAME is the name you made up when you added them.
+    \item To rename a remote:\\
+      \lstinline{git remote rename OLD-NAME NEW-NAME}\\
+      where OLD-NAME is the name you made up when you added them and
+      NEW-NAME is the name you want to change it to.
+    \item To see your changes, use:\\
+      \lstinline{git remote - v}\\
+      or the alias:\\
+      \lstinline{git r}
+  \ei
+}
+
+\section{Fetchching and merging remotes}
+\frame{\frametitle{Fetching overview}
+  Once you have set up your remotes, you can fetch other people's commits.
+  Before continuing work on your project, you should always check \gh, and
+  see if your collaborators have been working, and if so, what their commits
+  were. At this stage you get a general idea of what has been done since
+  you last looked at the repository. Once you have familiarized yourself with
+  the changes in a broad sense, you will want to merge them into yours.\\
+  \bigskip
+  Find the most recent commit on \gh's \emph{Network Graph}. It will have
+  one person's name associated with it. That is the person you will fetch
+  and merge in.\\
+  \bigskip
+  There may be some disarray in the network graph, but you can just merge
+  each person's repository into yours in succession if you wish, which
+  will clean up the network graph.
+}
+
+\frame{\frametitle{Fetching other people's changes}
+  To fetch someone's changes:\\
+  \lstinline{git fetch REMOTE-NAME}\\
+  where REMOTE-NAME is one in the list of remotes you have set up.
+  This command fetches everything in the person's repository, including
+  all branches. Running this command does not affect your repository
+  in any way. The fetch stores the information in a cache, awaiting
+  your command to merge.
+}
+
+\frame{\frametitle{Comparing the fetched repository with yours}
+  Once you've fetched someone's repository, you can exactly see what has
+  changed compared to yours. This is called \emph{Diff-ing}.
+  \bi
+    \item To compare the changes in master to yours (in master):
+      \lstinline{git diff REMOTE-NAME/master}\\
+      or using the \emph{Difftool} if you have it set up:\\
+      \lstinline{git difftool REMOTE-NAME/master}
+    \item This will show you exactly what changes to each file you are about
+      to merge into your repository.
+    \item In general, I use \emph{diff} if there are only minor changes
+      and \emph{difftool} if there are more changes or if more than one file
+      has been changed.
+  \ei
+}
+
+\frame{\frametitle{Merging the fetched repository into yours}
+  \bi
+    \item To merge the fetched repository's master branch into yours:\\
+      \lstinline{git merge REMOTE-NAME/master}\\
+      note that the merge will happen in the branch you are currently in, so make
+      sure you are in the \emph{master} branch.
+    \item To merge other branches:\\
+      \lstinline{git merge REMOTE-NAME/BRANCH-NAME}\\
+      note that the merge will happen in the branch you are currently in, so make
+      sure you are in the BRANCH-NAME branch.
+  \ei
+  At this point, you will either be up-to-date, meaning there were no merge
+  conflicts, or you will have one or more merge conflicts. If you are
+  up-to-date, you need to push back to your repository to complete the merge
+  step:\\
+  \lstinline{git push}\\
+  If you have conflicts, you need to fix them before continuing work.
+}
+
+\frame{\frametitle{Dealing with merge conflicts}
+  After merging either a remote or a local branch, you may have merge conflicts.
+  These are not something to fear, they are easy to fix and the messages are there
+  to help you.
+}
+
 \section{\gh\ - Adding collaborators}
-\frame{\frametitle{Add collaborators}
+\frame{\frametitle{\gh\ - Add collaborators}
   If your \gh\ repository is public, anyone can post an issue. If you want
   someone to be able to:
   \bi
