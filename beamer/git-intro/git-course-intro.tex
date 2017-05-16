@@ -146,11 +146,11 @@
   what is already there, you create a new branch. Once you are satisfied that
   everything is working correctly, you merge the changes into your master
   branch. You can also push branches to \gh\ if you feel the branch is going
-  to take longer to deal with or if there are going to be multiple
+  to be a longer term project and/or if there are going to be multiple
   collaborators on that new branch.\\
-
-  It is a good isea to commit all changes before creating a new branch, as
-  local changes which haven't been coimmitted will appear in the new branch
+  \bigskip
+  It is a good idea to commit all changes before creating a new branch, as
+  local changes which haven't been committed will appear in the new branch
   as well.
 }
 
@@ -164,24 +164,26 @@
       to files will now occur in the new branch.
     \item To view all local branches:
       \lstinline{git branch}
-    \item to switch to another branch:\\
+    \item To switch to another branch:\\
       \lstinline{git checkout BRANCH-NAME}\\
-      or use the alias:
+      or use the alias:\\
       \lstinline{git co BRANCH-NAME}\\
   \ei
 }
 
 \frame{\frametitle{Deleting branches}
   \bi
-    \item To delete a branch that you are not currently in:
+    \item To delete a branch that you are not currently in:\\
       \lstinline{git branch -d BRANCH-NAME}\\
     \item To delete the branch you are currently in, switch to another branch
-      first, (e.g. master) and then delete the branch:
+      first, (e.g. master) and then delete the branch:\\
       \lstinline{git co master}\\
       \lstinline{git branch -d BRANCH-NAME}\\
     \item If you have changes in the branch, you will not be allowed to delete
-      it. If you want to forcibly delete it, discarding your changes, use:
-      \lstinline{git branch -D BRANCH-NAME}
+      it. If you want to forcibly delete it, discarding your changes, use:\\
+      \lstinline{git branch -D BRANCH-NAME}\\
+      \textbf{Warning - you won't be able to get any of those changes back
+        once you do this.}
   \ei
 }
 
@@ -189,15 +191,16 @@
   \bi
     \item To merge a branch into another branch:
       \bn
-        \item Change to the branch you want to merge into, typically master:
+        \item Change to the branch you want to merge into, typically master:\\
           \lstinline{git co master}
-        \item Merge the branch into master:
+        \item Merge the branch into master:\\
           \lstinline{git merge BRANCH-NAME}
       \en
     \item If there was a merge conflict, you must fix it at this point. This
       will be covered later in the section about merging remotes, which
       follows the exact same method.
-    \item If you are done with that branch for good, delete it.
+    \item If you are done with that branch for good, delete it so you don't
+      have unused branches hanging around.
   \ei
 }
 
@@ -211,9 +214,9 @@
 
   \lstinline{git push}\\
 
-  while in the new branch, \gs\ will tell you what you need to do!\\
+  while in the new branch, \gs\ will tell you the command you need.\\
 
-  Once you've done this for a branch, all you have to do for future
+  Once you've done this once for a branch, all you have to do for future
   changes is:\\
   \lstinline{git push}
 }
