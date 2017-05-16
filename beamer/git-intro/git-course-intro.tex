@@ -143,28 +143,34 @@
 \section{Branches}
 \frame{\frametitle{Branching overview}
   When you want to add some new code to your project, but don't want to break
-  what is already there, you create a new branch. Once you are satisfied that
+  what is already there, you create a new branch. When creating a new branch,
+  your starting point is identical to the branch you were in when you created
+  the new one.
+  \bigskip
+  Once you have completed your work in the new branch and are satisfied that
   everything is working correctly, you merge the changes into your master
-  branch. You can also push branches to \gh\ if you feel the branch is going
-  to be a longer term project and/or if there are going to be multiple
-  collaborators on that new branch.\\
+  branch (or any other branch you wish).\\
+  \bigskip
+  You can also push branches to \gh\ if you feel the branch is going to be a
+  longer term project and/or if there are going to be multiple collaborators
+  on that new branch.\\
   \bigskip
   It is a good idea to commit all changes before creating a new branch, as
-  local changes which haven't been committed will appear in the new branch
+  local changes which haven't been coimmitted will appear in the new branch
   as well.
 }
 
 \frame{\frametitle{Creating a new branch}
   \bi
-    \item To create a new branch based off the branch you are currently on:
+    \item To create a new branch based off the branch you are currently on:\\
       \lstinline{git checkout -b BRANCH-NAME}\\
       or use the alias:\\
       \lstinline{git cb BRANCH-NAME}\\
-      You will be automatically placed in the new branch, and any changes
-      to files will now occur in the new branch.
-    \item To view all local branches:
+      You will be automatically placed in the new branch, and commits
+      you make will now occur in the new branch.
+    \item To view all local branches:\\
       \lstinline{git branch}
-    \item To switch to another branch:\\
+    \item to switch to another branch:\\
       \lstinline{git checkout BRANCH-NAME}\\
       or use the alias:\\
       \lstinline{git co BRANCH-NAME}\\
@@ -189,7 +195,7 @@
 
 \frame{\frametitle{Merging branches}
   \bi
-    \item To merge a branch into another branch:
+    \item To merge the changes from a branch into another branch:
       \bn
         \item Change to the branch you want to merge into, typically master:\\
           \lstinline{git co master}
@@ -200,7 +206,8 @@
       will be covered later in the section about merging remotes, which
       follows the exact same method.
     \item If you are done with that branch for good, delete it so you don't
-      have unused branches hanging around.
+      have unused branches hanging around:\\
+      \lstinline{git branch -d BRANCH-NAME}
   \ei
 }
 
@@ -210,22 +217,24 @@
 
   \lstinline{git --set-upstream origin BRANCH-NAME}\\
 
-  Oddly enough if you forget this and type:\\
+  \gs\ is somewhat smart, so if you forget this command and instead type:\\
 
   \lstinline{git push}\\
 
   while in the new branch, \gs\ will tell you the command you need.\\
-
-  Once you've done this once for a branch, all you have to do for future
-  changes is:\\
+  \bigskip
+  Once you've done this for a branch, all you have to do to push future
+  commits in this branch is:\\
   \lstinline{git push}
 }
 
 \frame{\frametitle{Deleting branches from \gh}
   To remove a branch entirely from \gh:\\
   \lstinline{git push origin --delete BRANCH-NAME}\\
-  The local branch will still exist, so if you want to delete that as well,
-  follow the instructions on the \emph{Deleting branches} slide above.
+  \bigskip
+  The local branch will still exist, so if you want to delete that as well:\\
+  \lstinline{git co master}\\
+  \lstinline{git branch -d BRANCH-NAME}
 }
 
 \section{\gh\ - Adding collaborators}
