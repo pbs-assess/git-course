@@ -205,6 +205,17 @@
   If you want to push the branch up to \gh, i.e. so others can fetch it and
   edit it, you need to be in the branch locally and:\\
 
+  \lstinline{git --set-upstream origin BRANCH-NAME}\\
+
+  Oddly enough if you forget this and type:\\
+
+  \lstinline{git push}\\
+
+  while in the new branch, \gs\ will tell you what you need to do!\\
+
+  Once you've done this for a branch, all you have to do for future
+  changes is:\\
+  \lstinline{git push}
 }
 
 \section{\gh\ - Adding collaborators}
