@@ -140,6 +140,18 @@
   \ei
 }
 
+\frame{\frametitle{The \emph{.gitignore} file}
+  Each repository can have one \emph{.gitignore} file, in the root directory
+  of the repository. This file has names of files or wildcard names such as
+  \lstinline{*.dvi} or \lstinline{*.nav} that will be completely ignored by
+  \gs. Many compilers make temporary files, the names of which should be added
+  to this file to avoid adding these files when adding whole directories
+  using command with wildcards such as \lstinline{git add test/*}.\\
+  \bigskip
+  This is important as you will clutter up your repository and have to spend
+  time cleaning it all up.
+}
+
 \section{Branches}
 \frame{\frametitle{Branching overview}
   When you want to add some new code to your project, but don't want to break
