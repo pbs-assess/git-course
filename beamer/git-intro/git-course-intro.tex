@@ -368,12 +368,12 @@
   Line(s) of text/code which are trying to merge in, but conflict.\\
   \lstinline{>>>>>>> BRANCH-NAME}\\
   \bigskip
-  where BRANCH-NAME is the name branch you are trying to merge in from the
-  previously-issued command:\\
+  where BRANCH-NAME is the name of the branch you are trying to merge in
+  from the previously-issued command:\\
   \lstinline{git merge BRANCH-NAME}\\
-  All you do is remove the bracketing lines, the ======= line, and choose
-  one of the line(s) of text/code to keep, or edit the line(s) to be
-  something else entirely. Once you are done fixing each conflicted file,
+  All you do is remove the bracketing lines, the \lstinline{=======} line,
+  and choose one of the line(s) of text/code to keep, or edit the line(s)
+  to be something else entirely. Once you are done fixing each conflicted file,
   you need to commit the merge conflict and push the result:\\
   \lstinline{git com "Merge conflict resolved."}\\
   \lstinline{git push}
@@ -382,16 +382,16 @@
 
 \frame{\frametitle{Dealing with merge conflicts - mergetool}
   You can also use a mergetool such as DiffMerge to fix the conflicts. It is
-  easier in the way that it will open a new session for each conflict and
-  place you at the correct place. You won't have to see the bracketing
-  markers and the files will be edited by the mergetool to what you want.
-  If you want to try the mergetool, after a merge conflict message, run:\\
+  easier in that it will open a new session for each conflict and place you
+  at the correct place. You won't have to see the bracketing markers and the
+  files will be edited by the mergetool to what you want. If you want to try
+  the mergetool, after a merge conflict message, run:\\
   \lstinline{git mergetool}\\
   \bi
-    \item The left panel is what was in the branch when you called the merge
-      command.
+    \item The left panel is what is in the branch you are in when you called
+      the merge command.
     \item The middle panel is what you will end up with once finished.
-    \item The right panel is what was in the branch you were trying to merge
+    \item The right panel is what is in the branch you are trying to merge
       in.
   \ei
   Once finished, click the X to close and the next conflicted file will pop
