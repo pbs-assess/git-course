@@ -312,7 +312,9 @@
 
 \frame{\frametitle{Fetching other people's changes}
   To fetch someone's changes:\\
+  \bigskip
   \lstinline{git fetch REMOTE-NAME}\\
+  \bigskip
   where REMOTE-NAME is one in the list of remotes you have set up.
   This command fetches everything in the person's repository, including
   all branches. Running this command does not affect your repository
@@ -417,8 +419,8 @@
 \frame{\frametitle{Stashing overview}
   If you are in the middle of working on something, but you need to change
   branches for some reason, you can \emph{stash} your changes and apply
-  them back later. Let's say you are working in the master repository.To
-  stash all changes:\\
+  them back later. Let's say you are working in the master branch. To
+  stash all changes in master:\\
   \lstinline{git stash}\\
   then change branches, and do whatever you like. To get those changes back,
   switch back to master:\\
@@ -429,32 +431,36 @@
   in progress and come back to where you left off.
 }
 
-\frame{\frametitle{Stashing details}
-  If you leave a stash for awhile and have made changes since the stash,
+\frame{\frametitle{Stashing - make it into a branch}
+  If you leave a stash for awhile and have made commits since the stash,
   then try to reapply it, you may get conflicts. The best way to apply a stash
   if you have modified things since you stashed is to let git create a branch
-  for the stash, and apply it inside the branch:\\
+  for the stash, which you can then look at and edit if you wish before merging
+  back into your master or other working branch:\\
+  \bigskip
   \lstinline{git stash branch BRANCH-NAME}\\
-  where BRANCH-NAME is the name you want to call the branch where the stash
-  will be applied, typically \emph{test-stash} or something similar.
+  \bigskip
+  where BRANCH-NAME is the name you want to call the new branch. You can then
+  merge this branch in as outlined in the merging slides and resolve conflicts
+  in the same way as with remotes or other local branches.
 }
 
-\frame{\frametitle{Advanced stashing}
-  You can stash more than one set of changes if you wish. To see your list
-  of available stashes:\\
-  \lstinline{git stash list}\\
-  The list will look something like this:\\
-  \lstinline{stash@\{0\}: WIP on master: 46ae7a8 Merge conflict resolved.}\\
-  \lstinline{stash@\{1\}: WIP on master: fe35a9b Minor change to Readme.}\\
-  \lstinline{...}\\
-  where each commit the stash was based on is listed. You can apply any
-  of these by using the syntax:\\
-  \lstinline{git stash apply stash@\{N\}}\\
-  where N is one of the numbers shown. If you don't specify a stash, the
-  most recent one is used, as shown in the previous slide.
-}
+%% \frame{\frametitle{Advanced stashing}
+%%   You can stash more than one set of changes if you wish. To see your list
+%%   of available stashes:\\
+%%   \lstinline{git stash list}\\
+%%   The list will look something like this:\\
+%%   \lstinline{stash@\{0\}: WIP on master: 46ae7a8 Merge conflict resolved.}\\
+%%   \lstinline{stash@\{1\}: WIP on master: fe35a9b Minor change to Readme.}\\
+%%   \lstinline{...}\\
+%%   where each commit the stash was based on is listed. You can apply any
+%%   of these by using the syntax:\\
+%%   \lstinline{git stash apply stash@\{N\}}\\
+%%   where N is one of the numbers shown. If you don't specify a stash, the
+%%   most recent one is used, as shown in the previous slide.
+%% }
 
-\frame{\frametitle{A Great Git page}
+\frame{\frametitle{A good introductory Git webpage}
   \url{https://www.git-tower.com/learn/git/ebook/en/command-line}
 }
 
