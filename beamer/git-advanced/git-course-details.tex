@@ -26,7 +26,7 @@
       in the \gs.
     \item the \textbf{master} which is just another branch and is the default
       one when you set up a repository on \gh.
-    \item the branch names that you have in your repository
+    \item the branch names that you have in your repository.
   \ei
   Once you've cloned a \gh\ repository, the \emph{master} points at the initial
   commit, and the \emph{HEAD} points at the master.
@@ -40,6 +40,8 @@
       \bi
         \item \textcolor{green}{Green} items are commits.
         \item \textcolor{orange}{Orange} items are branches.
+        \item The \textcolor{blue}{Stage} holds references to files you have
+          added using \lstinline{git add FILE-NAME} for the next commit.
         \item The current branch is always pointed to by \textbf{HEAD}.
         \item \textbf{ed489} is the most recent commit, and it is pointed to
           by \textbf{master} and \textbf{HEAD}.
@@ -58,19 +60,69 @@
 }
 
 \frame{\frametitle{Commit on master}
-  \includegraphics[
-    width=\textwidth,
-    height=0.8\textheight,
-    keepaspectratio]
-    {figures/commit-master}
+  \begin{columns}
+    \begin{column}{0.4\linewidth}
+      \bi
+        \item When you do a \lstinline{git commit} while in the \textbf{master}
+          branch, \textbf{master} and \textbf{HEAD} are moved up one to point
+          at the new commit. Everything else remains the same.
+        \item Any files you want included in the new commit must be have been
+          added previously with the \lstinline{git add FILENAME} command so
+          that they are in the \textcolor{blue}{Stage} area for the commit.
+      \ei
+    \end{column}
+    \begin{column}{0.6\linewidth}
+      \includegraphics[
+        width=\textwidth,
+        height=0.8\textheight,
+        keepaspectratio]
+                      {figures/commit-master}
+    \end{column}
+  \end{columns}
 }
 
 \frame{\frametitle{Commit on another branch}
-  \includegraphics[
-    width=\textwidth,
-    height=0.8\textheight,
-    keepaspectratio]
-    {figures/commit-maint}
+  \begin{columns}
+    \begin{column}{0.4\linewidth}
+      \bi
+        \item If you have changed to another branch using
+          \lstinline{git co maint} and then commit changes, \textbf{maint}
+          and \textbf{HEAD} will be moved up to the new commit, \textbf{1800b}.
+        \item \textbf{maint} is no longer an ancestor of \textbf{master}.
+        \item Any files added will be a part of the \textbf{maint} branch
+          and will not appear in the \textbf{master} branch.
+      \ei
+    \end{column}
+    \begin{column}{0.6\linewidth}
+      \includegraphics[
+        width=\textwidth,
+        height=0.8\textheight,
+        keepaspectratio]
+                      {figures/commit-maint}
+    \end{column}
+  \end{columns}
+}
+
+\frame{\frametitle{Commit amendment}
+  \begin{columns}
+    \begin{column}{0.4\linewidth}
+      \bi
+        \item If a mistake is made in the last commit, you can use
+          \lstinline{git commit --amend}.
+        \item it creates a new commit (\textbf{4ca87}) and discards the old
+          one if nothing else is pointing to it (\textbf{ed489}).
+        \item \textbf{master} and \textbf{HEAD} will be moved up to the
+          new commit.
+      \ei
+    \end{column}
+    \begin{column}{0.6\linewidth}
+      \includegraphics[
+        width=\textwidth,
+        height=0.8\textheight,
+        keepaspectratio]
+                      {figures/commit-amend}
+    \end{column}
+  \end{columns}
 }
 
 \frame{\frametitle{Advanced stashing}
@@ -85,7 +137,7 @@
   of these by using the syntax:\\
   \lstinline{git stash apply stash@\{N\}}\\
   where N is one of the numbers shown. If you don't specify a stash, the
-  most recent one is used, as shown in the previous slide.
+  most recent one is used.
 }
 
 \end{document}
