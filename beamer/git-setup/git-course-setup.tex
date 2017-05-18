@@ -23,6 +23,8 @@
   \bigskip
   \bi
     \item \url{https://github.com}
+    \item Have a picture handy, and attach it to your profile. It actually
+      makes it easier if you can see your collaborators.
   \ei
 }
 
@@ -97,7 +99,7 @@
     \item Press the \emph{Fork} button. This will give you a copy of the
       git-course repository.
     \item Navigate to your new forked repository:\\
-      \url{https://github.com/GITHUB-USER/git-course}
+      \lstinline{https://github.com/GITHUB-USER/git-course}
     \item Copy the URL for your repository.
     \item Windows: Open the \gs\ and run the following command to clone the
       repository, you can paste the URL into the \gs\ by pressing the right
@@ -117,14 +119,14 @@
       with one I use and modify it.
     \item Open up the \emph{contents} sub-directory in the \emph{git-course}
       directory and copy the file \emph{.gitconfig}
-    \item For Windows, copy this file to:\\
+    \item For Windows, copy this file (overwrite the existing file) to:\\
       \bigskip
       \lstinline[escapechar="\\"]{C:\\Users\\YOUR-COMPUTER-USER-NAME\\.gitconfig}\\
       \bigskip
       where YOUR-COMPUTER-USER-NAME is your user name on your computer, not
       your \gh\ account name.
       \bigskip
-    \item For MAC, copy this file to:\\
+    \item For MAC, copy this file (overwrite the existing file) to:\\
       \bigskip
       \lstinline[escapechar="\~"]{\~/.gitconfig}
       \bigskip
@@ -157,6 +159,30 @@
   \bigskip
   This will make your git output colored in a similar way to the Windows
   powershell version.
+}
+
+\frame{\frametitle{If you want to build these slides..}
+  If you want to build the slideshows we have prepared from source, you need to
+  have \LaTeX\ installed. I suggest trying, \emph{beamer} is great!
+  \bi
+    \item On Windows, install Mik\TeX:\\
+      \bigskip
+      \url{https://miktex.org/download}\\
+      \bigskip
+      Build each pdf by entering the beamer directory and then
+      the subdirectories inside. Each will have a \emph{build-pdf.bat} file which
+      you can double-click.
+    \item On MAC, install Mac\TeX:\\
+      \bigskip
+      \url{http://www.tug.org/mactex/}\\
+      \bigskip
+      Run the following in your shell in the directory for the given slideshow:\\
+      \lstinline{pdflatex TEX\_FILE\_NAME}\\
+      where TEX\_FILE\_NAME is the name of the TEX file, e.g.:
+      \lstinline{git-course-setup.tex}.\\
+      Run it two or three times to ensure page numbers are accurate.
+  \ei
+  \bigskip
 }
 
 \frame{\frametitle{You're ready...}
