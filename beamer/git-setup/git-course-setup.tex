@@ -3,7 +3,7 @@
 %% \documentclass{beamer}
 \usepackage{../git-course}
 
-\title[git-course]{Setting up Git and \gh\ for use with this course}
+\title[git-course]{Setting up Git and \gh\ for the first time}
 \author{Chris Grandin \& Andy Edwards}
 \date{\today}
 
@@ -22,7 +22,7 @@
 \frame{\frametitle{Get a \gh\ account}
   \bigskip
   \bi
-    \item \url{https://github.com}
+    \item Sign up for \gh: \url{https://github.com}
     \item Have a picture handy, and attach it to your profile. It actually
       makes it easier if you can see your collaborators.
   \ei
@@ -55,18 +55,22 @@
   \bi
     \item Windows:
       \bn
-        \item Create the directory \lstinline[escapechar="\\"]{C:\\github}.
+        \item Create the directory \lstinline[escapechar="\\"]{C:\\github}. If
+          you decide to use a different directory, make sure there are no spaces
+          or special characters anywhere in the full path.
         \item Open the GitHub Desktop Application. Press the gear icon and
           choose \emph{Options}.
         \item In \emph{Configure Git}, fill in your name and the
           email address you used for your GitHub account.
-        \item Change your \emph{Clone Path} to \lstinline[escapechar="\\"]{C:\\github}.
+        \item Change your \emph{Clone Path} to \lstinline[escapechar="\\"]{C:\\github}
+          (or whatever directory you created above).
         \item Make sure that for \emph{Default Shell}, \emph{PowerShell} is
           checked.
         \item Click \emph{Save} and close the application.
         \item Check the configuration by opening the \gs, (not the \gh\
           application). The directory that it starts in should be
-          \lstinline[escapechar="\\"]{C:\\github}.
+          \lstinline[escapechar="\\"]{C:\\github} (or whatever directory you created
+          above).
       \en
       \item MAC:
         \bn
@@ -92,7 +96,8 @@
 }
 
 \frame{\frametitle{Cloning the git-course repository}
-  For these instructions, replace GITHUB-USER with your \gh\ account name.
+  For these instructions, replace \lstinline{GITHUB-USER} with your
+  \gh\ account name.
   \bi
     \item On the \gh\ webpage, sign into your account and navigate to:\\
       \url{https://github.com/cgrandin/git-course}
