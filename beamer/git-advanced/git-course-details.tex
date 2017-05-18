@@ -1,0 +1,91 @@
+\documentclass[aspectratio=169]{beamer}
+%% For 4:3 aspect ratio:
+%% \documentclass{beamer}
+\usepackage{../git-course}
+
+\title[git-course]{Git details}
+\author{Chris Grandin \& Andy Edwards}
+\date{\today}
+
+\begin{document}
+
+\frame[plain]{
+\titlepage
+}
+
+\section{Introduction}
+\frame{\frametitle{Commits and history}
+  Git does not keep versions of software, it keeps \emph{commits}. The commits
+  are kept track of using a hash code, using \emph{Secure Hash Algorithm 1}
+  (SHA-1) which generates a hash key 40 digits long in hexadecimal. These are
+  what you see on \gh\ and in various places when you use \gs.\\
+  \bigskip
+  Several of these commits have pointers to them which have special names:
+  \bi
+    \item the \textbf{HEAD} which points to the commit you are currently on
+      in the \gs.
+    \item the \textbf{master} which is just another branch and is the default
+      one when you set up a repository on \gh.
+    \item the branch names that you have in your repository
+  \ei
+  Once you've cloned a \gh\ repository, the \emph{master} points at the initial
+  commit, and the \emph{HEAD} points at the master.
+}
+
+%% Figures from : https://marklodato.github.io/visual-git-guide/index-en.html?no-svg
+
+\frame{\frametitle{Git layout}
+  \begin{columns}
+    \begin{column}{0.4\linewidth}
+      \bi
+        \item \textcolor{green}{Green} items are commits.
+        \item \textcolor{orange}{Orange} items are branches.
+        \item The current branch is always pointed to by \textbf{HEAD}.
+        \item \textbf{ed489} is the most recent commit, and it is pointed to
+          by \textbf{master} and \textbf{HEAD}.
+        \item \textbf{maint} is another branch, and is an ancestor of
+          \textbf{master}.
+      \ei
+    \end{column}
+    \begin{column}{0.6\linewidth}
+      \includegraphics[
+        width=\textwidth,
+        height=0.8\textheight,
+        keepaspectratio]
+                      {figures/head-master}
+    \end{column}
+  \end{columns}
+}
+
+\frame{\frametitle{Commit on master}
+  \includegraphics[
+    width=\textwidth,
+    height=0.8\textheight,
+    keepaspectratio]
+    {figures/commit-master}
+}
+
+\frame{\frametitle{Commit on another branch}
+  \includegraphics[
+    width=\textwidth,
+    height=0.8\textheight,
+    keepaspectratio]
+    {figures/commit-maint}
+}
+
+\frame{\frametitle{Advanced stashing}
+  You can stash more than one set of changes if you wish. To see your list
+  of available stashes:\\
+  \lstinline{git stash list}\\
+  The list will look something like this:\\
+  \lstinline{stash@\{0\}: WIP on master: 46ae7a8 Merge conflict resolved.}\\
+  \lstinline{stash@\{1\}: WIP on master: fe35a9b Minor change to Readme.}\\
+  \lstinline{...}\\
+  where each commit the stash was based on is listed. You can apply any
+  of these by using the syntax:\\
+  \lstinline{git stash apply stash@\{N\}}\\
+  where N is one of the numbers shown. If you don't specify a stash, the
+  most recent one is used, as shown in the previous slide.
+}
+
+\end{document}
