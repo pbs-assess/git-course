@@ -457,6 +457,60 @@
   in the same way as with remotes or other local branches.
 }
 
+\section{Undoing things}
+\frame{\frametitle{Changing the commit message in the last commit}
+  If you make a commit, then realize that your message had a spelling error,
+  or needed more information in it, you can change the commit message:\\
+  \bigskip
+  \lstinline{git commit --amend -m "Correct message."}\\
+  \bigskip
+  This only works on the last commit. You can't change any other commit message
+  using \emph{amend}.\\
+  If you already pushed the commit before realizing that the message needs
+  modification, do this:\\
+  \bigskip
+  \lstinline{git push --force}\\
+  \bigskip
+  after making the amendment to the commit message. You can also make any other
+  changes you wish before issuing the amendment commit and those changes will
+  be rolled into the commit you are amending.
+}
+
+\frame{\frametitle{Undoing a commit}
+  If you make a commit followed by other commits, then realize you want to undo
+  the earlier commit, you use \emph{revert}:\\
+  \bigskip
+  \lstinline{git revert SHA1}\\
+  \bigskip
+  where SHA1 is the hash for the commit you want to undo. It is the 20-byte
+  string that appears with the commit.\\
+  e.g.: \lstinline{1ef1da5659a4b147562b155ffb6289811adab36b}\\
+  \gs\ is smart enough that you only need the first six or so digits:\\
+  \bigskip
+  \lstinline{git revert 1ef1da}\\
+  \bigskip
+  It is important to make a lot of commits, each with only small changes.
+  You can only revert the whole commit, not parts.
+}
+
+\frame{\frametitle{Undoing changes not yet committed}
+  If you've made a mess and you want to change everything back to the way
+  it was on the last commit:\\
+  \bigskip
+  \lstinline{git reset --hard}\\
+  \bigskip
+  If you've messed up a single file and just want that one file to go back
+  to the way it was on the last commit:\\
+  \bigskip
+  \lstinline{git checkout HEAD file/to/restore.r}\\
+  \bigskip
+  Warning - running these commends will delete the changes you have made.
+  Since you have not committed any changes, they will be lost. Make sure
+  you are certain you don't need the changes before running these commands.
+  If you aren't sure if you need the changes again in the future, use
+  \lstinline{git stash} instead.
+}
+
 %% \frame{\frametitle{Advanced stashing}
 %%   You can stash more than one set of changes if you wish. To see your list
 %%   of available stashes:\\
