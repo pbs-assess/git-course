@@ -125,6 +125,31 @@
   \end{columns}
 }
 
+\frame{\frametitle{Checking out at any commit}
+  \begin{columns}
+    \begin{column}{0.4\linewidth}
+      \bi
+        \item You can go to any commit and see how things looked at that
+          point in time. \lstinline{git checkout b325c} or
+          \lstinline{git checkout master~3} will put your \textbf{HEAD} in this
+          position.
+        \item Your working directory will change structure to be exactly
+          what is was at that commit.
+        \item This is the same as changing to another branch, but there
+          is no branch reference, leaving you in a \textbf{Detached Head}
+          state.
+      \ei
+    \end{column}
+    \begin{column}{0.6\linewidth}
+      \includegraphics[
+        width=\textwidth,
+        height=0.8\textheight,
+        keepaspectratio]
+                      {figures/detached-head}
+    \end{column}
+  \end{columns}
+}
+
 \frame{\frametitle{Advanced stashing}
   You can stash more than one set of changes if you wish. To see your list
   of available stashes:\\
