@@ -150,6 +150,50 @@
   \end{columns}
 }
 
+\frame{\frametitle{Committing with a detached \textbf{HEAD}}
+  \begin{columns}
+    \begin{column}{0.4\linewidth}
+      \bi
+        \item Commits work as usual, but there is no named branch so if you
+          use the \lstinline{git checkout} command after committing in a
+          detached HEAD state, you will
+          \textbf{lose all the work in those commits}.
+        \item To avoid losing these commits, save your commits before changing
+          back to \emph{master} or another branch by creating a new branch
+          where you currently are.
+      \ei
+    \end{column}
+    \begin{column}{0.6\linewidth}
+      \includegraphics[
+        width=\textwidth,
+        height=0.8\textheight,
+        keepaspectratio]
+                      {figures/commit-detached}
+    \end{column}
+  \end{columns}
+}
+
+\frame{\frametitle{Creating a branch while in a detached \textbf{HEAD} state}
+  \begin{columns}
+    \begin{column}{0.4\linewidth}
+      \bi
+        \item Creating a branch while in a detached HEAD state will change you
+          to the new branch and take you out of the detached HEAD state:\\
+          \lstinline{git checkout -b BRANCH-NAME}\\
+          or use the alias:\\
+          \lstinline{git cb BRANCH-NAME}
+      \ei
+    \end{column}
+    \begin{column}{0.6\linewidth}
+      \includegraphics[
+        width=\textwidth,
+        height=0.8\textheight,
+        keepaspectratio]
+                      {figures/checkout-b-detached}
+    \end{column}
+  \end{columns}
+}
+
 \frame{\frametitle{Advanced stashing}
   You can stash more than one set of changes if you wish. To see your list
   of available stashes:\\
