@@ -15,22 +15,25 @@
 
 \section{Introduction}
 \frame{\frametitle{Git Workflow}
-  Decide what kind of a project you are working on. Is it something that
-  people contribute small parts of sporadically, or is it something that
-  requires collaboration between people working closely on a project?
+  Decide what kind of a project you are working on. There are two ways to work
+  using Git and \gh:
 
-  \bi
-    \item A project where collaborators work closely together
+  \bn
+    \item A project where collaborators work closely together and each have
+      a copy of the repository, none of which are the 'master copy'.
       \bi
-        \item Fork
-        \item Merge other people's remote repositories using \gs
+        \item Fork a copy from the initial creator's repository.
+        \item Merge other people's remote repositories into yours using \gs.
       \ei
-    \item A project where people contribute small parts to a \emph{master}
+    \item A project where people contribute to a main repository that is
+      considered the 'master copy'.
       \bi
-        \item Don't Fork
-        \item Pull request on the \gh\ site
+        \item Don't fork, instead clone directly from the creator's repository.
+        \item Send a \emph{Pull request} to the creator on the \gh\ site. They
+          accept your pull request and your code is merged into the 'master
+          copy'.
       \ei
-  \ei
+  \en
 
   We will focus on the first method, as we are mostly working on assessments
   or other smallish projects closely with collaborators.
