@@ -68,6 +68,10 @@
           created.
       \ei
   \ei
+  \bigskip
+  You should now have a subdirectory called \lstinline{REPO-NAME}. Enter that
+  directory:\\
+  \lstinline{cd REPO-NAME}
 }
 
 \frame{\frametitle{Windows only: Storing your credentials}
@@ -89,11 +93,10 @@
       paste it into your newly cloned directory. You can edit this to suit
       the project, as there is a different \emph{.gitignore} file for each
       project.
-    \item In the \gs, enter the new directory: \lstinline{cd REPO-NAME}\\
     \item Check the status of your repository: \lstinline{git status}
     \item You will see that the new file \emph{.gitignore} has not been
-      staged for commit. You need to add any new files to be committed
-      by using the \lstinline{git add} command:\\
+      staged for commit. It is an \emph{Untracked file}. You need to add any
+      new files to be committed by using the \lstinline{git add} command:\\
       \lstinline{git add .gitignore}
     \item Make a commit for the changes:\\
       \lstinline{git commit -a -m "Added .gitignore"}\\
@@ -112,20 +115,21 @@
   Often you add multiple files or a new directory with files in it. In
   these cases, when you run \lstinline{git status} or the alias
   \lstinline{git s}, you will see a large listing of files. Files can
-  be added at once, by using the \textbf{*} wildcard:
+  be added at once, by simply adding the directory.
   \bi
     \item Add a new directory to your repository, using your normal method.
       Call it \lstinline{test}.
     \item Add a couple of new test files to that directory called
-      \lstinline{test1.txt} and \lstinline{test2.txt}. Put some example text
+      \lstinline{test1.r} and \lstinline{test2.r}. Put some example text
       in each and save them.
     \item On the command line, check the status:\\
       \lstinline{git status}\\
       or use the alias:\\
       \lstinline{git s}
-    \item You will see a listing showing \emph{Untracked files}. To add them in
-      preparation for a commit, issue the command:\\
-      \lstinline{git add test/*}
+    \item You will see a listing showing the \emph{test} directory in
+      \emph{Untracked files}. To add the files in preparation for a commit,
+      issue the command:\\
+      \lstinline{git add test}
   \ei
   \bigskip
   Continued...
@@ -147,13 +151,33 @@
   \ei
 }
 
+\frame{\frametitle{Renaming files}
+  \bi
+    \item You can rename any files the normal way you do that such as in the
+      Windows file explorer.
+    \item Once you've renamed your files, check the repository status:\\
+      \lstinline{git status}\\
+    \item You will see that the files you renamed need to be added again.
+      Do this the same way you added them in the first place. You can also
+      add a whole directory again and \gs\ is smart enough to only add the
+      renamed files.
+    \item Check the status again:\\
+      \lstinline{git status}\\
+      It will show that the file(s) were renamed.
+    \item Make a commit:\\
+      \lstinline{git com "Renamed files x, y, and z"}\\
+    \item Push the commit:\\
+      \lstinline{git push}
+  \ei
+}
+
 \frame{\frametitle{The \emph{.gitignore} file}
   Each repository can have one \emph{.gitignore} file, in the root directory
   of the repository. This file has names of files or wildcard names such as
   \lstinline{*.dvi} or \lstinline{*.nav} that will be completely ignored by
   \gs. Many compilers make temporary files, the names of which should be added
   to this file to avoid adding these files when adding whole directories
-  using command with wildcards such as \lstinline{git add test/*}.\\
+  using commands such as \lstinline{git add test}.\\
   \bigskip
   This is important as you will clutter up your repository and have to spend
   time cleaning it all up.\\
@@ -452,7 +476,7 @@
   switch back to master:\\
   \lstinline{git co master}\\
   and apply the stashed changes:\\
-  \lstinline{git stash apply}\\
+  \lstinline{git stash pop}\\
   Note that nothing is committed, this just lets you put on hold your work
   in progress and come back to where you left off.
 }
@@ -485,9 +509,10 @@
   \bigskip
   \lstinline{git push --force}\\
   \bigskip
-  after making the amendment to the commit message. You can also make any other
-  changes you wish before issuing the amendment commit and those changes will
-  be rolled into the commit you are amending.
+  after making the amendment to the commit message. You can also add more files
+  before issuing the amendment commit and those files will be added to the commit
+  you are amending. You can't add changes to file content this way though, you'll
+  need to do another commit for that.
 }
 
 \frame{\frametitle{Undoing a commit}
