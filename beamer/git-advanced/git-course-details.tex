@@ -233,7 +233,7 @@
   \bi
     \item References are things like \textbf{HEAD}, \textbf{master},
       other branch names, and remote names.
-    \item To see a list of hashes for where the \textbf{HEAD} was at:\\
+    \item To see a list of hashes for where the \textbf{HEAD} is/was:\\
       \lstinline{git reflog}
     \item To see a list of hashes for the referenced objects in your local
       repository:\\
@@ -254,19 +254,45 @@
 %%  mandatory.
 
 \section{Stashing}
-\frame{\frametitle{Advanced stashing}
-  You can stash more than one set of changes if you wish. To see your list
+\frame{\frametitle{Stashing - 1}
+  You can stash more than one set of changes if you wish. To see your stack
   of available stashes:\\
+  \bigskip
   \lstinline{git stash list}\\
+  \bigskip
   The list will look something like this:\\
   \lstinline{stash@\{0\}: WIP on master: 46ae7a8 Merge conflict resolved.}\\
   \lstinline{stash@\{1\}: WIP on master: fe35a9b Minor change to Readme.}\\
-  \lstinline{...}\\
   where each commit the stash was based on is listed. You can apply any
   of these by using the syntax:\\
+  \bigskip
   \lstinline{git stash apply stash@\{N\}}\\
+  \bigskip
   where N is one of the numbers shown. If you don't specify a stash, the
-  most recent one is used.
+  most recent one (\lstinline{stash@\{0\}}) is used:\\
+  \bigskip
+  \lstinline{git stash apply}
+}
+
+\frame{\frametitle{Stashing - 2}
+  If you use the \lstinline{git stash apply} command, the commit which is
+  applied will remain in the stash list. To apply the stash and also remove
+  it from the stash list:\\
+  \bigskip
+  \lstinline{git stash pop}\\
+  \bigskip
+  To remove stash commit N without applying it:\\
+  \bigskip
+  \lstinline{git stash drop stash@\{N\}}\\
+  \bigskip
+  To remove the top (most recent) stash commit without applying it:\\
+  \bigskip
+  \lstinline{git stash drop}\\
+  \bigskip
+  If you are cleaning up your repository, you can remove everything in the
+  stash list:\\
+  \bigskip
+  \lstinline{git stash clear}
 }
 
 \end{document}
