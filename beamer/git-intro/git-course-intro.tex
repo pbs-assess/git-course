@@ -550,23 +550,23 @@
   \lstinline{git stash} instead.
 }
 
-%% \frame{\frametitle{Advanced stashing}
-%%   You can stash more than one set of changes if you wish. To see your list
-%%   of available stashes:\\
-%%   \lstinline{git stash list}\\
-%%   The list will look something like this:\\
-%%   \lstinline{stash@\{0\}: WIP on master: 46ae7a8 Merge conflict resolved.}\\
-%%   \lstinline{stash@\{1\}: WIP on master: fe35a9b Minor change to Readme.}\\
-%%   \lstinline{...}\\
-%%   where each commit the stash was based on is listed. You can apply any
-%%   of these by using the syntax:\\
-%%   \lstinline{git stash apply stash@\{N\}}\\
-%%   where N is one of the numbers shown. If you don't specify a stash, the
-%%   most recent one is used, as shown in the previous slide.
-%% }
 
-\frame{\frametitle{A good introductory Git webpage}
-  \url{https://www.git-tower.com/learn/git/ebook/en/command-line}
+\frame{\frametitle{\lstinline{git merge} fail! But which is the HEAD?}
+  \centering
+      \includegraphics[
+        width=\textwidth,
+        height=0.8\textheight,
+        keepaspectratio]
+                      {figures/git-merge-failed-dogs}
+  \tiny
+  \url{https://www.reddit.com/user/NegativePitch}
 }
+
+%% Git tower webpage:
+%% https://www.git-tower.com/learn/git/ebook/en/command-line
+
+%% Dog pic:
+%% https://www.reddit.com/user/NegativePitch
+%% http://i.imgur.com/zxm6UAh.jpg
 
 \end{document}
