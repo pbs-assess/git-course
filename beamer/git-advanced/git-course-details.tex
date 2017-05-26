@@ -13,28 +13,31 @@
 \titlepage
 }
 
-\section{Introduction}
+\section{Git Structure}
 \frame{\frametitle{Commits and history}
-  Git does not keep versions of software, it keeps \emph{commits}. The commits
+  Git does not keep versions of code, it keeps \emph{commits}. The commits
   are kept track of using a hash code, using \emph{Secure Hash Algorithm 1}
   (SHA-1) which generates a hash key 40 digits long in hexadecimal. These are
   what you see on \gh\ and in various places when you use \gs.\\
   \bigskip
   Several of these commits have pointers to them which have special names:
   \bi
-    \item the \textbf{HEAD} which points to the commit you are currently on
+    \item The \textbf{HEAD} which points to the commit you are currently on
       in the \gs.
-    \item the \textbf{master} which is just another branch and is the default
-      one when you set up a repository on \gh.
-    \item the branch names that you have in your repository.
+    \item The \textbf{master} which is just the default branch when you set
+      up a repository on \gh.
+    \item The branch names that you have in your repository.
   \ei
-  Once you've cloned a \gh\ repository, the \emph{master} points at the initial
-  commit, and the \emph{HEAD} points at the master.
+  Once you've cloned a \gh\ repository, the \textbf{master} points to the initial
+  commit, and the \textbf{HEAD} points to the master.\\
+  \bigskip
+  The following slides use images from the following website:
+  \url{https://marklodato.github.io/visual-git-guide/index-en.html?no-svg}
 }
 
 %% Figures from : https://marklodato.github.io/visual-git-guide/index-en.html?no-svg
 
-\frame{\frametitle{Git layout}
+\frame{\frametitle{Git structure}
   \begin{columns}
     \begin{column}{0.4\linewidth}
       \bi
@@ -59,16 +62,19 @@
   \end{columns}
 }
 
+\section{Committing structure}
 \frame{\frametitle{Commit on master}
   \begin{columns}
     \begin{column}{0.4\linewidth}
       \bi
+        \item Any changes to files in the \textcolor{red}{Working Directory}
+          will be included in the commit.
+        \item Any new files you want included in the commit must be added with
+          the \lstinline{git add FILENAME} command so that they are in the
+          \textcolor{blue}{Stage} area.
         \item When you do a \lstinline{git commit} while in the \textbf{master}
           branch, \textbf{master} and \textbf{HEAD} are moved up one to point
-          at the new commit. Everything else remains the same.
-        \item Any files you want included in the new commit must be have been
-          added previously with the \lstinline{git add FILENAME} command so
-          that they are in the \textcolor{blue}{Stage} area for the commit.
+          at the new commit.
       \ei
     \end{column}
     \begin{column}{0.6\linewidth}
@@ -81,12 +87,12 @@
   \end{columns}
 }
 
-\frame{\frametitle{Commit on another branch}
+\frame{\frametitle{Commits on another branch}
   \begin{columns}
     \begin{column}{0.4\linewidth}
       \bi
         \item If you have changed to another branch using
-          \lstinline{git co maint} and then commit changes, \textbf{maint}
+          \lstinline{git checkout maint} and then commit changes, \textbf{maint}
           and \textbf{HEAD} will be moved up to the new commit, \textbf{1800b}.
         \item \textbf{maint} is no longer an ancestor of \textbf{master}.
         \item Any files added will be a part of the \textbf{maint} branch
@@ -109,10 +115,12 @@
       \bi
         \item If a mistake is made in the last commit, you can use
           \lstinline{git commit --amend}.
-        \item it creates a new commit (\textbf{4ca87}) and discards the old
-          one if nothing else is pointing to it (\textbf{ed489}).
-        \item \textbf{master} and \textbf{HEAD} will be moved up to the
+        \item It creates a new commit (\textbf{4ca87}) and ignores the old
+          one (\textbf{ed489}).
+        \item \textbf{master} and \textbf{HEAD} will be moved to the
           new commit.
+        \item You can still find and use the old one if you need to:\\
+          \lstinline{git reflog}
       \ei
     \end{column}
     \begin{column}{0.6\linewidth}
@@ -125,7 +133,8 @@
   \end{columns}
 }
 
-\frame{\frametitle{Checking out at any commit}
+\section{Checking out commits}
+\frame{\frametitle{Checking out any commit}
   \begin{columns}
     \begin{column}{0.4\linewidth}
       \bi
@@ -157,7 +166,7 @@
         \item Commits work as usual, but there is no named branch so if you
           use the \lstinline{git checkout} command after committing in a
           detached HEAD state, you will
-          \textbf{lose all the work in those commits}.
+          \textbf{appear to lose all the work in those commits}.
         \item To avoid losing these commits, save your commits before changing
           back to \emph{master} or another branch by creating a new branch
           where you currently are.
@@ -194,6 +203,57 @@
   \end{columns}
 }
 
+\frame{\frametitle{If you lose your commits..}
+  \begin{columns}
+    \begin{column}{0.4\linewidth}
+      \bi
+        \item If you have made a commit in a detached HEAD state then
+          checkout a different branch, you'll lose the reference
+          to the commit.
+        \item Find the the missing commit:\\
+          \lstinline{git reflog}
+        \item Turn your missing commit into a new branch called
+          \emph{new} using the SHA-1 hash associated with the commit:\\
+          \lstinline{git branch new SHA-1}
+        \item You can now checkout that branch just as any other.
+      \ei
+    \end{column}
+    \begin{column}{0.6\linewidth}
+      \includegraphics[
+        width=\textwidth,
+        height=0.8\textheight,
+        keepaspectratio]
+                      {figures/checkout-after-detached}
+    \end{column}
+  \end{columns}
+}
+
+\section{References}
+\frame{\frametitle{References}
+  \bi
+    \item References are things like \textbf{HEAD}, \textbf{master},
+      other branch names, and remote names.
+    \item To see a list of hashes for where the \textbf{HEAD} was at:\\
+      \lstinline{git reflog}
+    \item To see a list of hashes for the referenced objects in your local
+      repository:\\
+      \lstinline{git show-ref}\\
+      This shows you which commit the objects are currently pointing to.
+  \ei
+}
+%% To remove all unreachable (orphaned) commits:
+
+%% git reflog expire --expire-unreachable=now --all
+%% git gc --prune=now
+
+%% The first command removes all references of unreachable commits in reflog.
+%% The second commandremoves the commits themselves.
+
+%% Only using git gc --prune=now will not work since those commits
+%%  are still referenced in the reflog. Therefore, clearing the reflog is
+%%  mandatory.
+
+\section{Stashing}
 \frame{\frametitle{Advanced stashing}
   You can stash more than one set of changes if you wish. To see your list
   of available stashes:\\
