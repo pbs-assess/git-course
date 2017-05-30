@@ -8,6 +8,8 @@
 \date{\today}
 
 \begin{document}
+%% Needed to remove 'Figure:' from figure captions:
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
 
 \frame[plain]{
 \titlepage
@@ -551,15 +553,17 @@
 }
 
 
-\frame{\frametitle{\lstinline{git merge} fail! But which is the HEAD?}
+\frame{\frametitle{\lstinline{git merge} gone wrong - which is the HEAD?}
   \centering
-      \includegraphics[
+  \begin{figure}
+    \includegraphics[
         width=\textwidth,
         height=0.8\textheight,
         keepaspectratio]
-                      {figures/git-merge-failed-dogs}
-  \tiny
-  \url{https://www.reddit.com/user/NegativePitch}
+                    {figures/git-merge-failed-dogs}
+  \vspace{-3mm}
+  \caption{\tiny\url{https://www.reddit.com/user/NegativePitch}}
+  \end{figure}
 }
 
 %% Git tower webpage:
