@@ -1,4 +1,4 @@
-Some example text for the first exercise, taken from Wikipedia.
+Some example text for an exercise, taken from Wikipedia.
 
 You will be given a number from 1 to 4 -- just edit your paragraph. You can 
 fill in some ** blanks with numbers/words (just make things up), change some 
