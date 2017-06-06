@@ -18,27 +18,49 @@
 \section{Exercise 1}
 
 \frame{\frametitle{Exercise 1 -- individuals}
-  \be
+  \bn
     \item Each person sets up a new repository \lstinline{***}, following \emph{git-course-intro.pdf}.
     \item Copy a text file (**we provide up front).
     \item Edit and commit and push....
     \item 
-  \ei
+  \en
 }
 
 
 \section{Exercise 2}
 
 \frame{\frametitle{Exercise 2 -- help from friends}
-  \be
+  \bn
     \item Consecutively number everyone 1, 2, 3, 4. Each group of four sitting together will collaborate.
     \item Person 1 will set up a new repository \lstinline{help-friends}, following \emph{git-course-intro.pdf}.
-    \item Person 1 copies \tt{git-course/exercise-files/helpFriends.txt} into their new repository (on their computer).
-    \item \listinline{add}, \listinline{commit}, \listinline{push}. Check Network Graph.
+    \item Person 1 copies \lstinline{git-course/exercise-files/helpFriends.txt} into their new repository (on their computer).
+    \item \lstinline{add}, \lstinline{commit}, \lstinline{push}. Check Network Graph.
     \item Persons 2, 3 and 4 then fork and clone the repository. 
-    \item Everyone does some editing as per the instructions before each paragraph.
-  \ei
+    \item Everyone does a few edits on their paragraph (see \lstinline{helpFriends.txt}).
+    \item \lstinline{commit} a few times, \lstinline{push}. Check Network Graph.
+  \en
 }
+
+\frame{\frametitle{Exercise 2 -- help from friends}
+  \bn
+    \item Explore Network Graph (hover over the commits).
+    \item Whoever is furthest behind (not that it matters), \lstinline{fetch} and \lstinline{merge} from the person who's furthest ahead (see \emph{git-course-intro.pdf}):
+    \bi
+      \item \lstinline{git remote add REMOTE-NAME REMOTE-URL}  (one time command)
+      \item \lstinline{git fetch REMOTE-NAME}
+      \item \lstinline{git merge REMOTE-NAME}
+      \item \lstinline{git push}
+      \item Check Network Graph (have to refresh).
+      \item Check your collaborator's Network Graph (helpful if you care whether they have caught up with you).
+    \ei
+    \item Repeat step 2 until everyone is caught up.
+    \item So if person A has fetch and merged person's B's work, person C can just fetch and merge from person A.
+  \en
+}
+
+
+
+
 
 \end{document}
 
