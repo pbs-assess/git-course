@@ -56,13 +56,15 @@
       \item Check Network Graph (have to refresh).
       \item Check your collaborator's Network Graph (helpful if you care whether they have caught up with you).
     \ei
-    \item Repeat step 2 until everyone is caught up.
-    \item So if person A has fetch and merged person's B's work, person C can just fetch and merge from person A.
-  \en
+    \item Repeat step 2 until everyone is caught up. 
+    \item Step 2 is essentially all you have to (ever) do to keep collaborating on this repo.
+    \en
+  Note that Git shell auto-completes with \lstinline{<TAB>}, e.g. \lstinline{git merge <TAB>}.
 }
 
 \frame{\frametitle{Exercise 2 -- look at results}
   \bn
+    \item Note that if person A has fetched and merged B's work, person C can just fetch and merge from A (not from A and B -- A has already done that).
     \item On your repo website, go to Code and navigate to and click on \emph{helpFriends.txt}.
     \item See what Raw, Blame and History buttons do.
   \en
