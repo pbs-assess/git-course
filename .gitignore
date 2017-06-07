@@ -13,5 +13,8 @@
 *.snm
 *.nav
 *.synctex.gz*
+knitr-cache
+.RData
+.RHistory
 
 myNotes.*
