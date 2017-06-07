@@ -8,8 +8,10 @@
 *.pdf
 *.ps
 *.toc
-*.txt
+# *.txt
 *.out
 *.snm
 *.nav
 *.synctex.gz*
+
+myNotes.*
