@@ -468,7 +468,7 @@
 
 \begingroup
 \small
-\frame{\frametitle{Dealing with merge conflicts}
+\frame{\frametitle{Conflicts - what if two people have edited the same lines?}
   The merge message will tell you which files are conflicting. Open those
   files one by one, and you will see the conflicted section bracketed like the
   following:\\
@@ -482,11 +482,13 @@
   where \lstinline{BRANCH-NAME} is the name of the branch you are trying to
   merge in from the previously-issued command:\\
   \lstinline{git merge BRANCH-NAME}\\
-  All you do is remove the bracketing lines, the \lstinline{=======} line,
+  All you do is remove the bracketing lines (\lst{<<<...} and \lst{>>>...}), 
+  the \lstinline{=======} line,
   and choose one of the line(s) of text/code to keep, or edit the line(s)
   to be something else entirely. Once you are done fixing each conflicted file,
   you need to commit the merge conflict and push the result:\\
-  \lstinline{git com "Merge conflict resolved."}\\
+  e.g.~\lstinline{git com "Kept Dave's edits as more consistent with 
+  remaining text."}\\
   \lstinline{git push}
 }
 \endgroup
