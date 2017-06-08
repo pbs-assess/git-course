@@ -17,12 +17,15 @@
 
 \section{Exercise 1}
 
-\frame{\frametitle{Exercise 1 -- individuals}
+\frame{\frametitle{Exercise 1 -- on your own}
   \bn
-    \item Each person sets up a new repository \lstinline{***}, following \emph{git-course-intro.pdf}.
-    \item Copy a text file (**we provide up front).
-    \item Edit and commit and push....
-    \item 
+    \item Each person sets up a new repository \lstinline{simple-text}, following \lst{git-course-intro.pdf}.
+    \item Add some notes to the readme file (e.g. just `Simple example text to learn git').
+    \item Copy the text file \lst{git-course/exercise-files/simpleText.txt} into your local \lst{simple-text} repository.
+    \item \lst{git commit ``<commit description>''} and \lst{git push}.
+    \item Do some editing (see instructions at start of file), to get the hang of \lst{git commit} and \lst{git push}.
+    \item \lst{git commit ``<commit description>''} frequently and \lst{git push} occasionally, while intermittently doing \lst{git s} to understand what's changing.
+    \item Keep an eye on (and refresh) your Network Graph at \lst{https://github.com/YOUR-GITHUB-NAME/simple-text/network}\\ to understand what's going on. (There can be a short delay until it refreshes).
   \en
 }
 
@@ -38,7 +41,8 @@
     \item Persons 2, 3 and 4 then fork and clone the repository.
     \item All team members must add everyone else as a remote:\\
       \lstinline{git remote add REMOTE-NAME REMOTE-URL}\\
-      (run once for each team member other than yourself)
+      (run once for each team member other than yourself), e.g.:\\
+      \lstinline{git remote add aedwards https://github.com/andrew-edwards/help-friends}
     \item Everyone does a few edits on their paragraph (see \lstinline{helpFriends.txt}).
     \item \lstinline{commit} a few times, \lstinline{push}. Check Network Graph.
   \en
@@ -55,17 +59,21 @@
       \item Check Network Graph (have to refresh).
       \item Check your collaborator's Network Graph (helpful if you care whether they have caught up with you).
     \ei
-    \item Repeat step 2 until everyone is caught up.
-    \item So if person A has fetch and merged person's B's work, person C can just fetch and merge from person A.
-  \en
+    \item Repeat step 2 until everyone is caught up. 
+    \item Step 2 is essentially all you have to (ever) do to keep collaborating on this repo.
+    \en
+  Note that Git shell auto-completes with \lstinline{<TAB>}, e.g. \lstinline{git merge <TAB>}.
 }
 
 \frame{\frametitle{Exercise 2 -- look at results}
   \bn
+    \item Note that if person A has fetched and merged B's work, person C can just fetch and merge from A (not from A and B -- A has already done that).
     \item On your repo website, go to Code and navigate to and click on \emph{helpFriends.txt}.
     \item See what Raw, Blame and History buttons do.
   \en
 }
+
+\section{Exercise 3}
 
 \frame{\frametitle{Exercise 3 -- knitr and \LaTeX}
   Open up the hake-example PDF.
