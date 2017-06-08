@@ -134,8 +134,6 @@
       \lstinline{test1.r} and \lstinline{test2.r}. Put some example text
       in each and save them.
     \item On the command line, check the status:\\
-      \lstinline{git status}\\
-      or use the alias:\\
       \lstinline{git s}
     \item You will see a listing showing the \emph{test} directory in
       \emph{Untracked files}. To add the files in preparation for a commit,
@@ -149,11 +147,9 @@
 \frame{\frametitle{Adding multiple files at once - slide 2}
   \bi
     \item Check the status of the repository again:
-      \lstinline{git status} or \lstinline{git s}
+      \lstinline{git s}
     \item It will now show a \emph{new file} in \emph{Changes to be committed}
     \item Commit the changes:\\
-      \lstinline{git commit -a -m "Added new files to test directory."}\\
-      or use the alias:\\
       \lstinline{git com "Added new files to test directory."}
     \item Push the changes to \gh:\\
       \lstinline{git push}
@@ -167,13 +163,13 @@
     \item You can rename any files the normal way you do that such as in the
       Windows file explorer.
     \item Once you've renamed your files, check the repository status:\\
-      \lstinline{git status}\\
+      \lstinline{git s}\\
     \item You will see that the files you renamed need to be added again.
       Do this the same way you added them in the first place. You can also
       add a whole directory again and \gs\ is smart enough to only add the
       renamed files.
     \item Check the status again:\\
-      \lstinline{git status}\\
+      \lstinline{git s}\\
       It will show that the file(s) were renamed.
     \item Make a commit:\\
       \lstinline{git com "Renamed files x, y, and z"}\\
@@ -193,7 +189,7 @@
   This is important as you will clutter up your repository and have to spend
   time cleaning it all up.\\
   \bigskip
-  Anytime you run the command \lstinline{git status} and there are files listed
+  Anytime you run the command \lstinline{git s} and there are files listed
   that you don't want added to the repository, you should add them or a
   wildcard template encapsulating them to the \emph{.gitignore} file.
 }
@@ -221,16 +217,12 @@
 \frame{\frametitle{Creating a new branch}
   \bi
     \item To create a new branch based off the branch you are currently on:\\
-      \lstinline{git checkout -b BRANCH-NAME}\\
-      or use the alias:\\
       \lstinline{git cb BRANCH-NAME}\\
       You will be automatically placed in the new branch, and commits
       you make will now occur in the new branch.
     \item To view all local branches:\\
       \lstinline{git branch}
     \item to switch to another branch:\\
-      \lstinline{git checkout BRANCH-NAME}\\
-      or use the alias:\\
       \lstinline{git co BRANCH-NAME}\\
   \ei
 }
@@ -330,8 +322,6 @@
           \url{https://github.com/cgrandin/git-course}.
       \ei
     \item To view all remotes you have set up:\\
-      \lstinline{git remote -v}\\
-      or the alias:\\
       \lstinline{git r}
   \ei
 }
@@ -346,13 +336,11 @@
       where \lstinline{OLD-NAME} is the name you made up when you added them and
       \lstinline{NEW-NAME} is the name you want to change it to.
     \item To see your changes, use:\\
-      \lstinline{git remote -v}\\
-      or the alias:\\
       \lstinline{git r}
   \ei
 }
 
-\section{Fetchching and merging remotes}
+\section{Fetching and merging remotes}
 \frame{\frametitle{Fetching overview}
   Once you have set up your remotes, you can fetch other people's commits.
   Before continuing work on your project, you should always check \gh, and
@@ -535,7 +523,7 @@
   where \lstinline{HASH} is the hash for the commit you want to undo. It is the
   20-byte string that appears with the commit.\\
   e.g.: \lstinline{1ef1da5659a4b147562b155ffb6289811adab36b}\\
-  \gs\ is smart enough that you only need the first five or so digits:\\
+  \gs\ is smart enough that you only need the first five digits:\\
   \bigskip
   \lstinline{git revert 1ef1d}\\
   \bigskip
