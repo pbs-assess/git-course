@@ -1,1 +1,1 @@
-(@pdflatex "git-course-details.tex" && pdflatex "git-course-details.tex" && pdflatex "git-course-details.tex") 1> latexOutput.log 2>&1
+(@pdflatex "git-course-advanced.tex" && pdflatex "git-course-advanced.tex" && pdflatex "git-course-advanced.tex") 1> latexOutput.log 2>&1
