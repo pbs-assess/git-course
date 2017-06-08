@@ -214,7 +214,7 @@
   on that new branch.\\
   \bigskip
   It is a good idea to commit all changes before creating a new branch, as
-  local changes which haven't been coimmitted will appear in the new branch
+  local changes which haven't been committed will appear in the new branch
   as well.
 }
 
@@ -330,20 +330,6 @@
   \ei
 }
 
-\frame{\frametitle{Deleting or renaming remotes}
-  \bi
-    \item To delete someone as a remote:\\
-      \lstinline{git remote delete REMOTE-NAME}\\
-      where \lstinline{REMOTE-NAME} is the name you made up when you added them.
-    \item To rename a remote:\\
-      \lstinline{git remote rename OLD-NAME NEW-NAME}\\
-      where \lstinline{OLD-NAME} is the name you made up when you added them and
-      \lstinline{NEW-NAME} is the name you want to change it to.
-    \item To see your changes, use:\\
-      \lstinline{git r}
-  \ei
-}
-
 \section{Fetching and merging remotes}
 \frame{\frametitle{Fetching overview}
   Once you have set up your remotes, you can fetch other people's commits.
@@ -415,7 +401,7 @@
     \item Each group of four sitting together will collaborate. Each person
       in the group gets a number: 1, 2, 3, or 4.
     \item Person 1 will set up a new repository on \gh\ called
-      \lstinline{help-friends}.
+      \lstinline{help-friends}
     \item Person 1 copies \lstinline{git-course/exercise-files/helpFriends.txt}
       into their new repository (on their computer).
     \item \lstinline{add}, \lstinline{commit}, \lstinline{push}.
@@ -424,7 +410,7 @@
     \item All team members must add everyone else as a remote:\\
       \lstinline{git remote add REMOTE-NAME REMOTE-URL}\\
       (run once for each team member other than yourself), e.g.:\\
-      \lstinline{git remote add aedwards https://github.com/andrew-edwards/help-friends}.
+      \lstinline{git remote add aedwards https://github.com/andrew-edwards/help-friends}
     \item Run the command \lstinline{git r} to see your list of remotes. Make
       sure everyone in your group is on the list.
     \item Everyone does a few edits on their paragraph
@@ -451,7 +437,7 @@
     \item Repeat step 2 until everyone is caught up.
     \item Step 2 is essentially all you have to (ever) do to keep collaborating on this repo.
   \en
-  Note that \gs\ auto-completes with \lstinline{<TAB>}, e.g. \lstinline{git merge <TAB>}.
+  Note that \gs\ auto-completes with \lstinline{<TAB>}, e.g. \lstinline{git merge <TAB>}
 }
 
 \frame{\frametitle{Exercise on remotes and merging - 3}
@@ -464,6 +450,20 @@
       with will be below you on the graph in a new slot. If there are no names below yours,
       you have no unmerged commits and are up-to-date.
   \en
+}
+
+\frame{\frametitle{Deleting or renaming remotes (may occasionally need)}
+  \bi
+    \item To delete someone as a remote:\\
+      \lstinline{git remote delete REMOTE-NAME}\\
+      where \lstinline{REMOTE-NAME} is the name you made up when you added them.
+    \item To rename a remote:\\
+      \lstinline{git remote rename OLD-NAME NEW-NAME}\\
+      where \lstinline{OLD-NAME} is the name you made up when you added them and
+      \lstinline{NEW-NAME} is the name you want to change it to.
+    \item To see your changes, use:\\
+      \lstinline{git r}
+  \ei
 }
 
 \begingroup
