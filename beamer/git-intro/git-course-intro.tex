@@ -243,6 +243,33 @@
   \ei
 }
 
+\frame{\frametitle{Why you should not commit .RData etc.~files}
+  \bi
+  \item Collaborator had added \lst{.pdf} and \lst{.RData} files 
+     (plus \lst{.r} etc.), but these got updated when the code was run.
+  \item Ended up with \lst{.git/objects/pack} being 2.8Gb.
+  \item Essentially (I think) Git has to save every version of each file (since
+     binary, not just text) -- way more disk space than just the latest version.
+  \item I needed space quickly so just deleted four files in 
+     \lst{.git/objects/pack}, which freed up 1.6Gb. 
+  \item Note that I still have the actual final versions of files (as you would
+     if not using Git), but just not the full repository history.
+  \item However, when I tried to later do some work and then \lst{commit} I got ...
+  \ei
+}
+ 
+\frame{\frametitle{Why you should not commit .RData etc.~files}
+  \centering
+  \begin{figure}
+    \includegraphics[
+        width=\textwidth,
+        height=0.8\textheight,
+        keepaspectratio]
+        {../git-motivation/figures/notGood.png}
+  \end{figure}
+}
+
+
 \frame{\frametitle{Renaming files}
   \bi
     \item You can rename any files the normal way you do that such as in the
