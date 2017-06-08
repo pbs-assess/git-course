@@ -64,17 +64,17 @@ This may take a while depending on your network connection, mainly because there
 
 Okay, now to get started. It's easier to be shown by someone and for explaining the concepts, but basically I only end up using a few basic commands. These are typed in the Git Shell. If you are in your **C:/...../github/** directory then you should see a standard DOS prompt, something like:
 
- C:\user-name\github> 
+	C:\user-name\github> 
 
 Then **ls** or **dir** will show you the subdirectories, and you should only have **empirical-dyn-mod** if this is your first use of GitHub.
 
 So change directory 
 
- cd empirical-dyn-mod
+	cd empirical-dyn-mod
 
 [note that you can use Tab to complete unique commands]. The prompt now says something like
 
- C:\user-name\github\empirical-dyn-mod [master]>
+	C:\user-name\github\empirical-dyn-mod [master]>
 
 with **master** in blue. This last bit tells you that you are in a directory that is being tracked in a GitHub repository (don't worry about why it's called master yet). 
 
@@ -83,38 +83,38 @@ with **master** in blue. This last bit tells you that you are in a directory tha
       git s                             <View status of the repository>
       git com "MESSAGE"                 <Commit changes with message>
       git add filename                  <Add 'filename' (including path) to the list of files being tracked by git>
-   git push       <Push your changes to GitHub>
-   git fetch ****     <fetch changes that someone else has made>
-   git merge       <merge the fetched changes with your local repository>
-   git merge --no-ff     <merge a branch (or fetched changes?) with your master - see below>
-   git rm --cached filename   <remove the file from the git repo, but not from local directory>
-   git rm filename     <remove the file from the git repo AND from local directory>
+	  git push							<Push your changes to GitHub>
+	  git fetch ****					<fetch changes that someone else has made>
+	  git merge							<merge the fetched changes with your local repository>
+	  git merge --no-ff					<merge a branch (or fetched changes?) with your master - see below>
+	  git rm --cached filename			<remove the file from the git repo, but not from local directory>
+	  git rm filename					<remove the file from the git repo AND from local directory>
 
 In more detail:
 
- git s
+	git s
 
 is short for **git status**, and tells you if everything is 'up to date'.
 
- git com "Comment here"
+	git com "Comment here"
 
 is short for **git commit**. Once you have made a change to a file then you can 'commit' it to your repository. Git then notes that commit, but in such a way that you can **always go back to earlier versions of the file**. You do not end up with multiple copies of the same file in your directory - Git efficiently keeps track of the **differences** but in hidden folders.
 
 Each commit needs a comment describing what you did, such as
 
- git com "Updated README.md with comments about commiting."
+	git com "Updated README.md with comments about commiting."
  
 Next,
 
- git add filename
+	git add filename
 
 tells git to keep track of changes to that filename in this repository (so you do this when you create a new file). You do not need to change directory in the git shell once you're in the base directory for a repository, but you just need to include the relative path in 'filename' - i.e. something like
 
- git add edmPapers/smith06salmonEDM.pdf
+	git add edmPapers/smith06salmonEDM.pdf
 
 To ignore a file, you add that file to the **.gitignore** file for that repository. Don't worry about that for now.
 
- git push
+	git push
 
 pushes your commits back to the version of your repository that is on your GitHub web page.
 
@@ -134,17 +134,17 @@ You can use anything you like instead of 'aedwards', but we've found it consiste
 
 Then, to fetch (from GitHub) the latest version of mine:
 
- git fetch aedwards
+	git fetch aedwards
 
 I think you can do 
 
- git diff aedwards/master
+	git diff aedwards/master
 
 which will show the differences between our repositories, but it's not super clear. [I now use difftool I think which is likely better, but I haven't done merging for a while].
 
 Then to merge my version of the repository with your own repository, do
 
- git merge aedwards/master
+	git merge aedwards/master
 
 If we have no **conflicts** then the merge will work fine. A conflict is where we have both changed a file in the same place [line number] since the repositories diverged from each other. Then **git com "..."** (though a merge may automatically do one?) and **git push** as usual. Then look at the Network Graph page again (refresh it), and it should look different - the repository you merged from should not show up, since you are now up to date with it.
 
@@ -156,7 +156,7 @@ Generally we try and work on different files so that there are no conflicts when
 
 From <http://stackoverflow.com/questions/9069061/what-is-the-difference-between-git-merge-and-git-merge-no-ff> Andy found the command
 
- git merge --no-ff <branch name, or presumably e.g. cgrandin/master>
+	git merge --no-ff <branch name, or presumably e.g. cgrandin/master>
 
 which looks like in the Network Graph it retains a branch even if a fast-forward can occur (even if nothing else has happened and git can simply 'catch up'). Am testing by adding these notes in branch **mergeTest**. If it works then this side branch should show up on the Network Graph. Before I've gone back to **master** branch and just tweaked a file so that the side branch still shows up clearly on the Network Graph. This is obviously better. 
 
