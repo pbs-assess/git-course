@@ -87,7 +87,7 @@ make.catches.table(catch.tac,
                    xlabel <- "tab:es-catches",
                    font.size = 7,
                    space.size = 8,
-                   placement = "tbp")
+                   placement = "H")
 @
 
 }
