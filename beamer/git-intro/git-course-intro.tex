@@ -125,18 +125,22 @@
      \item The Network Graph is very useful to keep an eye on when
        collaborating. 
      \item Each \lst{commit} is shown as a point on the graph.
-     \item Hover the mouse over the commit to see:
+     \item Hover the mouse over a commit to see:
      \bi
        \item who committed
-       \item the commit \lst{HASH} -- a hexadecimal number that identifies
-         that commit
+       \item the commit \lst{HASH} -- a 20-byte hexadecimal string that
+         identifies that commit;\\
+         e.g.: \lstinline{1ef1da5659a4b147562b155ffb6289811adab36b}
        \item the commit message (so provide meaningful messages!).
      \ei
+
+
      \item Click on a commit to see the actual changes made for that commit 
         (therefore commit frequently so each commit only has a few changes).
      \item See that you (or a collaborator) can add comments for each commit.
      \item In the comments (or when you do \lst{git com "..."}) you can include
-        a \lst{HASH} from any other commit.
+        a \lst{HASH} from any other commit. You only need the first few digits
+        (five should be ample) to ensure uniqueness.
   \ei
 }
 
@@ -179,6 +183,30 @@
       have been uploaded.
   \ei
 }
+
+\frame{\frametitle{The power to go back}
+  With Git you can revert back to any previous state of your repository.
+  \bn
+    \item \lst{git s} to make sure you are all up-to-date 
+      (\lst{commit} and/or \lst{push} if necessary).
+    \item Hover over the first commit on your Network Graph of your 
+      \lst{test} repo.
+  \en
+}
+
+\frame{\frametitle{The power to go back}
+  Less clutter and more tractable than:
+  \centering
+  \begin{figure}
+    \includegraphics[
+        width=\textwidth,
+        height=0.8\textheight,
+        keepaspectratio]
+        {../git-motivation/figures/EAversions.png}
+  \end{figure}
+}
+
+
 
 \frame{\frametitle{Renaming files}
   \bi
@@ -606,10 +634,8 @@
   \bigskip
   \lstinline{git revert HASH}\\
   \bigskip
-  where \lstinline{HASH} is the hash for the commit you want to undo. It is the
-  20-byte string that appears with the commit.\\
-  e.g.: \lstinline{1ef1da5659a4b147562b155ffb6289811adab36b}\\
-  \gs\ is smart enough that you only need the first five digits:\\
+  where \lstinline{HASH} is the hash for the commit you want to undo (20-byte string)
+  Remember that \gs\ is smart enough that you only need the first five digits:\\
   \bigskip
   \lstinline{git revert 1ef1d}\\
   \bigskip
