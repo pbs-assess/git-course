@@ -185,12 +185,22 @@
 }
 
 \frame{\frametitle{The power to go back}
-  With Git you can revert back to any previous state of your repository.
+  With Git you can revert back to any previous state of your repository.\\
+  This is very powerful, though slightly scary at first.
   \bn
     \item \lst{git s} to make sure you are all up-to-date 
       (\lst{commit} and/or \lst{push} if necessary).
+    \item In Windows Explorer (or whatever) look at your repository.
     \item Hover over the first commit on your Network Graph of your 
-      \lst{test} repo.
+      \lst{test} repo and note the first five digits of the \lst{HASH}.
+    \item In \gs, do\\
+      \lst{git co <HASH>}
+    \item Look at Explorer again -- your \lst{r-test} directory should 
+      have ... disappeared!!\\
+    (If it hasn't then open it -- \lst{test1.r} and \lst{test2.r}
+      should be gone, but your text editor may have saved backup versions;
+      manually delete them plus the \lst{r-test} directory)
+    \item You are now back to the start of your repo.
   \en
 }
 
