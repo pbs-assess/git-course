@@ -94,12 +94,13 @@
   \lstinline{git diff}\\
   \lst{git com "Initial edit of Readme.md"}\\
   \lst{git push}\\
+  ~\\
   Refresh your \gh\ web page and you should see your text 
   (the \emph{Readme.md} file is what is shown on the main page
   of your repo).
 }
 
-\frame{\frametitle{Copy/edit and commit \emph{simpleText.txt}}
+\frame{\frametitle{Copy, edit and commit \emph{simpleText.txt}}
   \bn
     \item Copy the text file \lst{git-course/exercise-files/simpleText.txt}
       into your local \lst{test} repository.
@@ -114,11 +115,29 @@
       \lstinline{git diff} to understand what's changing.
     \item Keep an eye on (and refresh) your Network Graph at:\\
       \lst{https://github.com/YOUR-GITHUB-NAME/test/network}\\
-      to understand what's going on. There can be a short delay until it
+      to see it growing. There can be a short delay until it
       refreshes.
-     \item Click on each commit in turn on the graph. See that you (or a
-       collaborator) can add comments for each commit.
   \en
+}
+
+\frame{\frametitle{Network Graph}
+  \bi
+     \item The Network Graph is very useful to keep an eye on when
+       collaborating. 
+     \item Each \lst{commit} is shown as a point on the graph.
+     \item Hover the mouse over the commit to see:
+     \bi
+       \item who committed
+       \item the commit \lst{HASH} -- a hexadecimal number that identifies
+         that commit
+       \item the commit message (so provide meaningful messages!).
+     \ei
+     \item Click on a commit to see the actual changes made for that commit 
+        (therefore commit frequently so each commit only has a few changes).
+     \item See that you (or a collaborator) can add comments for each commit.
+     \item In the comments (or when you do \lst{git com "..."}) you can include
+        a \lst{HASH} from any other commit.
+  \ei
 }
 
 \frame{\frametitle{Adding multiple files at once - slide 1}
