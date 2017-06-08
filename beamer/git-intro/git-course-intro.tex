@@ -200,11 +200,23 @@
     (If it hasn't then open it -- \lst{test1.r} and \lst{test2.r}
       should be gone, but your text editor may have saved backup versions;
       manually delete them plus the \lst{r-test} directory)
-    \item You are now back to the start of your repo.
+    \item You are now back to the very first version of your repo.
   \en
 }
+\frame{\frametitle{Back to the latest version}
+  Now, to get your files back to the most recent version you had committed:
+  \bi
+    \item \lst{git co master}
+  \ei
+  ~\\
+  That's it. So you can {\red revert to any previous committed version of your
+    repository}.\\
+  ~\\
+  Very reassuring, especially for complex code that you may mess up and just
+    want to go back to yesterday's version.
+}
 
-\frame{\frametitle{The power to go back}
+\frame{\frametitle{Versions}
   Less clutter and more tractable than:
   \centering
   \begin{figure}
