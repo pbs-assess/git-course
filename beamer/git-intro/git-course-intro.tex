@@ -100,11 +100,13 @@
       new files to be committed by using the \lstinline{git add} command:\\
       \lstinline{git add .gitignore}
     \item Make a commit for the changes:\\
-      \lstinline{git commit -a -m "Added .gitignore"}\\
-      or use the alias:\\
       \lstinline{git com "Added .gitignore"}\\
       the commit message should be a useful message saying what the commit
-      encapsulates.
+      encapsulates.\\
+      Note the git command \lstinline{com} is an alias for the more complex
+      command: \lstinline{git commit -a -m "Added .gitignore"}\\
+      Aliases are found in your \lstinline{.gitconfig} file. You can make
+      up your own as you see fit.
     \item Push the commit to \gh: \lstinline{git push}
     \item Check the \gh\ webpage and see your commit and that the file
       has been uploaded.
