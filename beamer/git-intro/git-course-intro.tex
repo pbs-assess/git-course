@@ -46,8 +46,7 @@
   \bi
     \item Sign into your \gh\ account, click on the
       \emph{Repositories} tab, and press the \emph{New} button.
-    \item Give your repository a name. I like to use small letters and dashes
-      between words.
+    \item Give your repository a name. Let's call it \lstinline{test}.
     \item Check \emph{Initialize this repository with a README}.
     \item Leave \emph{Add .gitignore} and \emph{Add a license}
       set to \emph{None}.
@@ -57,23 +56,18 @@
 
 \frame{\frametitle{Cloning your new repository}
   \bi
-    \item Once you have created a repository on \gh, copy the URL
-      of the repository.
+    \item Once you have created the \lstinline{test} repository on \gh, copy
+      the URL of the repository.
     \item Open the \gs\ and run the following command to clone your repository:
-      \lstinline{git clone URL REPO-NAME}\\
-      where:\\
-      \bi
-        \item \lstinline{URL} is the url of your newly created repository. You
-          can paste the \lstinline{URL} into the command line (on Windows) by
-          pressing the right mouse button.
-        \item \lstinline{REPO-NAME} will be the name of the directory to be
-          created.
-      \ei
+      \lstinline{git clone URL test}\\
+      where \lstinline{URL} is the url of your newly created repository. You
+      can paste the \lstinline{URL} into the command line (on Windows) by
+      pressing the right mouse button.
   \ei
   \bigskip
-  You should now have a subdirectory called \lstinline{REPO-NAME}. Enter that
-  directory:\\
-  \lstinline{cd REPO-NAME}
+  You should now have a subdirectory called \lstinline{test}. In \gs, change
+  to that directory:\\
+  \lstinline{cd test}
 }
 
 \frame{\frametitle{Windows only: Storing your credentials}
@@ -114,31 +108,61 @@
 }
 \endgroup
 
-\frame{\frametitle{Learn by doing -- Exercise 1}
-  \bi
-     \item Exercise 1 in \lst{git-course-exercises.pdf}
-     \item Then look at your own Network Graph and we will explain it (from the \gh\ repo page that you will create, click on \lst{Insights-Graph-Network}).
-     \item Click on each commit in turn on the graph. See that you (or a collaborator) can add comments.
-  \ei
+\frame{\frametitle{Edit \emph{Readme.md}}
+  Edit the \emph{Readme.md} file. Add some simple comments describing
+  the project such as: "A test repository for learning Git."\\
+  \bigskip
+  Look over the changes, commit them, and push them to your \gh\
+  repository:\\
+  \lstinline{git s}\\
+  \lstinline{git diff}\\
+  \lst{git com "Initial edit of Readme.md"}\\
+  \lst{git push}
+}
+
+\frame{\frametitle{Copy/edit and commit \emph{simpleText.txt}}
+  \bn
+    \item Copy the text file \lst{git-course/exercise-files/simpleText.txt}
+      into your local \lst{test} repository.
+    \item Add the file to the repository using the git commands:\\
+      \lstinline{git add simpleText.txt}\\
+      \lst{git com "Add simpleText.txt"}\\
+      \lst{git push}
+    \item Do some editing of simpleText.txt (see instructions at start of
+      file), to get the hang of \lst{git com} and \lst{git push}.
+    \item \lst{git com "<commit description>"} frequently and \lst{git push}
+      occasionally, while intermittently doing \lst{git s} and
+      \lstinline{git diff} to understand what's changing.
+    \item Keep an eye on (and refresh) your Network Graph at:\\
+      \lst{https://github.com/YOUR-GITHUB-NAME/test/network}\\
+      to understand what's going on. There can be a short delay until it
+      refreshes.
+     \item Click on each commit in turn on the graph. See that you (or a
+       collaborator) can add comments.
+  \en
 }
 
 \frame{\frametitle{Adding multiple files at once - slide 1}
   Often you add multiple files or a new directory with files in it. In
-  these cases, when you run \lstinline{git status} or the alias
-  \lstinline{git s}, you will see a large listing of files. Files can
-  be added at once, by simply adding the directory.
+  these cases, when you run \lstinline{git s}, you will see a large
+  listing of \emph{Untracked files}. Files can be added at once, by simply
+  adding the whole directory.
   \bi
     \item Add a new directory to your repository, using your normal method.
-      Call it \lstinline{test}.
+      Call it \lstinline{r-test}.
     \item Add a couple of new test files to that directory called
       \lstinline{test1.r} and \lstinline{test2.r}. Put some example text
       in each and save them.
     \item On the command line, check the status:\\
       \lstinline{git s}
-    \item You will see a listing showing the \emph{test} directory in
-      \emph{Untracked files}. To add the files in preparation for a commit,
+    \item You will see a listing showing the \emph{r-test} directory in
+      \emph{Untracked files}.
+    \item To see that actual files to be committed instead of just the
+      directory:\\
+      \lstinline{git s -u}
+    \item To add the both files in preparation for a commit,
       issue the command:\\
-      \lstinline{git add test}
+      \lstinline{git add r-test}
   \ei
   \bigskip
   Continued...
@@ -148,12 +172,12 @@
   \bi
     \item Check the status of the repository again:
       \lstinline{git s}
-    \item It will now show a \emph{new file} in \emph{Changes to be committed}
+    \item It will now show both files in \emph{Changes to be committed}
     \item Commit the changes:\\
-      \lstinline{git com "Added new files to test directory."}
+      \lstinline{git com "Added new files to r-test directory."}
     \item Push the changes to \gh:\\
       \lstinline{git push}
-    \item Check the \gh\ webpage and see your commit and that the files
+    \item Check your \gh\ webpage and see your commit and that the files
       have been uploaded.
   \ei
 }
@@ -184,14 +208,15 @@
   \lstinline{*.dvi} or \lstinline{*.nav} that will be completely ignored by
   \gs. Many compilers make temporary files, the names of which should be added
   to this file to avoid adding these files when adding whole directories
-  using commands such as \lstinline{git add test}.\\
+  using commands such as \lstinline{git add r-test}.\\
   \bigskip
   This is important as you will clutter up your repository and have to spend
   time cleaning it all up.\\
   \bigskip
-  Anytime you run the command \lstinline{git s} and there are files listed
-  that you don't want added to the repository, you should add them or a
-  wildcard template encapsulating them to the \emph{.gitignore} file.
+  Anytime you run the command \lstinline{git s} or \lstinline{git s -u} and
+  there are files listed that you don't want added to the repository, you
+  should add them or a wildcard template encapsulating them to the
+  \emph{.gitignore} file.
 }
 
 \section{Branches}
