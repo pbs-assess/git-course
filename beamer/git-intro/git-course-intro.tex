@@ -330,30 +330,36 @@
 
 \frame{\frametitle{Creating a new branch}
   \bi
-    \item To create a new branch based off the branch you are currently on:\\
-      \lstinline{git cb BRANCH-NAME}\\
-      You will be automatically placed in the new branch, and commits
-      you make will now occur in the new branch.
+    \item In the \gs, enter your test repository:\\
+      \lstinline{cd test}\\
+      and see that you are in the \emph{master} branch by looking at the
+      prompt.
+    \item Create a new branch based off the branch you are currently on:\\
+      \lstinline{git cb temp}\\
+      You will be automatically placed in the new branch called
+      \emph{temp}, and commits you make will now occur in that
+      branch only.
     \item To view all local branches:\\
-      \lstinline{git branch}
-    \item to switch to another branch:\\
-      \lstinline{git co BRANCH-NAME}\\
+      \lstinline{git branch}\\
+      There is an asterisk next to the branch you are currently in.
+    \item To switch to another branch, let's say back to \emph{master}:\\
+      \lstinline{git co master}\\
   \ei
 }
 
-\frame{\frametitle{Deleting branches}
+\frame{\frametitle{Make a commit in the new branch}
   \bi
-    \item To delete a branch that you are not currently in:\\
-      \lstinline{git branch -d BRANCH-NAME}\\
-    \item To delete the branch you are currently in, switch to another branch
-      first, (e.g. master) and then delete the branch:\\
-      \lstinline{git co master}\\
-      \lstinline{git branch -d BRANCH-NAME}\\
-    \item If you have changes in the branch, you will not be allowed to delete
-      it. If you want to forcibly delete it, discarding your changes, use:\\
-      \lstinline{git branch -D BRANCH-NAME}\\
-      \textbf{Warning - you won't be able to get any of those changes back
-        once you do this.}
+    \item Make sure you are in the new branch:\\
+      \lstinline{git co temp}
+    \item Create a new file called \lstinline{junk.txt}
+    \item \lstinline{git add junk.txt}
+    \item \lstinline{git com "Added junk.txt"}
+    \item Switch back to \emph{master}:\\
+      \lstinline{git co master}
+    \item Notice that the file you just added is gone. It only exists in
+      the \emph{temp} branch at this point. You will need to merge that
+      branch back in to the \emph{master} branch if you want to keep the
+      work you did in the other branch.
   \ei
 }
 
@@ -361,17 +367,39 @@
   \bi
     \item To merge the changes from a branch into another branch:
       \bn
-        \item Change to the branch you want to merge into, typically master:\\
+        \item Change to the branch you want to merge into, typically
+          \emph{master}:\\
           \lstinline{git co master}
-        \item Merge the branch into master:\\
-          \lstinline{git merge BRANCH-NAME}
+        \item Merge the branch into \emph{master}:\\
+          \lstinline{git merge temp}
       \en
+    \item Notice that the file you created in the \emph{temp} branch
+      now appears in the \emph{master} branch. All commits done in a branch
+      which is merged in will be included in the merge step.
+    \item Since we are done with that branch for good, we will delete it so
+      we don't have unused branches hanging around (next slide).
+    \bigskip
     \item If there was a merge conflict, you must fix it at this point. This
       will be covered later in the section about merging remotes, which
       follows the exact same method.
-    \item If you are done with that branch for good, delete it so you don't
-      have unused branches hanging around:\\
-      \lstinline{git branch -d BRANCH-NAME}
+  \ei
+}
+
+\frame{\frametitle{Deleting branches}
+  \bi
+    \item To delete a branch that you are not currently in, in this case
+      the \emph{temp} branch:\\
+      \lstinline{git branch -d temp}\\
+    \item To delete the branch you are currently in, switch to another branch
+      first, (e.g. \emph{master}) and then delete the branch:\\
+      \lstinline{git co master}\\
+      \lstinline{git branch -d temp}\\
+    \item If you have unmerged changes in the branch, you will not be allowed
+      to delete it. If you want to forcibly delete it, discarding your changes,
+      use:\\
+      \lstinline{git branch -D temp}\\
+      \textbf{Warning - you won't be able to get any of those changes back
+        once you do this.}
   \ei
 }
 
@@ -391,7 +419,7 @@
   commits in this branch is:\\
   \lstinline{git push}\\
   \bigskip
-  Check the \gh\ webpage to make sure your branch was pushed.
+  Check the \gh\ webpage to see that your branch was pushed.
 }
 
 \frame{\frametitle{Deleting branches from \gh}
