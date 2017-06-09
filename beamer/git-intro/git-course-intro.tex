@@ -516,16 +516,13 @@
 }
 
 \frame{\frametitle{Merging the fetched repository into yours}
-  \bi
-    \item To merge the fetched repository's master branch into yours:\\
-      \lstinline{git merge REMOTE-NAME/master}\\
-      note that the merge will happen in the branch you are currently in, so make
-      sure you are in the \lstinline{master} branch.
-    \item To merge other branches:\\
-      \lstinline{git merge REMOTE-NAME/BRANCH-NAME}\\
-      note that the merge will happen in the branch you are currently in, so make
-      sure you are in the \lstinline{BRANCH-NAME} branch.
-  \ei
+  To merge the fetched repository's master branch into yours:\\
+  \lstinline{git merge REMOTE-NAME/master}\\
+  note that the merge will happen in the branch you are currently in, so make
+  sure you are in the \lstinline{master} branch.\\
+
+  \bigskip
+
   At this point, you will either be up-to-date, meaning there were no merge
   conflicts, or you will have one or more merge conflicts. If you are
   up-to-date, you need to push back to your repository to complete the merge
