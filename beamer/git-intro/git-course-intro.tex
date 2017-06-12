@@ -436,8 +436,12 @@
 \section{Network Graph}
 \frame{\frametitle{Network Graph}
   The Network Graph is useful when working alone, but especially so when collaborating.\\
+  ~\\
   Find it for any repo under \lst{Insights-Graph-Network}.\\
+  ~\\
   Look at \url{https://github.com/cgrandin/git-course/network}.\\
+  ~\\
+  Jump to start, hover over some commits and explain.
 }
 
 \frame{\frametitle{From motivation talk}
@@ -469,35 +473,34 @@
      height=0.6\textheight,
      keepaspectratio]
      {../git-motivation/figures/netWorkGraph1}\\
-  This graph is for {\red Andy's repo}, so Andy is at the top.\\
-  Chris's name shows up because he has pushed commits that Andy does not 
+  The graph was for {\red Andy's repo}, so Andy is at the top.\\
+  Chris's name shows up because he had pushed commits that Andy did not 
     yet have.\\
   So the graph shows that Andy should get caught up before continuing on 
     this project.\\
-  ~\\
-  Similarly, for hake assessment:
-    \url{https://github.com/andrew-edwards/hake-assessment/network}\\
-  Click on \lst{cgrandin} on that graph, to see the graph of Chris's repo.\\
-  Andy does not show up on that because he has not committed anything new (Chris
-    has everything Andy has done).
-}
-
-
-
-\frame{\frametitle{From motivation talk}
-
-  ... but just needed three commands (that you'll learn) to get caught up:
-  ~\\
-  ~\\
-
+  This took three commands, resulting in:
   \includegraphics[
      width=\textwidth,
      height=0.6\textheight,
      keepaspectratio]
      {../git-motivation/figures/netWorkGraph3}
+}
 
+
+
+\frame{\frametitle{From motivation talk}
+  \includegraphics[
+     width=\textwidth,
+     height=0.6\textheight,
+     keepaspectratio]
+     {../git-motivation/figures/netWorkGraph3}
   ~\\
-  All files that Chris edited got updated, plus I now have any new files he created, and our folder structures are identical. 
+  All files that Chris edited got updated, plus Andy then had any new files
+    that Chris created, and our folder structures are identical.\\
+  ~\\
+  Chris's name doesn't show up, even though he did a lot of the work.\\
+  ~\\
+  It is ``{\red about code not ego}''.
 }
   
 \frame{\frametitle{Network Graph}
@@ -511,6 +514,17 @@
 }
 
 \frame{\frametitle{Understanding the Network Graph}
+
+  Now, for hake assessment:
+    \url{https://github.com/andrew-edwards/hake-assessment/network}\\
+
+  Click on \lst{cgrandin} on that graph, to see the graph of Chris's repo.\\
+  Andy does not show up on that because he has not committed anything new (Chris
+    has everything Andy has done).
+
+
+
+
   Paraphrasing from (slightly dated) \url{https://github.com/blog/39-say-hello-to-the-network-graph-visualizer}\\
   
 
