@@ -501,6 +501,7 @@
   Chris's name doesn't show up, even though he did a lot of the work.\\
   ~\\
   It is ``{\red about code not ego}''.
+  ~\\
 }
   
 \frame{\frametitle{Network Graph}
@@ -516,20 +517,28 @@
 }
 
 \frame{\frametitle{Understanding the Network Graph}
-
-  Now, for hake assessment:
-    \url{https://github.com/andrew-edwards/hake-assessment/network}\\
-
-  Click on \lst{cgrandin} on that graph, to see the graph of Chris's repo.\\
-  Andy does not show up on that because he has not committed anything new (Chris
+  \bi
+    \item Now, for hake assessment:
+      \url{https://github.com/andrew-edwards/hake-assessment/network}\\
+    \item What's been happening recently?\\
+    \item Scroll back to show some complexity.\\
+    \item Click on \lst{cgrandin} on that graph, to see the graph of Chris's repo.\\
+    \item Andy does not show up on that because he has not committed anything new (Chris
     has everything Andy has done).
+  \ei
+}
 
-
-
-
+\frame{\frametitle{Understanding the Network Graph}
   Paraphrasing from (slightly dated) \url{https://github.com/blog/39-say-hello-to-the-network-graph-visualizer}\\
-  
-
+  \bi
+    \item If I am at the top: every commit in {\red my repo}
+    \item Next person: only commits in {\red his/her repo that are not in mine}
+    \item Next person: only commits in {\red his/her repo that are not in mine 
+      or second person's}
+    \item Each commit is shown {\blue only once}
+    \item Think of as a to-do list to show what other people have done 
+      that you need to catch up with
+  \ei
 
 }
 
