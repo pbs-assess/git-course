@@ -52,7 +52,7 @@ To clone it onto your local machine, in git shell:
       git log                           <view commit log>
       git help                          <list git commands>
 
-      git cb BRANCH-NAME	               <create and switch to branch BRANCH-NAME>
+      git cb BRANCH-NAME                <create and switch to branch BRANCH-NAME>
       git co BRANCH-NAME                <switch to (checkout) branch BRANCH-NAME>
       git branch                        <list all branches>
       git branch -d NAME                <safely delete the branch called NAME>
@@ -61,10 +61,11 @@ To clone it onto your local machine, in git shell:
 
 ### Some of those are aliases (from your .gitconfig file):
       git s                             git status
+      git com "MESSAGE"                 git commit -a -m "MESSAGE"
       git r                             git remote -v
       git cb BRANCH-NAME                git checkout -b BRANCH-NAME
       git co BRANCH-NAME                git checkout BRANCH-NAME
-      git com "MESSAGE"                 git commit -a -m "MESSAGE"
+
 
 ### Fixing a conflict
 
