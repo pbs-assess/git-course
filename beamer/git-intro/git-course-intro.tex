@@ -273,28 +273,29 @@
 
 \frame{\frametitle{So how does Git do all that?}
   \bi
-     \item By now you're probably wondering how Git keeps track of everything.
-     \item Basically, there is a hidden \lst{.git} folder in each repository.
-     \item We'll take a look and explain what we understand.
-     \item Look at \lst{refs/} and \lst{objects/}.
-     \item So Git keeps track of {\red changes to files}, and so can go back and
-        {\red rebuild} any file as per any \lst{commit}. 
-     \item Only works for ASCii (text) files, such as \lst{.r}, \lst{.txt},
-        \lst{.tex} etc.
-     \item This is why you should not commit \lst{.doc}, \lst{.pdf}, 
-        \lst{.RData} files (unless you know they will not change).
+    \item By now you're probably wondering how Git keeps track of everything.
+    \item Basically, there is a hidden \lst{.git} folder in each repository.
+    \item Look at the \lst{objects} subdirectory. Each subdirectory name is the
+      first two digits in a hash. The rest of the hash are the filenames.
+    \item Git keeps track of {\red changes to files}, and so can go back and
+      {\red rebuild} any file as per any \lst{commit}.
+    \item Only works for ASCii (text) files, such as \lst{.r}, \lst{.txt},
+      \lst{.tex}, etc.
+    \item This is why you should not commit binary files; git cannot understand
+      the differences between versions of them, and each one will be
+      stored as a new object making your repository very large and unmanageble.
   \ei
 }
 
 \frame{\frametitle{Why you should not commit .RData etc.~files}
+  An example of why not to:
   \bi
-  \item Collaborator had added \lst{.pdf} and \lst{.RData} files 
+  \item A collaborator had added \lst{.pdf} and \lst{.RData} files
      (plus \lst{.r} etc.), but these got updated when the code was run.
   \item Ended up with \lst{.git/objects/pack} being 2.8Gb.
-  \item Essentially (I think) Git has to save every version of each file (since
-     binary, not just text) -- way more disk space than just the latest version.
-  \item I needed space quickly so just deleted four files in 
-     \lst{.git/objects/pack}, which freed up 1.6Gb. 
+  \item Git has to save every version of each of these binary files.
+  \item I needed space quickly so just deleted four files in
+     \lst{.git/objects/pack}, which freed up 1.6Gb.
   \item Note that I still have the actual final versions of files (as you would
      if not using Git), but just not the full repository history.
   \item However, when I tried to later do some work and then \lst{commit} I got ...
