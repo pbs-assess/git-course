@@ -190,18 +190,19 @@
   With Git you can revert back to any previous state of your repository.\\
   This is {\red very powerful}, though slightly {\red scary} at first.
   \bn
-    \item \lst{git s} to make sure you are all up-to-date 
+    \item \lst{git s} to make sure you are all up-to-date
       (\lst{commit} and/or \lst{push} if necessary).
     \item In Windows Explorer (or whatever) look at your repository.
-    \item Hover over the first commit on your Network Graph of your 
+    \item Hover over the first commit on your Network Graph of your
       \lst{test} repo and note the first five digits of the \lst{HASH}.
     \item In \gs, do\\
       \lst{git co <HASH>} ~~~~[\lst{co} is alias for \lst{checkout}]
-    \item Look at Explorer again -- your \lst{r-test} directory should 
+    \item Look at Explorer again -- your \lst{r-test} directory should
       have ... disappeared!!\\
-    (If it hasn't then open it -- \lst{test1.r} and \lst{test2.r}
-      should be gone, but your text editor may have saved backup versions;
-      manually delete them plus the \lst{r-test} directory)
+      (If it hasn't then open it -- The test files, i.e. \lst{test1.r}
+      , \lst{test2.r}, etc. should be gone, but your text editor may
+      have saved backup versions; manually delete them plus the
+      \lst{r-test} directory)
     \item You are now back to the very first version of your repo.
   \en
 }
@@ -210,12 +211,15 @@
   \bi
     \item \lst{git co master}
   \ei
-  ~\\
+  \bigskip
   That's it. So you can {\red revert to any previous committed version of your
     repository}.\\
-  ~\\
+  \bigskip
   Very reassuring, especially for complex code that you may mess up and just
-    want to go back to yesterday's version.
+  want to go back to yesterday's version.\\
+  \bigskip
+  We will take a closer look at this in the advanced section, as there
+  are several things you can do once you go back to a previous commit.
 }
 
 \frame{\frametitle{Versions}
