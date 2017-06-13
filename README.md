@@ -37,14 +37,34 @@ To clone it onto your local machine, in git shell:
       git com "MESSAGE"                 <Commit changes with descriptive MESSAGE>
 	  git push                          <Push your changes to GitHub>
       git remote add REMOTE-NAME REMOTE-URL <One-time command to enable fetching and merging from REMOTE-NAME'S GitHub repo at REMOTE-URL, e.g.:>
-	  git remote add cgrandin https://github.com/cgrandin/git-course	
+	  git remote add cgrandin https://github.com/cgrandin/git-course  <example>	
+      git r                             <Look at all remote data sources (URLs)>
 
 	  git fetch cgrandin                <fetch changes that cgrandin has made>
-	  git merge cgranding/master        <merge the fetched changes with your local repository>
+	  git merge cgrandin/master        <merge the fetched changes with your local repository>
 	  git merge c<TAB>                  <this will auto-complete the above command (if unique)>
 	  git rm --cached FILENAME          <remove FILENAME from the git repo, but not from local directory>
 	  git rm FILENAME                   <remove FILENAME from the git repo AND from local directory>
-	  git difftool <options>            <Compare changes using difftool; options can be branches, other repos you have fetched but not merged, or leave blank to compare to latest commit **CHECK THESE**>
+	  git difftool <options>            <compare changes using difftool; options can be branches, other repos you have fetched but not merged, or leave blank to compare to latest commit **CHECK THESE**>
+      git log                           <view commit log>
+      git help                          <list git commands>
+
+      git cb BRANCH-NAME	                <create and switch to branch BRANCH-NAME>
+      git branch                        <list all branches>
+      git branch -d NAME                <safely delete the branch called NAME>
+      git branch -D NAME                <forcibly delete the branch called NAME>
+      git co BRANCH-NAME                <switch to branch BRANCH-NAME>
+      git push origin --delete NAME     <delete the branch NAME from the remote>
+
+
+### Some of those are aliases (see ***)
+      git s                             git status
+      git r                             git remote -v
+      git co BRANCH-NAME                git checkout BRANCH-NAME
+      git cb BRANCH-NAME                git checkout -b BRANCH-NAME
+      git com "MESSAGE"                 git commit -a -m "MESSAGE"
+
+
 
 
 ### Fixing a conflict
@@ -60,29 +80,5 @@ Generally we try and work on different files so that there are no conflicts when
 A readable introduction to the general ideas of 'version control' is the manuscript <a href="https://arxiv.org/abs/1609.00037">Good Enough Practices in Scientific Computing</a>.
 
 
-## Useful commands in the Git Shell
-      git help                          <List git commands>
-      git clone url NAME                <Clone repository found at url into directory NAME>
-      git status                        <View changes & staging>
-      git remote -v                     <Look at all remote data sources (URLs)>
-      git remote add NAME URL           <Add the remote reposiroty at URL, and give it the name NAME>
-      git fetch NAME                    <Fetch the commits from the repository denoted by NAME>
-      git add FILENAME                  <Add new file called FILENAME>
-      git commit -a -m "MESSAGE"        <Commit with MESSAGE recorded to the log>
-      git branch                        <List all branches>
-      git branch -d NAME                <Safely delete the branch called NAME>
-      git branch -D NAME                <Forcibly delete the branch called NAME>
-      git checkout -b NAME              <Create new branch called NAME>
-      git checkout NAME                 <Switch to already-existing branch called NAME>
-      git push                          <Add the local branch NAME to the remote>
-      git push origin --delete NAME     <Delete the branch NAME from the remote>
-      git log                           <View commit log>
-      git difftool                      <Open up your difftool software and show differences>
-## Useful Git aliases
-      git r                             <View remote URLs for the project, same as 'git remote -v'>
-      git s                             <View status of the repository, same as 'git status'>
-      git co NAME                       <Change to branch "NAME", same as 'git checkout NAME'>
-      git cb NAME                       <Create branch "NAME", same as 'git checkout -b NAME'>
-      git com "MESSAGE"                 <Commit all with message, same as 'git commit -a -m "MESSAGE"'>
 
 
