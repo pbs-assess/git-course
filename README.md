@@ -92,9 +92,9 @@ Once you are done fixing each conflicted file, you need to
 
      git add FILENAME
 
- to confirm that's the one you want (that step is not completely obvious), then commit and push.
+to confirm that's the one you want (that step is not completely obvious), then commit and push.
 
-See <https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line/>
+See <https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line/> for an example.
 
 Generally we try and work on different files so that there are no conflicts when we merge.
 
