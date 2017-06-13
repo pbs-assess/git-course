@@ -34,7 +34,7 @@ To clone it onto your local machine, in git shell:
 
       git s                             <View status of the repository>
       git add filename                  <Add 'filename' (including path) to the list of files being tracked by git>
-      git com "MESSAGE"                 <Commit changes with descriptive MESSAGE>
+      git com "MESSAGE"					<Commit changes with descriptive MESSAGE>
 	  git push							<Push your changes to GitHub>
       git remote add REMOTE-NAME REMOTE-URL
 		<One-time command to enable fetching 
