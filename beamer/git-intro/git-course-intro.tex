@@ -203,6 +203,26 @@
   \emph{.gitignore} file so that they are not added inadvertently.
 }
 
+\frame{\frametitle{Renaming files}
+  \bi
+    \item You can rename any files the way you usually would (e.g. in File explorer).
+    \item Once you've renamed your files, check the repository status:\\
+      \lstinline{git s}\\
+    \item You will see that the files you renamed have been automatically
+      deleted from the repository and need to be added again. Do this the
+      same way you add new files (\lstinline{git add filename}). You can also
+      add a whole directory again and \gs\ is smart enough to only add the
+      renamed files.
+    \item Check the status again:\\
+      \lstinline{git s}\\
+      It will show that the file(s) were renamed.
+    \item Make a commit:\\
+      \lstinline{git com "Renamed files x, y, and z"}\\
+    \item Push the commit:\\
+      \lstinline{git push}
+  \ei
+}
+
 \frame{\frametitle{The power to go back}
   With Git you can revert back to any previous state of your repository.\\
   This is {\red very powerful}, though slightly {\red scary} at first.
@@ -290,26 +310,6 @@
         keepaspectratio]
         {../git-motivation/figures/notGood.png}
   \end{figure}
-}
-
-\frame{\frametitle{Renaming files}
-  \bi
-    \item You can rename any files the normal way you do that such as in the
-      Windows file explorer.
-    \item Once you've renamed your files, check the repository status:\\
-      \lstinline{git s}\\
-    \item You will see that the files you renamed need to be added again.
-      Do this the same way you added them in the first place. You can also
-      add a whole directory again and \gs\ is smart enough to only add the
-      renamed files.
-    \item Check the status again:\\
-      \lstinline{git s}\\
-      It will show that the file(s) were renamed.
-    \item Make a commit:\\
-      \lstinline{git com "Renamed files x, y, and z"}\\
-    \item Push the commit:\\
-      \lstinline{git push}
-  \ei
 }
 
 \section{Branches}
