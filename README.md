@@ -53,7 +53,7 @@ To clone it onto your local machine, in git shell:
       git help                          <list git commands>
 
       git cb BRANCH-NAME                <create and switch to branch BRANCH-NAME>
-      git co BRANCH-NAME                <switch to (checkout) branch BRANCH-NAME>
+      git co BRANCH-NAME                <checkout(switch to) branch BRANCH-NAME>
       git branch                        <list all branches>
       git branch -d NAME                <safely delete the branch called NAME>
       git branch -D NAME                <forcibly delete the branch called NAME>
