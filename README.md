@@ -20,86 +20,32 @@ From the [GitHub glossary](https://help.github.com/articles/github-glossary/#rep
  
 ## Summary of most common commands
 
+### To fork and clone someone else's repository
 
+On the repository's GitHub page, click 'Fork'.
 
+Navigate to your GitHub version of the repo.
 
+To clone it onto your local machine, in git shell:
 
-5. Open the GitHub Application. Choose Tools->Options and under *configure git*, fill in your name, the email address you used for signing up to GitHub,
-and change your *default storage directory* to something simple that you will be able to find later. 
+      git clone https://github.com/YOUR-GITHUB-USER-NAME/REPO-NAME
 
- - It's good to have all your GitHub based projects in this directory, so something like **c:\github** or anything you like, but ***AVOID USING SPACES IN FILENAMES AND DIRECTORY NAMES*** [this is generally good practice but will avoid potential problems; make sure you add the new directory name to your back up software if you want to back your files up as normal]. 
- - Make sure that for *default shell*, *PowerShell* is checked. *pull behavior* should have *use rebase for pulls* checked. Click *Update* and close the application.
-
-### To get the repository onto your computer
-
-1. Open the Git Shell, (not the GitHub application). The shortcut should be at (maybe copy it to somewhere useful):
-**C:\Users\your-computer-user-name\AppData\Local\GitHub\GitHub.appref-ms --open-shell**
-
-2. Note your starting directory, this is where your files will be. It should be the same as the one you entered into the GitHub application in the steps above.
-
-Type the following to clone your repository onto your local machine:
-
-      git clone https://github.com/your-github-user-name/empirical-dyn-mod
-
-This may take a while depending on your network connection, mainly because there are many .pdf's of papers included. Now you have all the files on your computer.
-
-### To change the files and then *push* then back to GitHub
-
-Okay, now to get started. It's easier to be shown by someone and for explaining the concepts, but basically I only end up using a few basic commands. These are typed in the Git Shell. If you are in your **C:/...../github/** directory then you should see a standard DOS prompt, something like:
-
-	C:\user-name\github> 
-
-Then **ls** or **dir** will show you the subdirectories, and you should only have **empirical-dyn-mod** if this is your first use of GitHub.
-
-So change directory 
-
-	cd empirical-dyn-mod
-
-[note that you can use Tab to complete unique commands]. The prompt now says something like
-
-	C:\user-name\github\empirical-dyn-mod [master]>
-
-with **master** in blue. This last bit tells you that you are in a directory that is being tracked in a GitHub repository (don't worry about why it's called master yet). 
-
-### The basic commands that I use are:
+### The basic commands we use are:
 
       git s                             <View status of the repository>
-      git com "MESSAGE"                 <Commit changes with message>
       git add filename                  <Add 'filename' (including path) to the list of files being tracked by git>
+      git com "MESSAGE"                 <Commit changes with descriptive MESSAGE>
 	  git push							<Push your changes to GitHub>
-	  git fetch ****					<fetch changes that someone else has made>
-	  git merge							<merge the fetched changes with your local repository>
-	  git merge --no-ff					<merge a branch (or fetched changes?) with your master - see below>
+      git remote add REMOTE-NAME REMOTE-URL	<One-time command to enable fetching 
+		and merging from REMOTE-NAME'S GitHub repo at REMOTE-URL, e.g.:>
+	  git remote add cgrandin https://github.com/cgrandin/git-course	
+
+	  git fetch cgrandin					<fetch changes that cgrandin has made>
+	  git merge cgranding/master			<merge the fetched changes with your local repository>
+	  git merge c<TAB>						<this will auto-complete the above command (if unique)>
 	  git rm --cached filename			<remove the file from the git repo, but not from local directory>
 	  git rm filename					<remove the file from the git repo AND from local directory>
 
-In more detail:
-
-	git s
-
-is short for **git status**, and tells you if everything is 'up to date'.
-
-	git com "Comment here"
-
-is short for **git commit**. Once you have made a change to a file then you can 'commit' it to your repository. Git then notes that commit, but in such a way that you can **always go back to earlier versions of the file**. You do not end up with multiple copies of the same file in your directory - Git efficiently keeps track of the **differences** but in hidden folders.
-
-Each commit needs a comment describing what you did, such as
-
-	git com "Updated README.md with comments about commiting."
- 
-Next,
-
-	git add filename
-
-tells git to keep track of changes to that filename in this repository (so you do this when you create a new file). You do not need to change directory in the git shell once you're in the base directory for a repository, but you just need to include the relative path in 'filename' - i.e. something like
-
-	git add edmPapers/smith06salmonEDM.pdf
-
-To ignore a file, you add that file to the **.gitignore** file for that repository. Don't worry about that for now.
-
-	git push
-
-pushes your commits back to the version of your repository that is on your GitHub web page.
 
 ### To collaborate with others
 
