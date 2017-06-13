@@ -41,23 +41,23 @@ To clone it onto your local machine, in git shell:
                                             REMOTE-NAME'S GitHub repo at REMOTE-URL, for example:>
 	  git remote add cgrandin https://github.com/cgrandin/git-course  <example>	
       git r                             <Look at all remote data sources (URLs)>
-	  git fetch cgrandin                <fetch changes that cgrandin has made>
-	  git merge cgrandin/master         <merge the fetched changes with your local repository>
-	  git merge c<TAB>                  <this will auto-complete the above command (if unique)>
+	  git fetch cgrandin                <Fetch changes that cgrandin has made>
+	  git merge cgrandin/master         <Merge the fetched changes with your local repository>
+	  git merge c<TAB>                  <This will auto-complete the above command (if unique)>
 
-	  git rm --cached FILENAME          <remove FILENAME from the git repo, but not from local directory>
-	  git rm FILENAME                   <remove FILENAME from the git repo AND from local directory>
-	  git difftool <options>            <compare changes using difftool; options can be branches, other repos you have 
+	  git rm --cached FILENAME          <Remove FILENAME from the git repo, but not from local directory>
+	  git rm FILENAME                   <Remove FILENAME from the git repo AND from local directory>
+	  git difftool <options>            <Compare changes using difftool; options can be branches, other repos you have 
                                         fetched but not merged, or leave blank to compare to latest commit **CHECK THESE**>
-      git log                           <view commit log>
-      git help                          <list git commands>
+      git log                           <View commit log>
+      git help                          <List git commands>
 
-      git cb BRANCH-NAME                <create and switch to branch BRANCH-NAME>
-      git co BRANCH-NAME                <checkout(switch to) branch BRANCH-NAME>
-      git branch                        <list all branches>
-      git branch -d NAME                <safely delete the branch called NAME>
-      git branch -D NAME                <forcibly delete the branch called NAME>
-      git push origin --delete NAME     <delete the branch NAME from the remote>
+      git cb BRANCH-NAME                <Create and switch to branch BRANCH-NAME>
+      git co BRANCH-NAME                <Checkout(switch to) branch BRANCH-NAME>
+      git branch                        <List all branches>
+      git branch -d NAME                <Safely delete the branch called NAME>
+      git branch -D NAME                <Forcibly delete the branch called NAME>
+      git push origin --delete NAME     <Delete the branch NAME from the remote>
 
 ### Some of those are aliases (from your .gitconfig file):
       git s                             git status
