@@ -154,9 +154,9 @@
   \bi
     \item Add a new directory to your repository, using your normal method.
       Call it \lstinline{r-test}.
-    \item Add a couple of new test files to that directory called
-      \lstinline{test1.r} and \lstinline{test2.r}. Put some example text
-      in each and save them.
+    \item Add a few new test files to that directory called
+      \lstinline{test1.r}, \lstinline{test2.r}, etc. Put some example text
+      in one or more of them if you want.
     \item On the command line, check the status:\\
       \lstinline{git s}
     \item You will see a listing showing the \emph{r-test} directory in
@@ -164,7 +164,7 @@
     \item To see that actual files to be committed instead of just the
       directory:\\
       \lstinline{git s -u}
-    \item To add the both files in preparation for a commit,
+    \item To add all the new files in preparation for a commit,
       issue the command:\\
       \lstinline{git add r-test}
   \ei
@@ -176,7 +176,7 @@
   \bi
     \item Check the status of the repository again:
       \lstinline{git s}
-    \item It will now show both files in \emph{Changes to be committed}
+    \item It will now show all files in \emph{Changes to be committed}
     \item Commit the changes:\\
       \lstinline{git com "Added new files to r-test directory."}
     \item Push the changes to \gh:\\
