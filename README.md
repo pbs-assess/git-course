@@ -98,10 +98,7 @@ See <https://help.github.com/articles/resolving-a-merge-conflict-from-the-comman
 
 Generally we try and work on different files so that there are no conflicts when we merge.
 
-### General introduction
+## General introduction
 
 A readable introduction to the general ideas of 'version control' is the manuscript <a href="https://arxiv.org/abs/1609.00037">Good Enough Practices in Scientific Computing</a>.
-
-
-
 
