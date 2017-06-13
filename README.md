@@ -1,7 +1,12 @@
 # git-course
-A repository for teaching git
 
-Basically, **git** works on your computer and saves all versions of documents as you continually work on them ('version control'). **GitHUB** is a copy of everything on a website that allows users to share code with each other.
+Introductory course on **git** and **GitHub** by Chris Grandin and Andrew Edwards.
+
+Departure Bay Room A/B, Vancouver Island Conference Centre.
+
+Wednesday 21st and Thursday 22nd June, 9:00-4:30 both days.
+
+Basically, **git** works on your computer and saves all versions of documents as you continually work on them ('version control'). **GitHub** is a copy of everything on a website that allows users to share code with each other.
 
 
 ## Random notes/ideas - Andy just posting them here for now as think of them
