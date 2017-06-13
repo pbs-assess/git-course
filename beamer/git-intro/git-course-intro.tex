@@ -186,6 +186,23 @@
   \ei
 }
 
+\frame{\frametitle{The \emph{.gitignore} file}
+  Each repository can have one \emph{.gitignore} file, in the root directory
+  of the repository. This file has names of files or wildcard names such as
+  \lstinline{*.dvi} or \lstinline{*.nav} that will be completely ignored by
+  \gs. Many compilers make temporary files, the names of which should be added
+  to this file to avoid adding these files when adding whole directories
+  using commands such as \lstinline{git add r-test}.\\
+  \bigskip
+  This is important as you will clutter up your repository and have to spend
+  time cleaning it all up.\\
+  \bigskip
+  Anytime you run the command \lstinline{git s} or \lstinline{git s -u} and
+  there are files listed that you don't want added to the repository, you
+  should add them or a wildcard template encapsulating them to the
+  \emph{.gitignore} file so that they are not added inadvertently.
+}
+
 \frame{\frametitle{The power to go back}
   With Git you can revert back to any previous state of your repository.\\
   This is {\red very powerful}, though slightly {\red scary} at first.
@@ -263,7 +280,7 @@
   \item However, when I tried to later do some work and then \lst{commit} I got ...
   \ei
 }
- 
+
 \frame{\frametitle{Why you should not commit .RData etc.~files}
   \centering
   \begin{figure}
@@ -273,25 +290,6 @@
         keepaspectratio]
         {../git-motivation/figures/notGood.png}
   \end{figure}
-}
-
-
-
-\frame{\frametitle{The \emph{.gitignore} file}
-  Each repository can have one \emph{.gitignore} file, in the root directory
-  of the repository. This file has names of files or wildcard names such as
-  \lstinline{*.dvi} or \lstinline{*.nav} that will be completely ignored by
-  \gs. Many compilers make temporary files, the names of which should be added
-  to this file to avoid adding these files when adding whole directories
-  using commands such as \lstinline{git add r-test}.\\
-  \bigskip
-  This is important as you will clutter up your repository and have to spend
-  time cleaning it all up.\\
-  \bigskip
-  Anytime you run the command \lstinline{git s} or \lstinline{git s -u} and
-  there are files listed that you don't want added to the repository, you
-  should add them or a wildcard template encapsulating them to the
-  \emph{.gitignore} file so that they are not added inadvertently.
 }
 
 \frame{\frametitle{Renaming files}
