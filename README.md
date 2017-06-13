@@ -69,9 +69,32 @@ To clone it onto your local machine, in git shell:
 
 ### Fixing a conflict
 
-When there is a conflict you will get a message. Then open the relevant file in a text editor, and it has <<<<<<   for the start of a conflicting part, and ========= at the end, so manually fix it. Basically you decide which part of the conflicting code you want to keep.
+When there is a conflict you will get a message. Then open the relevant file in a text editor, and you will see
 
-Then **git add <filename>** to confirm that's the one you want (that step is not completely obvious), then **git com "..."** as usual. See <https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line/>
+     <<<<<<< HEAD
+     Line(s) of text/code which are currently in your file.
+     =======
+     Line(s) of text/code which are trying to merge in, but conflict.
+     >>>>>>> BRANCH-NAME
+  
+where BRANCH-NAME is the name of the branch (or remote) you are trying to merge in from the previously-issued command:
+
+     git merge BRANCH-NAME
+
+Choose one of the line(s) of text/code to keep, or edit the line(s) to be something else entirely.
+
+Then remove the bracketing and separation lines 
+
+     <<<...
+     >>>...
+     =======
+Once you are done fixing each conflicted file, you need to 
+
+     git add FILENAME
+
+ to confirm that's the one you want (that step is not completely obvious), then commit and push.
+
+See <https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line/>
 
 Generally we try and work on different files so that there are no conflicts when we merge.
 
