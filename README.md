@@ -36,13 +36,14 @@ To clone it onto your local machine, in git shell:
       git add filename                  <Add 'filename' (including path) to the list of files being tracked by git>
       git com "MESSAGE"                 <Commit changes with descriptive MESSAGE>
 	  git push							<Push your changes to GitHub>
-      git remote add REMOTE-NAME REMOTE-URL	<One-time command to enable fetching 
+      git remote add REMOTE-NAME REMOTE-URL
+		<One-time command to enable fetching 
 		and merging from REMOTE-NAME'S GitHub repo at REMOTE-URL, e.g.:>
 	  git remote add cgrandin https://github.com/cgrandin/git-course	
 
-	  git fetch cgrandin					<fetch changes that cgrandin has made>
-	  git merge cgranding/master			<merge the fetched changes with your local repository>
-	  git merge c<TAB>						<this will auto-complete the above command (if unique)>
+	  git fetch cgrandin				<fetch changes that cgrandin has made>
+	  git merge cgranding/master		<merge the fetched changes with your local repository>
+	  git merge c<TAB>					<this will auto-complete the above command (if unique)>
 	  git rm --cached filename			<remove the file from the git repo, but not from local directory>
 	  git rm filename					<remove the file from the git repo AND from local directory>
 	  git difftool <options>			<Compare changes using difftool; options can be branches, other repos you have fetched but not merged, or leave blank to compare to latest commit **CHECK THESE**>
@@ -56,42 +57,8 @@ Then **git add <filename>** to confirm that's the one you want (that step is not
 
 Generally we try and work on different files so that there are no conflicts when we merge.
 
-A readable introduction to the general ideas of 'version control' is the manuscript <a href="https://arxiv.org/abs/1609.00037">Good Enough Practices in Scientific Computing</a> (thanks to Carrie for passing this on).
+A readable introduction to the general ideas of 'version control' is the manuscript <a href="https://arxiv.org/abs/1609.00037">Good Enough Practices in Scientific Computing</a>.
 
-## This is what Chris had
-
-A repository for teaching Git and GitHub
-
-To use Git and GitHub on Windows, you will need to do the following things.
-If you have a MAC, skip this list and read below.
-
-1. <a href="https://github.com/" target="_blank">Get a GitHub account</a>.
-2. GitHub requires Microsoft .NET 4.5. If you have a .NET version less
-   than 4.5 ([Check version](https://github.com/downloads/shanselman/SmallestDotNet/CheckForDotNet45.exe
-   "Which .NET version is on my machine?")),
-   then upgrade it: <a href="http://go.microsoft.com/fwlink/p/?LinkId=310158"
-   target="_blank">Microsoft .NET 4.5.1</a>.
-3. Install <a href="http://windows.github.com" target="_blank">GitHub Desktop</a>
-4. Once installed, open the GitHub Desktop Application. Press the gear icon and
-   choose *Options*. In *Configure Git*, fill in your name and the email address
-   you used for your GitHub account, and change your *Clone Path* to
-   **c:\github**. Make sure that for *Default Shell*, *PowerShell* is checked.
-   Click *Save* and close the application. **This is a one-time step and you will not need
-   to do it again unless you want to sign in with a different user name.**
-5. Open the Git Shell, (not the GitHub application). The shortcut should be
-   **C:\Users\your-computer-user-name\AppData\Local\GitHub\GitHub.appref-ms --open-shell**
-   but with **your-computer-user-name** replaced with your Windows account name.
-6. Note your starting directory, this is where your files will be. It should be
-   the same as the one you entered into the GitHub application in the steps
-   above.
-7. Install <a href="https://sourcegear.com/diffmerge/downloads.php"
-   target="_blank">Diffmerge</a>
-
-If you have a MAC, try typing *git* on the command line. If it is installed,
-you have nothing else to do. If not, you need to install it. One way is
-outlined here (you don't need SSH keys):
-<a href="http://burnedpixel.com/blog/beginners-setup-guide-for-ruby-node-git-github-on-your-mac/"
-target="_blank">Install Git on MAC OSX</a>
 
 ## Useful commands in the Git Shell
       git help                          <List git commands>
