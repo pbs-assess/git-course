@@ -9,42 +9,20 @@ Wednesday 21st and Thursday 22nd June, 9:00-4:30 both days.
 Basically, **git** works on your computer and saves all versions of documents as you continually work on them ('version control'). **GitHub** is a copy of everything on a website that allows users to share code with each other.
 
 
+## Setting up
+
+See the **git-course-setup.pdf** file that we email to you. 
+
+You will then have all the files from this **git-course** repository on your computer.
+
+From the [GitHub glossary](https://help.github.com/articles/github-glossary/#repository): "A repository is the most basic element of GitHub. They're easiest to imagine as a project's folder. A repository contains all of the project files (including documentation), and stores each file's revision history. Repositories can have multiple collaborators and can be either public or private." 
+ 
+
 ## Random notes/ideas - Andy just posting them here for now as think of them
 
 Potentially <a href="http://www.sciencedirect.com/science/article/pii/S0169534715002906">useful reference</a> about code in ecology.
 
-Interim-year Res Doc - use as example of i) having to rely on a lead author, ii) Track Changes becoming out of control. Could use a few recent POP emails as examples also (check with Rowan).
 
-
-## Getting started
-
-Following notes are from Andy's https://github.com/andrew-edwards/empirical-dyn-mod  just copying here for now. Will require some editing. Most of it came originally from Chris's earlier workshop.
-
-
-### One time things to get started using git and GitHub
-
-Some of this is from <a href="https://github.com/andrew-edwards/git-workshop">my adapted version</a> of Chris Grandin's git workshop tutorial. Please keep a note of anything that didn't work or could be made clearer - once you get comfortable with using GitHub you'll be able to simply edit these notes and I can accept your changes so that others don't run into the same issues.
-
-**These are one-time steps and will not need to be done again**
-
-1. You will need to <a href="https://github.com/" target="_blank">sign up for GitHub</a>.
-
-2. GitHub *requires* Microsoft .NET 4.5.1 as of February 2014. If you have a .NET version less than 4.5 ([Check version](https://github.com/downloads/shanselman/SmallestDotNet/CheckForDotNet45.exe "Which .NET version is on my machine?")), then upgrade it: <a href="http://go.microsoft.com/fwlink/p/?LinkId=310158" target="_blank">Microsoft .NET 4.5.1</a>.
-
-3. Install <a href="http://windows.github.com" target="_blank">GitHub for Windows</a>
-
-- You will also need the **.gitconfig file** that includes a bunch of aliases that Chris Grandin set up (which make it easier to use some common commands):
-
- - Go to [https://raw.githubusercontent.com/andrew-edwards/git-workshop/master/.gitconfig](https://raw.githubusercontent.com/andrew-edwards/git-workshop/master/.gitconfig)
-
- - Right-click anywhere on the main text, Save-As, and save it in your equivalent of **C:\Users\edwardsand\** (where you replace **edwardsand** with the username you use to log in to your computer). I think that's the default place, it's where I found it on on my computer.  
- 
- - Open **C:\Users\edwardsand\.gitconfig** in a text editor and change the name and email address at the top from Chris's to yours.  
- 
-
-- The file you're reading is a Markdown file (filename is **README.md**). You can read it in any text editor (as it's just ASCii text), but to get the formatting etc. (and see things in **bold** or *italics*) you’ll also want an editor that knows how to view these. I use Markdown Pad 2 which is easy to use. It’s at  [http://markdownpad.com](http://markdownpad.com/). Just get the free version. 
-
-- Go back to Andy's version of the [empirical-dyn-mod repository](https://github.com/andrew-edwards/empirical-dyn-mod) (where you're reading this), make sure you are signed in to GitHub, and **Fork** the project (button on the top right). This will create a copy of the repository on your GitHub site. I think the website you are viewing should then change to **https://github.com/your-github-user-name/empircal-dyn-mod** (but I can't test this). From the [GitHub glossary](https://help.github.com/articles/github-glossary/#repository): "A repository is the most basic element of GitHub. They're easiest to imagine as a project's folder. A repository contains all of the project files (including documentation), and stores each file's revision history. Repositories can have multiple collaborators and can be either public or private." 
 
 5. Open the GitHub Application. Choose Tools->Options and under *configure git*, fill in your name, the email address you used for signing up to GitHub,
 and change your *default storage directory* to something simple that you will be able to find later. 
