@@ -38,11 +38,11 @@ To clone it onto your local machine, in git shell:
 	  git push                          <Push your changes to GitHub>
 
       git remote add REMOTE-NAME REMOTE-URL <One-time command to enable fetching and merging from 
-                                            REMOTE-NAME'S GitHub repo at REMOTE-URL, e.g.:>
+                                            REMOTE-NAME'S GitHub repo at REMOTE-URL, for example:>
 	  git remote add cgrandin https://github.com/cgrandin/git-course  <example>	
       git r                             <Look at all remote data sources (URLs)>
 	  git fetch cgrandin                <fetch changes that cgrandin has made>
-	  git merge cgrandin/master        <merge the fetched changes with your local repository>
+	  git merge cgrandin/master         <merge the fetched changes with your local repository>
 	  git merge c<TAB>                  <this will auto-complete the above command (if unique)>
 
 	  git rm --cached FILENAME          <remove FILENAME from the git repo, but not from local directory>
@@ -52,18 +52,18 @@ To clone it onto your local machine, in git shell:
       git log                           <view commit log>
       git help                          <list git commands>
 
-      git cb BRANCH-NAME	                <create and switch to branch BRANCH-NAME>
+      git cb BRANCH-NAME	               <create and switch to branch BRANCH-NAME>
+      git co BRANCH-NAME                <switch to (checkout) branch BRANCH-NAME>
       git branch                        <list all branches>
       git branch -d NAME                <safely delete the branch called NAME>
       git branch -D NAME                <forcibly delete the branch called NAME>
-      git co BRANCH-NAME                <switch to branch BRANCH-NAME>
       git push origin --delete NAME     <delete the branch NAME from the remote>
 
 ### Some of those are aliases (from your .gitconfig file):
       git s                             git status
       git r                             git remote -v
-      git co BRANCH-NAME                git checkout BRANCH-NAME
       git cb BRANCH-NAME                git checkout -b BRANCH-NAME
+      git co BRANCH-NAME                git checkout BRANCH-NAME
       git com "MESSAGE"                 git commit -a -m "MESSAGE"
 
 ### Fixing a conflict
