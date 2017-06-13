@@ -16,11 +16,12 @@ See the **git-course-setup.pdf** file that we email to you.
 You will then have all the files from this **git-course** repository on your computer.
 
 From the [GitHub glossary](https://help.github.com/articles/github-glossary/#repository): "A repository is the most basic element of GitHub. They're easiest to imagine as a project's folder. A repository contains all of the project files (including documentation), and stores each file's revision history. Repositories can have multiple collaborators and can be either public or private." 
+
+If you want Potentially <a href="http://www.sciencedirect.com/science/article/pii/S0169534715002906">useful reference</a> about code in ecology.
  
+## Summary of most common commands
 
-## Random notes/ideas - Andy just posting them here for now as think of them
 
-Potentially <a href="http://www.sciencedirect.com/science/article/pii/S0169534715002906">useful reference</a> about code in ecology.
 
 
 
