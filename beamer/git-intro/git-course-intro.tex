@@ -274,26 +274,33 @@
 \frame{\frametitle{So how does Git do all that?}
   \bi
     \item By now you're probably wondering how Git keeps track of everything.
-    \item Basically, there is a hidden \lst{.git} folder in each repository.
+    \item There is a hidden \lst{.git} directory in each repository.
     \item Look at the \lst{objects} subdirectory. Each subdirectory name is the
-      first two digits in a hash. The rest of the hash are the filenames.
-    \item Git keeps track of {\red changes to files}, and so can go back and
-      {\red rebuild} any file as per any \lst{commit}.
-    \item Only works for ASCii (text) files, such as \lst{.r}, \lst{.txt},
+      first two digits of a hash. The rest of the hash are the names in the
+      directory. The hashes represent \textbf{file contents (blobs)},
+      \textbf{commits},
+      and \textbf{directory structures (trees)}.
+    \item Because of these structures, you can go back and {\red rebuild} any
+      or all files at any \lst{commit}, and even have different directory
+      structures at each commit.
+    \item Works best for ASCii (text) files, such as \lst{.r}, \lst{.txt},
       \lst{.tex}, etc.
-    \item This is why you should not commit binary files; git cannot understand
-      the differences between versions of them, and each one will be
-      stored as a new object making your repository very large and unmanageble.
+    \item Works for binary files, e.g. \lst{.RData} and \lst{.xls} files but
+      you will not be able to do any useful merging with those files. You will
+      lose the power that git provides.
+    \item Exceptions: Image files that aren't likely to change. There are some
+      in the \lst{git-course} repository.
   \ei
 }
 
-\frame{\frametitle{Why you should not commit .RData etc.~files}
-  An example of why not to:
+\frame{\frametitle{Why you should not commit binary files}
+  An example:
   \bi
-  \item A collaborator had added \lst{.pdf} and \lst{.RData} files
+  \item A collaborator had added \lst{.pdf}, \lst{.RData} and \lst{.docx} files
      (plus \lst{.r} etc.), but these got updated when the code was run.
-  \item Ended up with \lst{.git/objects/pack} being 2.8Gb.
-  \item Git has to save every version of each of these binary files.
+  \item Git has to save every version of each of these binary files even if just
+    one word has been changed.
+  \item I ended up with \lst{.git/objects/pack} being 2.8Gb.
   \item I needed space quickly so just deleted four files in
      \lst{.git/objects/pack}, which freed up 1.6Gb.
   \item Note that I still have the actual final versions of files (as you would
@@ -302,7 +309,7 @@
   \ei
 }
 
-\frame{\frametitle{Why you should not commit .RData etc.~files}
+\frame{\frametitle{Why you should not commit binary files}
   \centering
   \begin{figure}
     \includegraphics[
@@ -311,6 +318,8 @@
         keepaspectratio]
         {../git-motivation/figures/notGood.png}
   \end{figure}
+
+  \textbf{\large Don't mess with the .git directory!!}
 }
 
 \section{Branches}
