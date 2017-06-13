@@ -17,7 +17,6 @@ You will then have all the files from this **git-course** repository on your com
 
 From the [GitHub glossary](https://help.github.com/articles/github-glossary/#repository): "A repository is the most basic element of GitHub. They're easiest to imagine as a project's folder. A repository contains all of the project files (including documentation), and stores each file's revision history. Repositories can have multiple collaborators and can be either public or private." 
 
-If you want Potentially <a href="http://www.sciencedirect.com/science/article/pii/S0169534715002906">useful reference</a> about code in ecology.
  
 ## Summary of most common commands
 
@@ -207,4 +206,5 @@ target="_blank">Install Git on MAC OSX</a>
       git co NAME                       <Change to branch "NAME", same as 'git checkout NAME'>
       git cb NAME                       <Create branch "NAME", same as 'git checkout -b NAME'>
       git com "MESSAGE"                 <Commit all with message, same as 'git commit -a -m "MESSAGE"'>
+
 
