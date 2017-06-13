@@ -33,7 +33,7 @@ To clone it onto your local machine, in git shell:
 ### The basic commands we use are:
 
       git s                             <View status of the repository>
-      git add filename                  <Add 'filename' (including path) to the list of files being tracked by git>
+      git add FILENAME                  <Add FILENAME (including path) to the list of files being tracked by git>
       git com "MESSAGE"                 <Commit changes with descriptive MESSAGE>
 	  git push                          <Push your changes to GitHub>
       git remote add REMOTE-NAME REMOTE-URL <One-time command to enable fetching and merging from REMOTE-NAME'S GitHub repo at REMOTE-URL, e.g.:>
@@ -42,8 +42,8 @@ To clone it onto your local machine, in git shell:
 	  git fetch cgrandin                <fetch changes that cgrandin has made>
 	  git merge cgranding/master        <merge the fetched changes with your local repository>
 	  git merge c<TAB>                  <this will auto-complete the above command (if unique)>
-	  git rm --cached filename          <remove the file from the git repo, but not from local directory>
-	  git rm filename                   <remove the file from the git repo AND from local directory>
+	  git rm --cached FILENAME          <remove FILENAME from the git repo, but not from local directory>
+	  git rm FILENAME                   <remove FILENAME from the git repo AND from local directory>
 	  git difftool <options>            <Compare changes using difftool; options can be branches, other repos you have fetched but not merged, or leave blank to compare to latest commit **CHECK THESE**>
 
 
@@ -54,6 +54,8 @@ When there is a conflict you will get a message. Then open the relevant file in 
 Then **git add <filename>** to confirm that's the one you want (that step is not completely obvious), then **git com "..."** as usual. See <https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line/>
 
 Generally we try and work on different files so that there are no conflicts when we merge.
+
+### General introduction
 
 A readable introduction to the general ideas of 'version control' is the manuscript <a href="https://arxiv.org/abs/1609.00037">Good Enough Practices in Scientific Computing</a>.
 
