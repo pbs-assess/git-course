@@ -34,19 +34,17 @@ To clone it onto your local machine, in git shell:
 
       git s                             <View status of the repository>
       git add filename                  <Add 'filename' (including path) to the list of files being tracked by git>
-      git com "MESSAGE"					<Commit changes with descriptive MESSAGE>
-	  git push							<Push your changes to GitHub>
-      git remote add REMOTE-NAME REMOTE-URL
-		<One-time command to enable fetching 
-		and merging from REMOTE-NAME'S GitHub repo at REMOTE-URL, e.g.:>
+      git com "MESSAGE"                 <Commit changes with descriptive MESSAGE>
+	  git push                          <Push your changes to GitHub>
+      git remote add REMOTE-NAME REMOTE-URL <One-time command to enable fetching and merging from REMOTE-NAME'S GitHub repo at REMOTE-URL, e.g.:>
 	  git remote add cgrandin https://github.com/cgrandin/git-course	
 
-	  git fetch cgrandin				<fetch changes that cgrandin has made>
-	  git merge cgranding/master		<merge the fetched changes with your local repository>
-	  git merge c<TAB>					<this will auto-complete the above command (if unique)>
-	  git rm --cached filename			<remove the file from the git repo, but not from local directory>
-	  git rm filename					<remove the file from the git repo AND from local directory>
-	  git difftool <options>			<Compare changes using difftool; options can be branches, other repos you have fetched but not merged, or leave blank to compare to latest commit **CHECK THESE**>
+	  git fetch cgrandin                <fetch changes that cgrandin has made>
+	  git merge cgranding/master        <merge the fetched changes with your local repository>
+	  git merge c<TAB>                  <this will auto-complete the above command (if unique)>
+	  git rm --cached filename          <remove the file from the git repo, but not from local directory>
+	  git rm filename                   <remove the file from the git repo AND from local directory>
+	  git difftool <options>            <Compare changes using difftool; options can be branches, other repos you have fetched but not merged, or leave blank to compare to latest commit **CHECK THESE**>
 
 
 ### Fixing a conflict
