@@ -1,4 +1,7 @@
 \documentclass[aspectratio=169]{beamer}
+%% For 4:3 aspect ratio:
+%% \documentclass{beamer}
+
 \usetheme[compress]{Singapore}
 \usecolortheme{seahorse}
 \usefonttheme{default}
@@ -19,6 +22,9 @@
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
 \usepackage{pgf}
 
+%% Disable the bookmarks pane from opening in the PDF
+\hypersetup{pdfpagemode=UseNone}
+
 \newcommand{\red}{\color{red}}
 \newcommand{\blue}{\color{blue}}
 
@@ -33,9 +39,6 @@
 %% Multi-line-cell in an xtable
 %% syntax is \mlc{first line\\secondline}
 \newcommand{\mlc}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
-
-%% For 4:3 aspect ratio:
-%% \documentclass{beamer}
 
 <<load-everything, echo=FALSE,  message=FALSE, results='hide', warning=FALSE>>=
 opts_chunk$set(dev = 'cairo_ps',
