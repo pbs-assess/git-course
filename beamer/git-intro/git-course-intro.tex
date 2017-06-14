@@ -148,7 +148,7 @@
   \ei
 }
 
-\frame{\frametitle{Adding multiple files at once - slide 1}
+\frame{\frametitle{Adding multiple files at once -- slide 1}
   Often you add multiple files or a new directory with files in it. In
   these cases, when you run \lst{git s}, you will see a large
   listing of \emph{Untracked files}. Files can be added at once, by simply
@@ -174,7 +174,7 @@
   Continued...
 }
 
-\frame{\frametitle{Adding multiple files at once - slide 2}
+\frame{\frametitle{Adding multiple files at once -- slide 2}
   \bi
     \item Check the status of the repository again:
       \lst{git s}
@@ -416,7 +416,7 @@
       to delete it. If you want to forcibly delete it, discarding your changes,
       use:\\
       \lst{git branch -D temp}\\
-      \textbf{Warning - you won't be able to get any of those changes back
+      \textbf{Warning -- you won't be able to get any of those changes back
         once you do this.}
   \ei
 }
@@ -468,7 +468,7 @@
   using \lst{git add filename} before using the \lst{git stash} command.
 }
 
-\frame{\frametitle{Stashing - make it into a branch}
+\frame{\frametitle{Stashing -- make it into a branch}
   If you leave a stash for awhile and have made commits since the stash,
   then try to reapply it, you may get conflicts. The best way to apply a stash
   if you have modified things since you stashed is to let git create a branch
@@ -731,7 +731,7 @@
   If you have conflicts, you need to fix them before continuing work.
 }
 
-\frame{\frametitle{Exercise on remotes and merging - 1}
+\frame{\frametitle{Exercise on remotes and merging -- 1}
   \bn
     \item Each group of four sitting together will collaborate. Each person
       in the group gets a number: 1, 2, 3, or 4.
@@ -755,7 +755,7 @@
   \en
 }
 
-\frame{\frametitle{Exercise on remotes and merging - 2}
+\frame{\frametitle{Exercise on remotes and merging -- 2}
   \bn
     \item Explore Network Graph (hover over the commits).
     \item Whoever is furthest behind (not that it matters), \lst{fetch}
@@ -775,7 +775,7 @@
   Note that \gs\ auto-completes with \lst{<TAB>}, e.g. \lst{git merge <TAB>}
 }
 
-\frame{\frametitle{Exercise on remotes and merging - 3}
+\frame{\frametitle{Exercise on remotes and merging -- 3}
   \bn
     \item Note that if person A has fetched and merged B's work, person C
       can just fetch and merge from A (not from A and B -- A has already done that).
@@ -812,7 +812,7 @@
 
 \begingroup
 \small
-\frame{\frametitle{Conflicts - what if two people have edited the same lines?}
+\frame{\frametitle{Conflicts -- what if two people have edited the same lines?}
   The merge message will tell you which files are conflicting. Open those
   files one by one, and you will see the conflicted section bracketed like the
   following:\\
@@ -837,7 +837,7 @@
 }
 \endgroup
 
-\frame{\frametitle{Dealing with merge conflicts - mergetool}
+\frame{\frametitle{Dealing with merge conflicts -- mergetool}
   You can also use a mergetool such as DiffMerge to fix the conflicts. It is
   easier in that it will open a new session for each conflict and place you
   at the correct place. You won't have to see the bracketing markers and the
@@ -858,7 +858,7 @@
   \lst{git push}
 }
 
-\frame{\frametitle{\gh\ - Add collaborators}
+\frame{\frametitle{\gh\ -- Add collaborators}
   If your \gh\ repository is public, anyone can post an \emph{Issue} (explained 
     next). If you want someone to be able to:
   \bi
@@ -870,7 +870,7 @@
     them an invitation to collaborate.
 }
 
-\frame{\frametitle{\gh\ - Issues}
+\frame{\frametitle{\gh\ -- Issues}
   \emph{Issues} are very useful for discussing issues with your repo.
   For this course we used them a lot:\\
   ~~\url{https://github.com/cgrandin/git-course}\\
@@ -889,7 +889,7 @@
   ~~\url{https://github.com/andrew-edwards/git-course}\\
 }
 
-\frame{\frametitle{\gh\ - Issues}
+\frame{\frametitle{\gh\ -- Issues}
   For hake we have over 281 closed \emph{Issues}:\\
   ~~\url{https://github.com/cgrandin/hake-assessment}\\
   ~\\
@@ -960,7 +960,7 @@
   \bigskip
   \lst{git checkout HEAD file/to/restore.r}\\
   \bigskip
-  Warning - running these commands will delete the changes you have made.
+  Warning -- running these commands will delete the changes you have made.
   Since you have not committed any changes, they will be lost. Make sure
   you are certain you don't need the changes before running these commands.
   If you aren't sure if you need the changes again in the future, use
