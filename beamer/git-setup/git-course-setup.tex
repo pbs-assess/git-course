@@ -5,7 +5,9 @@
 
 \title[git-course]{Setting up Git and \gh\ for the first time}
 \author{Chris Grandin \& Andrew Edwards}
-\date{\today}
+
+\date{Wednesday 21st and Thursday 22nd June at Vancouver Island
+  Conference Centre (9am, Departure Bay Rooms A and B)}
 
 \begin{document}
 
@@ -14,9 +16,10 @@
 }
 
 \frame{\frametitle{Getting started...}
-  Before you start using Git, you need to set up your computer to use it.
-  This is a {\red one-time setup} and once it is done, you can easily create
-  new projects or join others in collaboration.
+  Before you start using Git you need to set up your computer to use it, and
+  install a few other programs that are useful. This is a {\red one-time setup}
+  and once it is done, you will be able to easily create new projects or join
+  others in collaboration.
 }
 
 \frame{\frametitle{Get a \gh\ account}
@@ -26,7 +29,9 @@
     \item Choose a user name that will make sense to other people,
       e.g. \textbf{cgrandin} or
       \textbf{andrew-edwards}, not \textbf{fishman123}.
-    \item Attach a photo (headshot) to your profile. This makes it easy for collaborators to identify you. (If you don't have one handy you can attach it later -- please do so before the workshop).
+    \item Attach a photo (headshot) to your profile. This makes it easy for
+      collaborators to identify you. (If you don't have one handy you can
+      attach it later -- please do so before the workshop).
   \ei
 }
 
@@ -48,7 +53,8 @@
       Note that some people have had issues trying to install on a DFO computer
       without having admin privileges. If so, you may have to use a different
       computer.
-    \item MAC: Type \emph{git} on the command line. You will either see that it
+    \item MAC:\\
+      Type \emph{git} on the command line. You will either see that it
       is installed, or if you have OSX 10.9 or higher it will prompt you to
       install it. If your OSX is less than 10.9, or for any other reason, you
       can install git from here:\\
@@ -125,8 +131,7 @@
 \frame{\frametitle{Copy the \emph{.gitconfig} file}
   \bi
     \item Git uses a configuration file for your account info, name to use
-      when committing, aliases for commands, and other things. We will start
-      with one we use and modify it.
+      when committing, aliases for commands, and other things.
     \item Open up the \emph{content} sub-directory in the \emph{git-course}
       directory and copy the file \emph{.gitconfig}
     \item For Windows, copy this file (overwrite the existing file) to:\\
@@ -147,7 +152,7 @@
   \bi
     \item Use your favourite editor to edit the file. Don't edit the one in the
       \emph{git-course/content} directory.
-    \item Change the [user] settings.
+    \item Change the [user] settings to reflect your information.
     \item Change the [difftool] and [diffmerge] directories so they point to
       the location where you have DiffMerge.
     \item For Windows the location should be:\\
@@ -175,46 +180,17 @@
   Each project has an associated \lstinline{README.md} file that appears
   on its \gh\ homepage. The extension \lstinline{.md} stands for Markdown
   and is just an ASCii text file that contains simple formatting (such as
-  bold or italics). There are two options to read markdown files:
+  bold or italics). There are two options we have used to read markdown files,
+  choose one:\\
+
+  \bigskip
+
   \bi
     \item The Markdown Pad 2 editor/viewer which is easy to use:\\
       \url{http://markdownpad.com}. Just get the free version.
     \item The Chrome extension for markdown viewing:\\
       \url{https://chrome.google.com/webstore/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk?hl=en}.
   \ei
-
-  %% $^*$From \url{https://help.github.com/articles/github-glossary/}:\\
-
-  %% "A repository is the most basic element of GitHub. They're easiest to imagine
-  %% as a project's folder. A repository contains all of the project files
-  %% (including documentation), and stores each file's revision history.
-  %% Repositories can have multiple collaborators and can be either public or
-  %% private."
-}
-
-\frame{\frametitle{\LaTeX\ installation}
-  Some exercises in the course rely on having \LaTeX\ installed. You will also
-  be able to build all of these course presentations from code.
-  \bi
-    \item On Windows, install Mik\TeX:\\
-      \bigskip
-      \url{https://miktex.org/download}\\
-      \bigskip
-      You can build this PDF (that you are reading) by entering the 
-      \lst{beamer/git-setup} directory and double-click the \emph{build-pdf.bat}
-       file (close this PDF first).
-    \item On MAC, install Mac\TeX:\\
-      \bigskip
-      \url{http://www.tug.org/mactex/}\\
-      \bigskip
-      Run the following in your shell in the directory for the given
-      slideshow:\\
-      \lstinline{pdflatex TEX\_FILE\_NAME}\\
-      where TEX\_FILE\_NAME is the name of the TEX file, e.g.:
-      \lstinline{git-course-setup.tex}.\\
-      Run it two or three times to ensure page numbers are accurate.
-  \ei
-  \bigskip
 }
 
 \frame{\frametitle{R and packages installation}
@@ -233,23 +209,50 @@
 
   Make sure the location of \lstinline{Rscript} is included in your
   \textbf{PATH} environment variable. This is necessary to use the batch
-  files that build the slides using knitr/\LaTeX.
+  files that build the slides using knitr/\LaTeX. To check if it is, type
+  the following into the \gs\ or any other command-line window:\\
+  \lst{Rscript --version}\\
+  and you should see something like this:\\
+  \bigskip
+  R scripting front-end version 3.3.2 (2016-10-31)
+}
+
+\frame{\frametitle{\LaTeX\ installation}
+  Some exercises in the course rely on having \LaTeX\ installed. You will also
+  be able to build all of these course presentations from code.
+  \bi
+    \item On Windows, install Mik\TeX:\\
+      \bigskip
+      \url{https://miktex.org/download}\\
+      \bigskip
+      You can build this PDF (that you are reading) by entering the 
+      \lst{beamer/git-setup} directory and double-click the \emph{build-pdf.bat}
+       file (close this PDF first).
+    \item On MAC, install Mac\TeX:\\
+      \bigskip
+      \url{http://www.tug.org/mactex/}\\
+      \bigskip
+      Run the following two or three times (to ensure page numbers are accurate)
+      in the \lst{beamer/git-setup} directory (close this PDF first):\\
+      \lstinline{pdflatex git-course-setup.tex}
+  \ei
+  \bigskip
 }
 
 \frame{\frametitle{Text editor}
   You must have a text editor that is aware of outside changes in a file. This
   is necessary because if you have a file open in the editor and you download
-  an updated version of the file, you want the editor to ask you if you want 
+  an updated version of the file, you want the editor to ask you if you want
   to use the updated version.\\
 
   \bigskip
 
   We know that \textbf{Emacs}, \textbf{Xemacs}, \textbf{vim} are okay, as is
-  \textbf{RStudio} for \textbf{.r} files.   
+  \textbf{RStudio} for \textbf{.r} files.
 
   \bigskip
 
-  \textbf{Notepad} is not okay. But you can download and install 
+  \textbf{Notepad} is not okay. But you can download and install
   \textbf{Notepad++} which is fine:
 
   \bigskip
@@ -259,7 +262,8 @@
   \bigskip
 
   [We use \textbf{Xemacs} for everything as it has many keyboard shortcuts
-  and colours text and code based on the file extension.]
+    and colours text and code based on the file extension, but it has a very
+    steep learning curve.]
 }
 
 \frame{\frametitle{If you work closely with others who are taking the course}
@@ -307,7 +311,7 @@
   The network graph is an invaluable tool in keeping track of what is going
   on amongst you and you collaborators. We'll get into it more in the course.
 
-  See you soon -- Wednesday 21st and Thursday 22nd June at Vancouver Island 
+  See you soon -- Wednesday 21st and Thursday 22nd June at Vancouver Island
   Conference Centre (9am, Departure Bay Rooms A and B).
 }
 
