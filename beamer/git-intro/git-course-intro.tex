@@ -577,13 +577,18 @@
 \frame{\frametitle{Understanding the Network Graph}
   Paraphrasing from (slightly dated) \url{https://github.com/blog/39-say-hello-to-the-network-graph-visualizer}\\
   \bi
-    \item If I am at the top: every commit in {\red my repo}
-    \item Next person: only commits in {\red his/her repo that are not in mine}
-    \item Next person: only commits in {\red his/her repo that are not in mine 
-      or second person's}
+    \item On your own network graph, you will always be on top.
+    \item Any names below you have changes in their repository which you
+      have not yet merged into yours.
+    \item When you merge someone's commits into yours, their name will
+      dissappear from your network graph.
+    \item Once your name is the only one remaining, everyone's changes
+      have been completely merged into your repository.
+    \item All commits from all branches in the repository are shown on the
+      graph.
     \item Each commit is shown {\blue only once}
-    \item Think of as a to-do list to show what other people have done 
-      that you need to catch up with
+    \item \textbf{Think of it as a to-do list to show what other people have done
+      that you need to catch up with}.
   \ei
 }
 
