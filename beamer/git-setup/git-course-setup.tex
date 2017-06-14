@@ -65,26 +65,26 @@
   \bi
     \item Windows:
       \bn
-        \item Create the directory \lstinline[escapechar="\\"]{C:\\github}. If
+        \item Create the directory \lst[escapechar="\\"]{C:\\github}. If
           you decide to use a different directory, make sure there are no spaces
           or special characters anywhere in the full path.
         \item Open the GitHub Desktop Application. Press the gear icon and
           choose \emph{Options}.
         \item In \emph{Configure Git}, fill in your name and the
           email address you used for your GitHub account.
-        \item Change your \emph{Clone Path} to \lstinline[escapechar="\\"]{C:\\github}
+        \item Change your \emph{Clone Path} to \lst[escapechar="\\"]{C:\\github}
           (or whatever directory you created above).
         \item Make sure that for \emph{Default Shell}, \emph{PowerShell} is
           checked.
         \item Click \emph{Save} and close the application.
         \item Check the configuration by opening the \gs, (not the \gh\
           application). The directory that it starts in should be
-          \lstinline[escapechar="\\"]{C:\\github} (or whatever directory you created
+          \lst[escapechar="\\"]{C:\\github} (or whatever directory you created
           above).
       \en
       \item MAC:
         \bn
-          \item Create the directory \lstinline[escapechar="\~"]{\~/github}.
+          \item Create the directory \lst[escapechar="\~"]{\~/github}.
           \item Enjoy a beverage.
         \en
   \ei
@@ -106,7 +106,7 @@
 }
 
 \frame{\frametitle{Cloning the git-course repository}
-  For these instructions, replace \lstinline{GITHUB-USER} with your
+  For these instructions, replace \lst{GITHUB-USER} with your
   \gh\ account name.
   \bi
     \item On the \gh\ webpage, sign into your account and navigate to:\\
@@ -114,16 +114,16 @@
     \item Press the \emph{Fork} button. This will give you a copy of the
       git-course repository.
     \item Navigate to your new forked repository:\\
-      \lstinline{https://github.com/GITHUB-USER/git-course}
+      \lst{https://github.com/GITHUB-USER/git-course}
     \item Copy the URL for your repository.
     \item Windows: Open the \gs\ and run the following command to clone the
       repository, you can paste the URL into the \gs\ by pressing the right
       mouse button:\\
-      \lstinline{git clone https://github.com/GITHUB-USER/git-course}
+      \lst{git clone https://github.com/GITHUB-USER/git-course}
     \item MAC: Open terminal and change to the github directory:\\
-      \lstinline{cd ~/github}\\
+      \lst{cd ~/github}\\
       then run the clone command:\\
-      \lstinline{git clone https://github.com/GITHUB-USER/git-course}
+      \lst{git clone https://github.com/GITHUB-USER/git-course}
   \ei
 }
 
@@ -135,14 +135,14 @@
       directory and copy the file \emph{.gitconfig}
     \item For Windows, copy this file (overwrite the existing file) to:\\
       \bigskip
-      \lstinline[escapechar="\\"]{C:\\Users\\YOUR-COMPUTER-USER-NAME\\.gitconfig}\\
+      \lst[escapechar="\\"]{C:\\Users\\YOUR-COMPUTER-USER-NAME\\.gitconfig}\\
       \bigskip
-      where \lstinline{YOUR-COMPUTER-USER-NAME} is your user name on your
+      where \lst{YOUR-COMPUTER-USER-NAME} is your user name on your
       computer, not your \gh\ account name.
       \bigskip
     \item For MAC, copy this file (overwrite the existing file) to:\\
       \bigskip
-      \lstinline[escapechar="\~"]{\~/.gitconfig}
+      \lst[escapechar="\~"]{\~/.gitconfig}
       \bigskip
     \ei
 }
@@ -156,28 +156,28 @@
       the location where you have DiffMerge.
     \item For Windows the location should be:\\
       \bigskip
-      \lstinline[escapechar="\\"]{C:\\Program Files\\SourceGear\\Common\\DiffMerge\\sgdm.exe}
+      \lst[escapechar="\\"]{C:\\Program Files\\SourceGear\\Common\\DiffMerge\\sgdm.exe}
       \bigskip
     \item For MAC the location should be:\\
       \bigskip
-      \lstinline{/usr/local/bin/diffmerge}
+      \lst{/usr/local/bin/diffmerge}
       \bigskip
     \ei
 }
 
 \frame{\frametitle{MAC only: make your output pretty}
-  On the MAC, change to the \lstinline[escapechar="\~"]{\~/github} directory
+  On the MAC, change to the \lst[escapechar="\~"]{\~/github} directory
   and run the following command:\\
   \bigskip
-  \lstinline{git config --global color.ui.auto}\\
+  \lst{git config --global color.ui.auto}\\
   \bigskip
   This will make your git output colored in a similar way to the Windows
   powershell version.
 }
 
 \frame{\frametitle{Markdown Pad}
-  Each project has an associated \lstinline{README.md} file that appears
-  on its \gh\ homepage. The extension \lstinline{.md} stands for Markdown
+  Each project has an associated \lst{README.md} file that appears
+  on its \gh\ homepage. The extension \lst{.md} stands for Markdown
   and is just an ASCii text file that contains simple formatting (such as
   bold or italics). There are two options we have used to read markdown files,
   choose one:\\
@@ -200,13 +200,13 @@
   \bigskip
 
   \bi
-    \item \lstinline{knitr}
-    \item \lstinline{xtable}
+    \item \lst{knitr}
+    \item \lst{xtable}
   \ei
 
   \bigskip
 
-  Make sure the location of \lstinline{Rscript} is included in your
+  Make sure the location of \lst{Rscript} is included in your
   \textbf{PATH} environment variable. This is necessary to use the batch
   files that build the slides using knitr/\LaTeX. To check if it is, type
   the following into the \gs\ or any other command-line window:\\
@@ -224,7 +224,7 @@
       \bigskip
       \url{https://miktex.org/download}\\
       \bigskip
-      You can build this PDF (that you are reading) by entering the 
+      You can build this PDF (that you are reading) by entering the
       \lst{beamer/git-setup} directory and double-click the \emph{build-pdf.bat}
        file (close this PDF first).
     \item On MAC, install Mac\TeX:\\
@@ -233,7 +233,7 @@
       \bigskip
       Run the following two or three times (to ensure page numbers are accurate)
       in the \lst{beamer/git-setup} directory (close this PDF first):\\
-      \lstinline{pdflatex git-course-setup.tex}
+      \lst{pdflatex git-course-setup.tex}
   \ei
   \bigskip
 }
