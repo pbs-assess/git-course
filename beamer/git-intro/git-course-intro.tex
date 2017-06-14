@@ -370,9 +370,9 @@
   \bi
     \item Make sure you are in the new branch:\\
       \lst{git co temp}
-    \item Create a new file called \lst{junk.txt}
-    \item \lst{git add junk.txt}
-    \item \lst{git com "Added junk.txt"}
+    \item Create a new file called \lst{tester.txt}
+    \item \lst{git add tester.txt}
+    \item \lst{git com "Added tester.txt"}
     \item Switch back to \emph{master}:\\
       \lst{git co master}
     \item Notice that the file you just added is gone. It only exists in
@@ -447,6 +447,36 @@
   The local branch will still exist, so if you want to delete that as well:\\
   \lst{git co master}\\
   \lst{git branch -d BRANCH-NAME}
+}
+
+\section{Stashing}
+\frame{\frametitle{Stashing overview}
+  If you are in the middle of working on something, but you need to change
+  branches for some reason, you can \emph{stash} your changes and apply
+  them back later. Let's say you are working in the master branch. To
+  stash all changes in master:\\
+  \lst{git stash}\\
+  then change branches, and do whatever you like. To get those changes back,
+  switch back to master:\\
+  \lst{git co master}\\
+  and apply the stashed changes:\\
+  \lst{git stash pop}\\
+  Note that nothing is committed, this just lets you put on hold your work
+  in progress and come back to where you left off.
+}
+
+\frame{\frametitle{Stashing - make it into a branch}
+  If you leave a stash for awhile and have made commits since the stash,
+  then try to reapply it, you may get conflicts. The best way to apply a stash
+  if you have modified things since you stashed is to let git create a branch
+  for the stash, which you can then look at and edit if you wish before merging
+  back into your master or other working branch:\\
+  \bigskip
+  \lst{git stash branch BRANCH-NAME}\\
+  \bigskip
+  where \lst{BRANCH-NAME} is the name you want to call the new branch.
+  You can then merge this branch in as outlined in the merging slides and
+  resolve conflicts in the same way as with remotes or other local branches.
 }
 
 \section{Network Graph}
@@ -840,36 +870,6 @@
    turn them off (someone will know how ...).\\
   If you include the first seven digits of a commit \lst{HASH} it will become a 
    clickable link.
-}
-
-\section{Stashing}
-\frame{\frametitle{Stashing overview}
-  If you are in the middle of working on something, but you need to change
-  branches for some reason, you can \emph{stash} your changes and apply
-  them back later. Let's say you are working in the master branch. To
-  stash all changes in master:\\
-  \lst{git stash}\\
-  then change branches, and do whatever you like. To get those changes back,
-  switch back to master:\\
-  \lst{git co master}\\
-  and apply the stashed changes:\\
-  \lst{git stash pop}\\
-  Note that nothing is committed, this just lets you put on hold your work
-  in progress and come back to where you left off.
-}
-
-\frame{\frametitle{Stashing - make it into a branch}
-  If you leave a stash for awhile and have made commits since the stash,
-  then try to reapply it, you may get conflicts. The best way to apply a stash
-  if you have modified things since you stashed is to let git create a branch
-  for the stash, which you can then look at and edit if you wish before merging
-  back into your master or other working branch:\\
-  \bigskip
-  \lst{git stash branch BRANCH-NAME}\\
-  \bigskip
-  where \lst{BRANCH-NAME} is the name you want to call the new branch.
-  You can then merge this branch in as outlined in the merging slides and
-  resolve conflicts in the same way as with remotes or other local branches.
 }
 
 \section{Undoing things}
