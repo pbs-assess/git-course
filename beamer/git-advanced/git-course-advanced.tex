@@ -119,7 +119,7 @@
           one (\textbf{ed489}).
         \item \textbf{master} and \textbf{HEAD} will be moved to the
           new commit.
-        \item You can still find and use the old one if you need to:\\
+        \item You can still find the old one if you want:\\
           \lst{git reflog}
       \ei
     \end{column}
@@ -167,9 +167,9 @@
           use the \lst{git checkout} command after committing in a
           detached HEAD state, you will
           \textbf{appear to lose all the work in those commits}.
-        \item To avoid losing these commits, save your commits before changing
-          back to \emph{master} or another branch by creating a new branch
-          where you currently are.
+        \item You can easily find them again, and go back to them by running
+          \lst{git reflog}, searching for the commit message and create a
+          branch there: \lst{git branch <new-branch-name> HASH}
       \ei
     \end{column}
     \begin{column}{0.6\linewidth}
