@@ -22,7 +22,7 @@
   \bi
     \item Sign into your \gh\ account, click on the
       \emph{Repositories} tab, and press the \emph{New} button.
-    \item Give your repository a name. Let's call it \lstinline{test}.
+    \item Give your repository a name. Let's call it \lst{test}.
     \item Check \emph{Initialize this repository with a README}.
     \item Leave \emph{Add .gitignore} and \emph{Add a license}
       set to \emph{None}.
@@ -32,29 +32,29 @@
 
 \frame{\frametitle{Cloning your new repository}
   \bi
-    \item Once you have created the \lstinline{test} repository on \gh, copy
+    \item Once you have created the \lst{test} repository on \gh, copy
       the URL of the repository.
     \item Open the \gs\ and run the following command to clone your repository:
-      \lstinline{git clone URL test}\\
-      where \lstinline{URL} is the url of your newly created repository. You
-      can paste the \lstinline{URL} into the command line (on Windows) by
+      \lst{git clone URL test}\\
+      where \lst{URL} is the url of your newly created repository. You
+      can paste the \lst{URL} into the command line (on Windows) by
       pressing the right mouse button.
   \ei
   \bigskip
-  You should now have a subdirectory called \lstinline{test}. In \gs, change
+  You should now have a subdirectory called \lst{test}. In \gs, change
   to that directory:\\
-  \lstinline{cd test}
+  \lst{cd test}
 }
 
 \frame{\frametitle{Windows only: Storing your credentials}
   When you are using the \gs\ for the first time, issue
   the following command:\\
   \bigskip
-  \lstinline{git config --global credential.helper wincred}\\
+  \lst{git config --global credential.helper wincred}\\
   \bigskip
   This means that you don't have to repeatedly enter your \gh\ password.\\
   The command creates a credential file containing your account information:\\
-  \lstinline[escapechar="\\"]{C:\\Users\\YOUR-COMPUTER-USER-NAME\\.git-credentials}\\
+  \lst[escapechar="\\"]{C:\\Users\\YOUR-COMPUTER-USER-NAME\\.git-credentials}\\
 }
 
 \section{Committing new files}
@@ -66,20 +66,20 @@
       paste it into your newly cloned directory. You can edit this to suit
       the project, as there is a different \emph{.gitignore} file for each
       project.
-    \item Check the status of your repository: \lstinline{git status}
+    \item Check the status of your repository: \lst{git status}
     \item You will see that the new file \emph{.gitignore} has not been
       staged for commit. It is an \emph{Untracked file}. You need to add any
-      new files to be committed by using the \lstinline{git add} command:\\
-      \lstinline{git add .gitignore}
+      new files to be committed by using the \lst{git add} command:\\
+      \lst{git add .gitignore}
     \item Make a commit for the changes:\\
-      \lstinline{git com "Added .gitignore"}\\
+      \lst{git com "Added .gitignore"}\\
       The commit message should be a useful message saying what the commit
       encapsulates.\\
-      Note the git command \lstinline{com} is an alias for the more complex
-      command: \lstinline{git commit -a -m "Added .gitignore"}\\
-      Aliases are found in your \lstinline{.gitconfig} file. You can make
+      Note the git command \lst{com} is an alias for the more complex
+      command: \lst{git commit -a -m "Added .gitignore"}\\
+      Aliases are found in your \lst{.gitconfig} file. You can make
       up your own as you see fit.
-    \item Push the commit to \gh: \lstinline{git push}
+    \item Push the commit to \gh: \lst{git push}
     \item Check the \gh\ webpage and see your commit and that the file
       has been uploaded.
   \ei
@@ -92,8 +92,8 @@
   \bigskip
   Look over the changes, commit them, and push them to your \gh\
   repository:\\
-  \lstinline{git s}\\
-  \lstinline{git diff}\\
+  \lst{git s}\\
+  \lst{git diff}\\
   \lst{git com "Initial edit of Readme.md"}\\
   \lst{git push}\\
   ~\\
@@ -107,14 +107,14 @@
     \item Copy the text file \lst{git-course/exercise-files/simpleText.txt}
       into your local \lst{test} repository.
     \item Add the file to the repository using the git commands:\\
-      \lstinline{git add simpleText.txt}\\
+      \lst{git add simpleText.txt}\\
       \lst{git com "Adding simpleText.txt"}\\
       \lst{git push}
     \item Do some editing of simpleText.txt (see instructions at start of
       it), to get the hang of \lst{git com} and \lst{git push}.
     \item \lst{git com "<commit description>"} frequently and \lst{git push}
       occasionally, while intermittently doing \lst{git s} and
-      \lstinline{git diff} to understand what's changing.
+      \lst{git diff} to understand what's changing.
     \item Keep an eye on (and refresh) your Network Graph at:\\
       \lst{https://github.com/YOUR-GITHUB-NAME/test/network}\\
       to see it growing. You have to manually refresh (there can be a short 
@@ -132,7 +132,7 @@
        \item who committed
        \item the commit \lst{HASH} -- a 20-byte hexadecimal string that
          identifies that commit;\\
-         e.g.: \lstinline{1ef1da5659a4b147562b155ffb6289811adab36b}
+         e.g.: \lst{1ef1da5659a4b147562b155ffb6289811adab36b}
        \item the commit message (so provide meaningful messages!).
      \ei
 
@@ -150,25 +150,25 @@
 
 \frame{\frametitle{Adding multiple files at once - slide 1}
   Often you add multiple files or a new directory with files in it. In
-  these cases, when you run \lstinline{git s}, you will see a large
+  these cases, when you run \lst{git s}, you will see a large
   listing of \emph{Untracked files}. Files can be added at once, by simply
   adding the whole directory.
   \bi
     \item Add a new directory to your repository, using your normal method.
-      Call it \lstinline{r-test}.
+      Call it \lst{r-test}.
     \item Add a few new test files to that directory called
-      \lstinline{test1.r}, \lstinline{test2.r}, etc. Put some example text
+      \lst{test1.r}, \lst{test2.r}, etc. Put some example text
       in one or more of them if you want.
     \item On the command line, check the status:\\
-      \lstinline{git s}
+      \lst{git s}
     \item You will see a listing showing the \emph{r-test} directory in
       \emph{Untracked files}.
     \item To see that actual files to be committed instead of just the
       directory:\\
-      \lstinline{git s -u}
+      \lst{git s -u}
     \item To add all the new files in preparation for a commit,
       issue the command:\\
-      \lstinline{git add r-test}
+      \lst{git add r-test}
   \ei
   \bigskip
   Continued...
@@ -177,12 +177,12 @@
 \frame{\frametitle{Adding multiple files at once - slide 2}
   \bi
     \item Check the status of the repository again:
-      \lstinline{git s}
+      \lst{git s}
     \item It will now show all files in \emph{Changes to be committed}
     \item Commit the changes:\\
-      \lstinline{git com "Added new files to r-test directory."}
+      \lst{git com "Added new files to r-test directory."}
     \item Push the changes to \gh:\\
-      \lstinline{git push}
+      \lst{git push}
     \item Check your \gh\ webpage and see your commit and that the files
       have been uploaded.
   \ei
@@ -191,15 +191,15 @@
 \frame{\frametitle{The \emph{.gitignore} file}
   Each repository can have one \emph{.gitignore} file, in the root directory
   of the repository. This file has names of files or wildcard names such as
-  \lstinline{*.dvi} or \lstinline{*.nav} that will be completely ignored by
+  \lst{*.dvi} or \lst{*.nav} that will be completely ignored by
   \gs. Many compilers make temporary files, the names of which should be added
   to this file to avoid adding these files when adding whole directories
-  using commands such as \lstinline{git add r-test}.\\
+  using commands such as \lst{git add r-test}.\\
   \bigskip
   This is important as you will clutter up your repository and have to spend
   time cleaning it all up.\\
   \bigskip
-  Anytime you run the command \lstinline{git s} or \lstinline{git s -u} and
+  Anytime you run the command \lst{git s} or \lst{git s -u} and
   there are files listed that you don't want added to the repository, you
   should add them or a wildcard template encapsulating them to the
   \emph{.gitignore} file so that they are not added inadvertently.
@@ -209,19 +209,19 @@
   \bi
     \item You can rename any files the way you usually would (e.g. in File explorer).
     \item Once you've renamed your files, check the repository status:\\
-      \lstinline{git s}\\
+      \lst{git s}\\
     \item You will see that the files you renamed have been automatically
       deleted from the repository and need to be added again. Do this the
-      same way you add new files (\lstinline{git add filename}). You can also
+      same way you add new files (\lst{git add filename}). You can also
       add a whole directory again and \gs\ is smart enough to only add the
       renamed files.
     \item Check the status again:\\
-      \lstinline{git s}\\
+      \lst{git s}\\
       It will show that the file(s) were renamed.
     \item Make a commit:\\
-      \lstinline{git com "Renamed files x, y, and z"}\\
+      \lst{git com "Renamed files x, y, and z"}\\
     \item Push the commit:\\
-      \lstinline{git push}
+      \lst{git push}
   \ei
 }
 
@@ -350,31 +350,31 @@
 \frame{\frametitle{Creating a new branch}
   \bi
     \item In the \gs, enter your test repository:\\
-      \lstinline{cd test}\\
+      \lst{cd test}\\
       and see that you are in the \emph{master} branch by looking at the
       prompt.
     \item Create a new branch based off the branch you are currently on:\\
-      \lstinline{git cb temp}\\
+      \lst{git cb temp}\\
       You will be automatically placed in the new branch called
       \emph{temp}, and commits you make will now occur in that
       branch only.
     \item To view all local branches:\\
-      \lstinline{git branch}\\
+      \lst{git branch}\\
       There is an asterisk next to the branch you are currently in.
     \item To switch to another branch, let's say back to \emph{master}:\\
-      \lstinline{git co master}\\
+      \lst{git co master}\\
   \ei
 }
 
 \frame{\frametitle{Make a commit in the new branch}
   \bi
     \item Make sure you are in the new branch:\\
-      \lstinline{git co temp}
-    \item Create a new file called \lstinline{junk.txt}
-    \item \lstinline{git add junk.txt}
-    \item \lstinline{git com "Added junk.txt"}
+      \lst{git co temp}
+    \item Create a new file called \lst{junk.txt}
+    \item \lst{git add junk.txt}
+    \item \lst{git com "Added junk.txt"}
     \item Switch back to \emph{master}:\\
-      \lstinline{git co master}
+      \lst{git co master}
     \item Notice that the file you just added is gone. It only exists in
       the \emph{temp} branch at this point. You will need to merge that
       branch back in to the \emph{master} branch if you want to keep the
@@ -388,9 +388,9 @@
       \bn
         \item Change to the branch you want to merge into, typically
           \emph{master}:\\
-          \lstinline{git co master}
+          \lst{git co master}
         \item Merge the branch into \emph{master}:\\
-          \lstinline{git merge temp}
+          \lst{git merge temp}
       \en
     \item Notice that the file you created in the \emph{temp} branch
       now appears in the \emph{master} branch. All commits done in a branch
@@ -408,15 +408,15 @@
   \bi
     \item To delete a branch that you are not currently in, in this case
       the \emph{temp} branch:\\
-      \lstinline{git branch -d temp}\\
+      \lst{git branch -d temp}\\
     \item To delete the branch you are currently in, switch to another branch
       first, (e.g. \emph{master}) and then delete the branch:\\
-      \lstinline{git co master}\\
-      \lstinline{git branch -d temp}\\
+      \lst{git co master}\\
+      \lst{git branch -d temp}\\
     \item If you have unmerged changes in the branch, you will not be allowed
       to delete it. If you want to forcibly delete it, discarding your changes,
       use:\\
-      \lstinline{git branch -D temp}\\
+      \lst{git branch -D temp}\\
       \textbf{Warning - you won't be able to get any of those changes back
         once you do this.}
   \ei
@@ -426,28 +426,28 @@
   If you want to push the branch up to \gh, i.e. so others can fetch it and
   edit it, you need to be in the branch locally and:\\
 
-  \lstinline{git --set-upstream origin BRANCH-NAME}\\
+  \lst{git --set-upstream origin BRANCH-NAME}\\
 
   \gs\ is somewhat smart, so if you forget this command and instead type:\\
 
-  \lstinline{git push}\\
+  \lst{git push}\\
 
   while in the new branch, \gs\ will tell you the command you need.\\
   \bigskip
   Once you've done this for a branch, all you have to do to push future
   commits in this branch is:\\
-  \lstinline{git push}\\
+  \lst{git push}\\
   \bigskip
   Check the \gh\ webpage to see that your branch was pushed.
 }
 
 \frame{\frametitle{Deleting branches from \gh}
   To remove a branch entirely from \gh:\\
-  \lstinline{git push origin --delete BRANCH-NAME}\\
+  \lst{git push origin --delete BRANCH-NAME}\\
   \bigskip
   The local branch will still exist, so if you want to delete that as well:\\
-  \lstinline{git co master}\\
-  \lstinline{git branch -d BRANCH-NAME}
+  \lst{git co master}\\
+  \lst{git branch -d BRANCH-NAME}
 }
 
 \section{Network Graph}
@@ -594,18 +594,18 @@
     \item Once everyone has \emph{Forked} on \gh, you must add each person as
       a \emph{remote}. They must also add everyone else as remotes. Everyone
       must trade URLs, and add each other person like this:\\
-      \lstinline{git remote add REMOTE-NAME REMOTE-URL}\\
+      \lst{git remote add REMOTE-NAME REMOTE-URL}\\
       where:\\
       \bi
-        \item \lstinline{REMOTE-NAME} is a name you make up that you will
+        \item \lst{REMOTE-NAME} is a name you make up that you will
           remember. I use first initial followed by last name for everyone,
           so they have the same syntax. e.g.: cgrandin, aedwards, rforrest.
-        \item \lstinline{REMOTE-URL} is the URL on \gh\ where the person's
+        \item \lst{REMOTE-URL} is the URL on \gh\ where the person's
           repository can be found. e.g.:\\
           \url{https://github.com/cgrandin/git-course}.
       \ei
     \item To view all remotes you have set up:\\
-      \lstinline{git r}
+      \lst{git r}
   \ei
 }
 
@@ -629,9 +629,9 @@
 \frame{\frametitle{Fetching other people's changes}
   To fetch someone's changes:\\
   \bigskip
-  \lstinline{git fetch REMOTE-NAME}\\
+  \lst{git fetch REMOTE-NAME}\\
   \bigskip
-  where \lstinline{REMOTE-NAME} is one in the list of remotes you have set up.
+  where \lst{REMOTE-NAME} is one in the list of remotes you have set up.
   This command fetches everything in the person's repository, including
   all branches. Running this command does not affect your repository
   in any way. The fetch stores the information in a cache, awaiting
@@ -644,9 +644,9 @@
   \bi
     \item To compare the changes in their master to yours (make sure you are in
       the master branch in \gs):
-      \lstinline{git diff REMOTE-NAME/master}\\
+      \lst{git diff REMOTE-NAME/master}\\
       or using the \emph{Difftool} if you have it set up:\\
-      \lstinline{git difftool REMOTE-NAME/master}
+      \lst{git difftool REMOTE-NAME/master}
     \item This will show you exactly what changes to each file you are about
       to merge into your repository.
     \item In general, I use \emph{diff} if there are only minor changes
@@ -657,9 +657,9 @@
 
 \frame{\frametitle{Merging the fetched repository into yours}
   To merge the fetched repository's master branch into yours:\\
-  \lstinline{git merge REMOTE-NAME/master}\\
+  \lst{git merge REMOTE-NAME/master}\\
   note that the merge will happen in the branch you are currently in, so make
-  sure you are in the \lstinline{master} branch.\\
+  sure you are in the \lst{master} branch.\\
 
   \bigskip
 
@@ -667,7 +667,7 @@
   conflicts, or you will have one or more merge conflicts. If you are
   up-to-date, you need to push back to your repository to complete the merge
   step:\\
-  \lstinline{git push}\\
+  \lst{git push}\\
   If you have conflicts, you need to fix them before continuing work.
 }
 
@@ -676,21 +676,21 @@
     \item Each group of four sitting together will collaborate. Each person
       in the group gets a number: 1, 2, 3, or 4.
     \item Person 1 will set up a new repository on \gh\ called
-      \lstinline{help-friends}
-    \item Person 1 copies \lstinline{git-course/exercise-files/helpFriends.txt}
+      \lst{help-friends}
+    \item Person 1 copies \lst{git-course/exercise-files/helpFriends.txt}
       into their new repository (on their computer).
-    \item \lstinline{add}, \lstinline{commit}, \lstinline{push}.
+    \item \lst{add}, \lst{commit}, \lst{push}.
       Check Network Graph.
     \item Persons 2, 3 and 4 then fork and clone the repository.
     \item All team members must add everyone else as a remote:\\
-      \lstinline{git remote add REMOTE-NAME REMOTE-URL}\\
+      \lst{git remote add REMOTE-NAME REMOTE-URL}\\
       (run once for each team member other than yourself), e.g.:\\
-      \lstinline{git remote add aedwards https://github.com/andrew-edwards/help-friends}
-    \item Run the command \lstinline{git r} to see your list of remotes. Make
+      \lst{git remote add aedwards https://github.com/andrew-edwards/help-friends}
+    \item Run the command \lst{git r} to see your list of remotes. Make
       sure everyone in your group is on the list.
     \item Everyone does a few edits on their paragraph
-      (see \lstinline{helpFriends.txt}).
-    \item \lstinline{commit} a few times, \lstinline{push}.
+      (see \lst{helpFriends.txt}).
+    \item \lst{commit} a few times, \lst{push}.
       Check Network Graph.
   \en
 }
@@ -698,13 +698,13 @@
 \frame{\frametitle{Exercise on remotes and merging - 2}
   \bn
     \item Explore Network Graph (hover over the commits).
-    \item Whoever is furthest behind (not that it matters), \lstinline{fetch}
-      and \lstinline{merge} from the person who's furthest ahead:
+    \item Whoever is furthest behind (not that it matters), \lst{fetch}
+      and \lst{merge} from the person who's furthest ahead:
       \bi
-        \item \lstinline{git fetch REMOTE-NAME}
-        \item \lstinline{git diff REMOTE-NAME/master}
-        \item \lstinline{git merge REMOTE-NAME/master}
-        \item \lstinline{git push}
+        \item \lst{git fetch REMOTE-NAME}
+        \item \lst{git diff REMOTE-NAME/master}
+        \item \lst{git merge REMOTE-NAME/master}
+        \item \lst{git push}
         \item Check Network Graph (have to refresh).
         \item Check your collaborator's Network Graph (helpful if you care whether
           they have caught up with you).
@@ -712,7 +712,7 @@
     \item Repeat step 2 until everyone is caught up.
     \item Step 2 is essentially all you have to (ever) do to keep collaborating on this repo.
   \en
-  Note that \gs\ auto-completes with \lstinline{<TAB>}, e.g. \lstinline{git merge <TAB>}
+  Note that \gs\ auto-completes with \lst{<TAB>}, e.g. \lst{git merge <TAB>}
 }
 
 \frame{\frametitle{Exercise on remotes and merging - 3}
@@ -732,14 +732,14 @@
 \frame{\frametitle{Deleting or renaming remotes (may occasionally need)}
   \bi
     \item To delete someone as a remote:\\
-      \lstinline{git remote delete REMOTE-NAME}\\
-      where \lstinline{REMOTE-NAME} is the name you made up when you added them.
+      \lst{git remote delete REMOTE-NAME}\\
+      where \lst{REMOTE-NAME} is the name you made up when you added them.
     \item To rename a remote:\\
-      \lstinline{git remote rename OLD-NAME NEW-NAME}\\
-      where \lstinline{OLD-NAME} is the name you made up when you added them and
-      \lstinline{NEW-NAME} is the name you want to change it to.
+      \lst{git remote rename OLD-NAME NEW-NAME}\\
+      where \lst{OLD-NAME} is the name you made up when you added them and
+      \lst{NEW-NAME} is the name you want to change it to.
     \item To see your changes, use:\\
-      \lstinline{git r}
+      \lst{git r}
   \ei
 }
 
@@ -750,23 +750,23 @@
   files one by one, and you will see the conflicted section bracketed like the
   following:\\
   \bigskip
-  \lstinline{<<<<<<< HEAD}\\
+  \lst{<<<<<<< HEAD}\\
   Line(s) of text/code which are currently in your file.\\
-  \lstinline{=======}\\
+  \lst{=======}\\
   Line(s) of text/code which are trying to merge in, but conflict.\\
-  \lstinline{>>>>>>> BRANCH-NAME}\\
+  \lst{>>>>>>> BRANCH-NAME}\\
   \bigskip
-  where \lstinline{BRANCH-NAME} is the name of the branch you are trying to
+  where \lst{BRANCH-NAME} is the name of the branch you are trying to
   merge in from the previously-issued command:\\
-  \lstinline{git merge BRANCH-NAME}\\
+  \lst{git merge BRANCH-NAME}\\
   All you do is remove the bracketing lines (\lst{<<<...} and \lst{>>>...}), 
-  the \lstinline{=======} line,
+  the \lst{=======} line,
   and choose one of the line(s) of text/code to keep, or edit the line(s)
   to be something else entirely. Once you are done fixing each conflicted file,
   you need to commit the merge conflict and push the result:\\
-  e.g.~\lstinline{git com "Kept Dave's edits as more consistent with 
+  e.g.~\lst{git com "Kept Dave's edits as more consistent with 
   remaining text."}\\
-  \lstinline{git push}
+  \lst{git push}
 }
 \endgroup
 
@@ -776,7 +776,7 @@
   at the correct place. You won't have to see the bracketing markers and the
   files will be edited by the mergetool to what you want. If you want to try
   the mergetool, after a merge conflict message, run:\\
-  \lstinline{git mergetool}\\
+  \lst{git mergetool}\\
   \bi
     \item The left panel is what is in the branch you are in when you called
       the merge command.
@@ -787,8 +787,8 @@
   Once finished, click the X to close and the next conflicted file will pop
   up in a new session of DiffMerge. Once all conflicts have been resolved,
   issue a commit and push to complete to merge:\\
-  \lstinline{git com "Merge conflict resolved."}\\
-  \lstinline{git push}
+  \lst{git com "Merge conflict resolved."}\\
+  \lst{git push}
 }
 
 \frame{\frametitle{\gh\ - Add collaborators}
@@ -849,12 +849,12 @@
   branches for some reason, you can \emph{stash} your changes and apply
   them back later. Let's say you are working in the master branch. To
   stash all changes in master:\\
-  \lstinline{git stash}\\
+  \lst{git stash}\\
   then change branches, and do whatever you like. To get those changes back,
   switch back to master:\\
-  \lstinline{git co master}\\
+  \lst{git co master}\\
   and apply the stashed changes:\\
-  \lstinline{git stash pop}\\
+  \lst{git stash pop}\\
   Note that nothing is committed, this just lets you put on hold your work
   in progress and come back to where you left off.
 }
@@ -866,9 +866,9 @@
   for the stash, which you can then look at and edit if you wish before merging
   back into your master or other working branch:\\
   \bigskip
-  \lstinline{git stash branch BRANCH-NAME}\\
+  \lst{git stash branch BRANCH-NAME}\\
   \bigskip
-  where \lstinline{BRANCH-NAME} is the name you want to call the new branch.
+  where \lst{BRANCH-NAME} is the name you want to call the new branch.
   You can then merge this branch in as outlined in the merging slides and
   resolve conflicts in the same way as with remotes or other local branches.
 }
@@ -878,14 +878,14 @@
   If you make a commit, then realize that your message had a spelling error,
   or needed more information in it, you can change the commit message:\\
   \bigskip
-  \lstinline{git commit --amend -m "Correct message."}\\
+  \lst{git commit --amend -m "Correct message."}\\
   \bigskip
   This only works on the last commit. You can't change any other commit message
   using \emph{amend}.\\
   If you already pushed the commit before realizing that the message needs
   modification, do this:\\
   \bigskip
-  \lstinline{git push --force}\\
+  \lst{git push --force}\\
   \bigskip
   after making the amendment to the commit message. You can also add more files
   before issuing the amendment commit and those files will be added to the commit
@@ -897,12 +897,12 @@
   If you make a commit followed by other commits, then realize you want to undo
   the earlier commit, you use \emph{revert}:\\
   \bigskip
-  \lstinline{git revert HASH}\\
+  \lst{git revert HASH}\\
   \bigskip
-  where \lstinline{HASH} is the hash for the commit you want to undo (20-byte string)
+  where \lst{HASH} is the hash for the commit you want to undo (20-byte string)
   Remember that \gs\ is smart enough that you only need the first five digits:\\
   \bigskip
-  \lstinline{git revert 1ef1d}\\
+  \lst{git revert 1ef1d}\\
   \bigskip
   It is important to make a lot of commits, each with only small changes.
   You can only revert the whole commit, not parts.
@@ -912,18 +912,18 @@
   If you've made a mess in your working directory and you want to change
   everything back to the way it was on the last commit:\\
   \bigskip
-  \lstinline{git reset --hard HEAD}\\
+  \lst{git reset --hard HEAD}\\
   \bigskip
   If you've messed up a single file and just want that one file to go back
   to the way it was on the last commit:\\
   \bigskip
-  \lstinline{git checkout HEAD file/to/restore.r}\\
+  \lst{git checkout HEAD file/to/restore.r}\\
   \bigskip
   Warning - running these commands will delete the changes you have made.
   Since you have not committed any changes, they will be lost. Make sure
   you are certain you don't need the changes before running these commands.
   If you aren't sure if you need the changes again in the future, use
-  \lstinline{git stash} instead.
+  \lst{git stash} instead.
 }
 
 %% Git tower webpage:
