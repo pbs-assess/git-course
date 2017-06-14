@@ -44,7 +44,7 @@
         \item \textcolor{green}{Green} items are commits.
         \item \textcolor{orange}{Orange} items are branches.
         \item The \textcolor{blue}{Stage} holds references to files you have
-          added using \lstinline{git add FILE-NAME} for the next commit.
+          added using \lst{git add FILE-NAME} for the next commit.
         \item The current branch is always pointed to by \textbf{HEAD}.
         \item \textbf{ed489} is the most recent commit, and it is pointed to
           by \textbf{master} and \textbf{HEAD}.
@@ -70,9 +70,9 @@
         \item Any changes to files in the \textcolor{red}{Working Directory}
           will be included in the commit.
         \item Any new files you want included in the commit must be added with
-          the \lstinline{git add FILENAME} command so that they are in the
+          the \lst{git add FILENAME} command so that they are in the
           \textcolor{blue}{Stage} area.
-        \item When you do a \lstinline{git commit} while in the \textbf{master}
+        \item When you do a \lst{git commit} while in the \textbf{master}
           branch, \textbf{master} and \textbf{HEAD} are moved up one to point
           at the new commit.
       \ei
@@ -92,7 +92,7 @@
     \begin{column}{0.4\linewidth}
       \bi
         \item If you have changed to another branch using
-          \lstinline{git checkout maint} and then commit changes, \textbf{maint}
+          \lst{git checkout maint} and then commit changes, \textbf{maint}
           and \textbf{HEAD} will be moved up to the new commit, \textbf{1800b}.
         \item \textbf{maint} is no longer an ancestor of \textbf{master}.
         \item Any files added will be a part of the \textbf{maint} branch
@@ -114,13 +114,13 @@
     \begin{column}{0.4\linewidth}
       \bi
         \item If a mistake is made in the last commit, you can use
-          \lstinline{git commit --amend}.
+          \lst{git commit --amend}.
         \item It creates a new commit (\textbf{4ca87}) and ignores the old
           one (\textbf{ed489}).
         \item \textbf{master} and \textbf{HEAD} will be moved to the
           new commit.
         \item You can still find and use the old one if you need to:\\
-          \lstinline{git reflog}
+          \lst{git reflog}
       \ei
     \end{column}
     \begin{column}{0.6\linewidth}
@@ -139,8 +139,8 @@
     \begin{column}{0.4\linewidth}
       \bi
         \item You can go to any commit and see how things looked at that
-          point in time. \lstinline{git checkout b325c} or
-          \lstinline{git checkout master~3} will put your \textbf{HEAD} in this
+          point in time. \lst{git checkout b325c} or
+          \lst{git checkout master~3} will put your \textbf{HEAD} in this
           position.
         \item Your working directory will change structure to be exactly
           what is was at that commit.
@@ -164,7 +164,7 @@
     \begin{column}{0.4\linewidth}
       \bi
         \item Commits work as usual, but there is no named branch so if you
-          use the \lstinline{git checkout} command after committing in a
+          use the \lst{git checkout} command after committing in a
           detached HEAD state, you will
           \textbf{appear to lose all the work in those commits}.
         \item To avoid losing these commits, save your commits before changing
@@ -188,9 +188,9 @@
       \bi
         \item Creating a branch while in a detached HEAD state will change you
           to the new branch and take you out of the detached HEAD state:\\
-          \lstinline{git checkout -b BRANCH-NAME}\\
+          \lst{git checkout -b BRANCH-NAME}\\
           or use the alias:\\
-          \lstinline{git cb BRANCH-NAME}
+          \lst{git cb BRANCH-NAME}
       \ei
     \end{column}
     \begin{column}{0.6\linewidth}
@@ -211,10 +211,10 @@
           checkout a different branch, you'll lose the reference
           to the commit.
         \item Find the the missing commit:\\
-          \lstinline{git reflog}
+          \lst{git reflog}
         \item Turn your missing commit into a new branch called
           \emph{new} using the SHA-1 hash associated with the commit:\\
-          \lstinline{git branch new SHA-1}
+          \lst{git branch new SHA-1}
         \item You can now checkout that branch just as any other.
       \ei
     \end{column}
@@ -234,10 +234,10 @@
     \item References are things like \textbf{HEAD}, \textbf{master},
       other branch names, and remote names.
     \item To see a list of hashes for where the \textbf{HEAD} is/was:\\
-      \lstinline{git reflog}
+      \lst{git reflog}
     \item To see a list of hashes for the referenced objects in your local
       repository:\\
-      \lstinline{git show-ref}\\
+      \lst{git show-ref}\\
       This shows you which commit the objects are currently pointing to.
   \ei
 }
@@ -258,44 +258,44 @@
   You can stash more than one set of changes if you wish. To see your stack
   of available stashes:\\
   \bigskip
-  \lstinline{git stash list}\\
+  \lst{git stash list}\\
   \bigskip
   The list will look something like this:\\
-  \lstinline{stash@\{0\}: WIP on master: 46ae7a8 Merge conflict resolved.}\\
-  \lstinline{stash@\{1\}: WIP on master: fe35a9b Minor change to Readme.}\\
+  \lst{stash@\{0\}: WIP on master: 46ae7a8 Merge conflict resolved.}\\
+  \lst{stash@\{1\}: WIP on master: fe35a9b Minor change to Readme.}\\
   where each commit the stash was based on is listed. You can apply any
   of these by using the syntax:\\
   \bigskip
-  \lstinline{git stash apply stash@\{N\}}\\
+  \lst{git stash apply stash@\{N\}}\\
   \bigskip
   where N is one of the numbers shown. If you don't specify a stash, the
-  most recent one (\lstinline{stash@\{0\}}) is used:\\
+  most recent one (\lst{stash@\{0\}}) is used:\\
   \bigskip
-  \lstinline{git stash apply}
+  \lst{git stash apply}
 }
 
 \frame{\frametitle{Stashing - 2}
-  If you use the \lstinline{git stash apply} command, the commit which is
+  If you use the \lst{git stash apply} command, the commit which is
   applied will remain in the stash list. To apply the stash and also remove
   it from the stash list:\\
   \bigskip
-  \lstinline{git stash pop}\\
+  \lst{git stash pop}\\
   \bigskip
   To remove stash commit N without applying it:\\
   \bigskip
-  \lstinline{git stash drop stash@\{N\}}\\
+  \lst{git stash drop stash@\{N\}}\\
   \bigskip
   To remove the top (most recent) stash commit without applying it:\\
   \bigskip
-  \lstinline{git stash drop}\\
+  \lst{git stash drop}\\
   \bigskip
   If you are cleaning up your repository, you can remove everything in the
   stash list:\\
   \bigskip
-  \lstinline{git stash clear}
+  \lst{git stash clear}
 }
 
-\frame{\frametitle{\lstinline{git merge} gone wrong - which is the HEAD?}
+\frame{\frametitle{\lst{git merge} gone wrong - which is the HEAD?}
   \centering
   \begin{figure}
     \includegraphics[
