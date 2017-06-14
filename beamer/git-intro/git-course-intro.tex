@@ -482,105 +482,6 @@
   resolve conflicts in the same way as with remotes or other local branches.
 }
 
-\section{Collaborating}
-\frame{\frametitle{Remotes overview}
-  Once you have created a repository on \gh\ and uploaded some files, you may
-  want to start collaboration with others. To do this, send them the URL of
-  your \gh\ repository, and ask them to \emph{Fork} it on \gh. Once they have
-  done that and cloned your repository, everyone involved will need to add
-  each other's repository as a \emph{remote} so that all changes can be merged.\\
-  \bigskip
-  Adding remotes has to be done once for each project. Once you have added
-  someone, their remote information remains on your local computer. \gh\ has
-  some smart programming, which detects merges between remotes and will keep
-  track of the project and all its contributions.\\
-  \bigskip
-  The network graph is a great place to look at what has happened on a given
-  repository.
-}
-
-\frame{\frametitle{Adding remotes}
-  \bi
-    \item Once everyone has \emph{Forked} on \gh, you must add each person as
-      a \emph{remote}. They must also add everyone else as remotes. Everyone
-      must trade URLs, and add each other person like this:\\
-      \lst{git remote add REMOTE-NAME REMOTE-URL}\\
-      where:\\
-      \bi
-        \item \lst{REMOTE-NAME} is a name you make up that you will
-          remember. I use first initial followed by last name for everyone,
-          so they have the same syntax. e.g.: cgrandin, aedwards, rforrest.
-        \item \lst{REMOTE-URL} is the URL on \gh\ where the person's
-          repository can be found. e.g.:\\
-          \url{https://github.com/cgrandin/git-course}.
-      \ei
-    \item To view all remotes you have set up:\\
-      \lst{git r}
-  \ei
-}
-
-\frame{\frametitle{Fetching overview}
-  Once you have set up your remotes, you can fetch other people's commits.
-  Before continuing work on your project, you should always check \gh, and
-  see if your collaborators have been working, and if so, what their commits
-  were. At this stage you get a general idea of what has been done since
-  you last looked at the repository. Once you have familiarized yourself with
-  the changes in a broad sense, you will want to merge them into yours.\\
-  \bigskip
-  Find the most recent commit on \gh's \emph{Network Graph}. It will have
-  one person's name associated with it. That is the person you will fetch
-  and merge in.\\
-  \bigskip
-  There may be some disarray in the network graph, but you can just merge
-  each person's repository into yours in succession if you wish, which
-  will clean up the network graph.
-}
-
-\frame{\frametitle{Fetching other people's changes}
-  To fetch someone's changes:\\
-  \bigskip
-  \lst{git fetch REMOTE-NAME}\\
-  \bigskip
-  where \lst{REMOTE-NAME} is one in the list of remotes you have set up.
-  This command fetches everything in the person's repository, including
-  all branches. Running this command does not affect your repository
-  in any way. The fetch stores the information in a cache, awaiting
-  your command to merge.
-}
-
-\frame{\frametitle{Comparing the fetched repository with yours}
-  Once you've fetched someone's repository, you can exactly see what has
-  changed compared to yours. This is called \emph{Diff-ing}.
-  \bi
-    \item To compare the changes in their master to yours (make sure you are in
-      the master branch in \gs):
-      \lst{git diff REMOTE-NAME/master}\\
-      or using the \emph{Difftool} if you have it set up:\\
-      \lst{git difftool REMOTE-NAME/master}
-    \item This will show you exactly what changes to each file you are about
-      to merge into your repository.
-    \item In general, I use \emph{diff} if there are only minor changes
-      and \emph{difftool} if there are more changes or if more than one file
-      has been changed.
-  \ei
-}
-
-\frame{\frametitle{Merging the fetched repository into yours}
-  To merge the fetched repository's master branch into yours:\\
-  \lst{git merge REMOTE-NAME/master}\\
-  note that the merge will happen in the branch you are currently in, so make
-  sure you are in the \lst{master} branch.\\
-
-  \bigskip
-
-  At this point, you will either be up-to-date, meaning there were no merge
-  conflicts, or you will have one or more merge conflicts. If you are
-  up-to-date, you need to push back to your repository to complete the merge
-  step:\\
-  \lst{git push}\\
-  If you have conflicts, you need to fix them before continuing work.
-}
-
 \section{Network Graph}
 \frame{\frametitle{Understanding the Network Graph}
   The Network Graph is useful when working alone, but especially so when
@@ -728,6 +629,106 @@
     \item Click on \lst{cgrandin} on that graph, to see the graph of 
       Chris's repo.\\
   \ei
+}
+
+
+\section{Collaborating}
+\frame{\frametitle{Remotes overview}
+  Once you have created a repository on \gh\ and uploaded some files, you may
+  want to start collaboration with others. To do this, send them the URL of
+  your \gh\ repository, and ask them to \emph{Fork} it on \gh. Once they have
+  done that and cloned your repository, everyone involved will need to add
+  each other's repository as a \emph{remote} so that all changes can be merged.\\
+  \bigskip
+  Adding remotes has to be done once for each project. Once you have added
+  someone, their remote information remains on your local computer. \gh\ has
+  some smart programming, which detects merges between remotes and will keep
+  track of the project and all its contributions.\\
+  \bigskip
+  The network graph is a great place to look at what has happened on a given
+  repository.
+}
+
+\frame{\frametitle{Adding remotes}
+  \bi
+    \item Once everyone has \emph{Forked} on \gh, you must add each person as
+      a \emph{remote}. They must also add everyone else as remotes. Everyone
+      must trade URLs, and add each other person like this:\\
+      \lst{git remote add REMOTE-NAME REMOTE-URL}\\
+      where:\\
+      \bi
+        \item \lst{REMOTE-NAME} is a name you make up that you will
+          remember. I use first initial followed by last name for everyone,
+          so they have the same syntax. e.g.: cgrandin, aedwards, rforrest.
+        \item \lst{REMOTE-URL} is the URL on \gh\ where the person's
+          repository can be found. e.g.:\\
+          \url{https://github.com/cgrandin/git-course}.
+      \ei
+    \item To view all remotes you have set up:\\
+      \lst{git r}
+  \ei
+}
+
+\frame{\frametitle{Fetching overview}
+  Once you have set up your remotes, you can fetch other people's commits.
+  Before continuing work on your project, you should always check \gh, and
+  see if your collaborators have been working, and if so, what their commits
+  were. At this stage you get a general idea of what has been done since
+  you last looked at the repository. Once you have familiarized yourself with
+  the changes in a broad sense, you will want to merge them into yours.\\
+  \bigskip
+  Find the most recent commit on \gh's \emph{Network Graph}. It will have
+  one person's name associated with it. That is the person you will fetch
+  and merge in.\\
+  \bigskip
+  There may be some disarray in the network graph, but you can just merge
+  each person's repository into yours in succession if you wish, which
+  will clean up the network graph.
+}
+
+\frame{\frametitle{Fetching other people's changes}
+  To fetch someone's changes:\\
+  \bigskip
+  \lst{git fetch REMOTE-NAME}\\
+  \bigskip
+  where \lst{REMOTE-NAME} is one in the list of remotes you have set up.
+  This command fetches everything in the person's repository, including
+  all branches. Running this command does not affect your repository
+  in any way. The fetch stores the information in a cache, awaiting
+  your command to merge.
+}
+
+\frame{\frametitle{Comparing the fetched repository with yours}
+  Once you've fetched someone's repository, you can exactly see what has
+  changed compared to yours. This is called \emph{Diff-ing}.
+  \bi
+    \item To compare the changes in their master to yours (make sure you are in
+      the master branch in \gs):
+      \lst{git diff REMOTE-NAME/master}\\
+      or using the \emph{Difftool} if you have it set up:\\
+      \lst{git difftool REMOTE-NAME/master}
+    \item This will show you exactly what changes to each file you are about
+      to merge into your repository.
+    \item In general, I use \emph{diff} if there are only minor changes
+      and \emph{difftool} if there are more changes or if more than one file
+      has been changed.
+  \ei
+}
+
+\frame{\frametitle{Merging the fetched repository into yours}
+  To merge the fetched repository's master branch into yours:\\
+  \lst{git merge REMOTE-NAME/master}\\
+  note that the merge will happen in the branch you are currently in, so make
+  sure you are in the \lst{master} branch.\\
+
+  \bigskip
+
+  At this point, you will either be up-to-date, meaning there were no merge
+  conflicts, or you will have one or more merge conflicts. If you are
+  up-to-date, you need to push back to your repository to complete the merge
+  step:\\
+  \lst{git push}\\
+  If you have conflicts, you need to fix them before continuing work.
 }
 
 \frame{\frametitle{Exercise on remotes and merging - 1}
