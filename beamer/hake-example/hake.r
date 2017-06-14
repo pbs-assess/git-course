@@ -1,4 +1,4 @@
-source("latex-utities.r")
+source("latex-utilities.r")
 
 catch.tac <- read.csv("landings-tac-history.csv")
 
