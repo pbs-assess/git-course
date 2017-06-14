@@ -462,7 +462,10 @@
   and apply the stashed changes:\\
   \lst{git stash pop}\\
   Note that nothing is committed, this just lets you put on hold your work
-  in progress and come back to where you left off.
+  in progress and come back to where you left off.\\
+  \bigskip
+  To make sure new files are included in the stash, you must have added them
+  using \lst{git add filename} before using the \lst{git stash} command.
 }
 
 \frame{\frametitle{Stashing - make it into a branch}
