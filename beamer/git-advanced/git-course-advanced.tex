@@ -245,9 +245,11 @@
   \begin{columns}
     \begin{column}{0.4\linewidth}
       \bi
+        \item Always start with a clean repository when merging.
         \item The simplest merge is the fast-forward merge.
         \item If one branch is an ancestor of the other, the reference
           is updated and nothing else needs to be done.
+        \item It is not possible to have conflicts with a fast-forward merge.
       \ei
     \end{column}
     \begin{column}{0.6\linewidth}
@@ -270,6 +272,11 @@
           merge is needed.
         \item The {\orange other} (33104), {\orange master} (ed489) and their
           common ancestor (b325c) are merged.
+        \item There are two scenarios:
+          \bn
+            \item One of the branches is different than the ancestor ({\blue No conflict})
+            \item All three are different ({\red Conflict})
+          \en
       \ei
     \end{column}
     \begin{column}{0.6\linewidth}
