@@ -82,6 +82,25 @@
   \ei
 }
 
+\frame{\frametitle{Thoughts/hints regarding commit messages}
+  \bi
+    \item When collaborating (and merging frequently), don't \lst{push} a 
+       \lst{commit} for which the code does not run.
+    \item That's annoying. 
+    \item If another person does \lst{fetch} and \lst{merge} and realises
+       the problem they will likely try and fix it.
+    \item If you also then try and fix it then you're duplicating work.
+    ~\\
+    \item You can include Issues as follows:\\
+    ~~~~\lst{git com "Moved two Network Graph slides as per Issue \#20.}
+    \item \gh\ will then automatically create a link to the Issue in the commit
+       page: \url{https://github.com/andrew-edwards/git-course/commit/37e90ae}
+    \item AND mention the commit on the Issues page:\\
+       \url{https://github.com/cgrandin/git-course/issues/20}
+  \ei
+}
+
+
 \section{Private}
 \frame{\frametitle{Private and public repositories}
   So far we have only used \emph{public} repositories -- anyone can look at them.\\
