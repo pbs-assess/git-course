@@ -848,8 +848,10 @@
   the \lst{=======} line,
   and choose one of the line(s) of text/code to keep, or edit the line(s)
   to be something else entirely. Once you are done fixing each conflicted file,
-  you need to commit the merge conflict and push the result:\\
-  e.g.~\lst{git com "Kept Dave's edits as more consistent with 
+  you need to \lst{add}, \lst{commit} and \lst{push}, e.g.:\\
+  \lst{git add FILENAME}~~~(not quite sure why necessary, but \lst{git s} 
+    will remind you)\\
+  \lst{git com "Kept Dave's edits as more consistent with 
   remaining text."}\\
   \lst{git push}
 }
