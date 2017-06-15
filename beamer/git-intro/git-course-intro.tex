@@ -705,6 +705,24 @@
   If you have conflicts, you need to fix them before continuing work.
 }
 
+\frame{\frametitle{Demonstration of collaborating}
+  \bi
+    \item Chris to set up a new repo.
+    \item Andy to fork and clone.
+    \item Both do some edits, keeping an eye on the evolving Network Graphs.
+    \item For Andy to get Chris's updates, it will just be:
+    \bi
+      \item \lst{git fetch cgrandin}
+      \item \lst{git merge cgrandin/master}
+      \item \lst{git push}
+    \ei
+  \ei
+  \bigskip
+  It's actually even easier because \lst{git} will autocomplete, so
+    Andy can just do \lst{git fetch c<TAB>} etc.
+}
+
+
 \frame{\frametitle{Exercise on remotes and merging -- 1}
   \bn
     \item Each group of four sitting together will collaborate. Each person
