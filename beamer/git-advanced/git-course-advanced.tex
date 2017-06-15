@@ -278,9 +278,9 @@
   where each commit the stash was based on is listed. You can apply any
   of these by using the syntax:\\
   \bigskip
-  \lst{git stash apply stash@\{N\}}\\
+  \lst{git stash apply "stash@\{N\}"}\\
   \bigskip
-  where N is one of the numbers shown. If you don't specify a stash, the
+  where \lst{N} is one of the numbers shown. If you don't specify a stash, the
   most recent one (\lst{stash@\{0\}}) is used:\\
   \bigskip
   \lst{git stash apply}
@@ -292,10 +292,12 @@
   it from the stash list:\\
   \bigskip
   \lst{git stash pop}\\
+  or\\
+  \lst{git stash pop "stash@\{N\}"}\\
   \bigskip
   To remove stash commit N without applying it:\\
   \bigskip
-  \lst{git stash drop stash@\{N\}}\\
+  \lst{git stash drop "stash@\{N\}"}\\
   \bigskip
   To remove the top (most recent) stash commit without applying it:\\
   \bigskip
