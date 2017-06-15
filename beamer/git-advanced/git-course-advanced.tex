@@ -31,11 +31,16 @@
   What to write in \lst{git com "COMMIT MESSAGE"}?\\
   Ideally:
   \bi
-    \item Want to describe \emph{what} and (sometimes) \emph{why} you did something.
+    \item Want to describe \emph{what} and (sometimes \emph{why}) you did 
+       something.
     \item The \emph{how} is not needed since that will be explained by the
        actual changes in the code.
     \item Message should be informative for collaborators (including your future self).
   \ei
+  {\red Bad}:\\
+  ~~\lst{git com "Tweaked function."}\\
+  {\blue Good}:\\
+  ~~\lst{git com "Allow plotBiomass() to use extra colours."}\\
 }
 
 \frame{\frametitle{Thoughts/hints regarding commit messages}
