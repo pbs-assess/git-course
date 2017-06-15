@@ -32,14 +32,21 @@ To clone it onto your local machine, in git shell:
 
 ### The basic commands we use are:
 
+[//]: # (https://mislav.net/2010/07/git-tips/)
+
+      git help <command>                <Open a help page in your browser for the command>
+
       git s                             <View status of the repository>
+      git s -sb                         <View status of the repository in very concise form>
+      git s -u                          <Show all untracked files, not just directories>
       git add FILENAME                  <Add FILENAME (including path) to the list of files being tracked by git>
       git com "MESSAGE"                 <Commit changes with descriptive MESSAGE>
 	  git push                          <Push your changes to GitHub>
 
-      git remote add REMOTE-NAME REMOTE-URL <One-time command to enable fetching and merging from 
-                                            REMOTE-NAME'S GitHub repo at REMOTE-URL, for example:>
-	  git remote add cgrandin https://github.com/cgrandin/git-course  <example>	
+      git remote add NAME URL           <One-time command to enable fetching and merging from
+                                         NAME'S GitHub repo at URL, for example:>
+	  git remote add cgrandin https://github.com/cgrandin/git-course
+
       git r                             <Look at all remote data sources (URLs)>
 	  git fetch cgrandin                <Fetch changes that cgrandin has made>
 	  git merge cgrandin/master         <Merge the fetched changes with your local repository>
@@ -47,13 +54,14 @@ To clone it onto your local machine, in git shell:
 
 	  git rm --cached FILENAME          <Remove FILENAME from the git repo, but not from local directory>
 	  git rm FILENAME                   <Remove FILENAME from the git repo AND from local directory>
-	  git difftool <options>            <Compare changes using difftool; options can be branches, other repos you have 
-                                        fetched but not merged, or leave blank to compare to latest commit **CHECK THESE**>
+	  git difftool <options>            <Compare changes using difftool; options can be branches, other repos you have
+                                         fetched but not merged, or leave blank to compare to latest commit>
+
       git log                           <View commit log>
       git help                          <List git commands>
 
       git cb BRANCH-NAME                <Create and switch to branch BRANCH-NAME>
-      git co BRANCH-NAME                <Checkout(switch to) branch BRANCH-NAME>
+      git co BRANCH-NAME                <Checkout (switch to) branch BRANCH-NAME>
       git branch                        <List all branches>
       git branch -d NAME                <Safely delete the branch called NAME>
       git branch -D NAME                <Forcibly delete the branch called NAME>
