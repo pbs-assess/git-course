@@ -224,9 +224,9 @@
           to the commit.
         \item Find the the missing commit:\\
           \lst{git reflog}
-        \item Turn your missing commit into a new branch called
-          \emph{new} using the SHA-1 hash associated with the commit:\\
-          \lst{git branch new SHA-1}
+        \item Turn your missing commit into a new branch using the \lst{HASH}
+          associated with the commit:\\
+          \lst{git branch BRANCH-NAME HASH}
         \item You can now checkout that branch just as any other.
       \ei
     \end{column}
@@ -236,6 +236,48 @@
         height=0.8\textheight,
         keepaspectratio]
                       {figures/checkout-after-detached}
+    \end{column}
+  \end{columns}
+}
+
+\section{Merging}
+\frame{\frametitle{Fast-forward merges}
+  \begin{columns}
+    \begin{column}{0.4\linewidth}
+      \bi
+        \item The simplest merge is the fast-forward merge.
+        \item If one branch is an ancestor of the other, the reference
+          is updated and nothing else needs to be done.
+      \ei
+    \end{column}
+    \begin{column}{0.6\linewidth}
+      \includegraphics[
+        width=\textwidth,
+        height=0.8\textheight,
+        keepaspectratio]
+                      {figures/merge-fast-forward}
+    \end{column}
+  \end{columns}
+}
+
+\frame{\frametitle{Three-way merges}
+  \begin{columns}
+    \begin{column}{0.4\linewidth}
+      \bi
+        \item While in {\orange master}, the command \lst{git merge other}
+          was issued.
+        \item Since there have been changes in both branches, a three-way
+          merge is needed.
+        \item The {\orange other} (33104), {\orange master} (ed489) and their
+          common ancestor (b325c) are merged.
+      \ei
+    \end{column}
+    \begin{column}{0.6\linewidth}
+      \includegraphics[
+        width=\textwidth,
+        height=0.8\textheight,
+        keepaspectratio]
+                      {figures/merge-three-way}
     \end{column}
   \end{columns}
 }
