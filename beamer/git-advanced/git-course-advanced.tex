@@ -315,7 +315,7 @@
 %%  mandatory.
 
 \section{Stashing}
-\frame{\frametitle{Stashing - 1}
+\frame{\frametitle{Applying a stash}
   You can stash more than one set of changes if you wish. To see your stack
   of available stashes:\\
   \bigskip
@@ -327,28 +327,20 @@
   where each commit the stash was based on is listed. You can apply any
   of these by using the syntax:\\
   \bigskip
-  \lst{git stash apply "stash@\{N\}"}\\
+  \lst{git stash pop "stash@\{N\}"}\\
   \bigskip
   where \lst{N} is one of the numbers shown. If you don't specify a stash, the
   most recent one (\lst{stash@\{0\}}) is used:\\
   \bigskip
-  \lst{git stash apply}
+  \lst{git stash pop}
 }
 
-\frame{\frametitle{Stashing - 2}
-  If you use the \lst{git stash apply} command, the commit which is
-  applied will remain in the stash list. To apply the stash and also remove
-  it from the stash list:\\
-  \bigskip
-  \lst{git stash pop}\\
-  or\\
-  \lst{git stash pop "stash@\{N\}"}\\
-  \bigskip
-  To remove stash commit N without applying it:\\
+\frame{\frametitle{Deleting stashes}
+  To remove stash N without applying it:\\
   \bigskip
   \lst{git stash drop "stash@\{N\}"}\\
   \bigskip
-  To remove the top (most recent) stash commit without applying it:\\
+  To remove the top (most recent) stash without applying it:\\
   \bigskip
   \lst{git stash drop}\\
   \bigskip
