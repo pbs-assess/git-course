@@ -17,6 +17,32 @@ You will then have all the files from this **git-course** repository on your com
 
 From the [GitHub glossary](https://help.github.com/articles/github-glossary/#repository): "A repository is the most basic element of GitHub. They're easiest to imagine as a project's folder. A repository contains all of the project files (including documentation), and stores each file's revision history. Repositories can have multiple collaborators and can be either public or private." 
 
+## Contents of repository
+
+**beamer/** - our slides for the course, created using beamer (which is an alternative to Powerpoint). To build the slides (with Latex installed) click on the **.bat** file in each subdirectory.
+
+**beamer/git-course.sty** is the common style file that is used for each set of slides.
+
+In the order to be presented, the subdirectories are:
+
+**beamer/git-setup/** - instructions for setting up prior to course
+
+**beamer/git-outline/** - outline of course
+
+**beamer/git-motivation/** - motivation for using Git
+
+**beamer/git-intro/** - introduction including some exercises (day 1)
+
+**beamer/git-advanced/** - more advanced understanding (day 2)
+
+**beamer/hake-example/** - simple example of using knitr
+
+**exercise-files/** - contains files needed for exercises
+
+**content/** - contains **.gitconfig** needed for setup
+
+**.gitignore** - files to be ignored by Git
+
  
 ## Summary of most common commands
 
