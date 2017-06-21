@@ -1,1 +1,4 @@
 
+To check changes that have been made (online at GitHub) via git comm, git push: go to Insights -> Graphs -> Network, there is a dot for every change and who it was made by.
+Clicking on each dot will show the changes that have been made.
+At the bottom you can add comments that will be sent to collaborators.
