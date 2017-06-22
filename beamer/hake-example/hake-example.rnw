@@ -1,0 +1,98 @@
+\documentclass[aspectratio=169]{beamer}
+%% For 4:3 aspect ratio:
+%% \documentclass{beamer}
+
+\usetheme[compress]{Singapore}
+\usecolortheme{seahorse}
+\usefonttheme{default}
+
+\setbeamertemplate{footline}[frame number]
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,
+            linkcolor=blue,
+            urlcolor=blue}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small\color{purple}}
+
+\usepackage{graphicx}
+%% So that pdf, png, and jpg are recognized as graphics files
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\usepackage{pgf}
+
+%% Disable the bookmarks pane from opening in the PDF
+\hypersetup{pdfpagemode=UseNone}
+
+\newcommand{\red}{\color{red}}
+\newcommand{\blue}{\color{blue}}
+
+\newcommand{\bc}{\begin{center}}
+\newcommand{\ec}{\end{center}}
+\newcommand{\bn}{\begin{enumerate}}
+\newcommand{\en}{\end{enumerate}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\gh}{GitHub}
+\newcommand{\gs}{Git shell}
+%% Multi-line-cell in an xtable
+%% syntax is \mlc{first line\\secondline}
+\newcommand{\mlc}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+<<load-everything, echo=FALSE,  message=FALSE, results='hide', warning=FALSE>>=
+opts_chunk$set(dev = 'cairo_ps',
+               fig.path = 'knitr-cache/',
+               fig.dpi = 96,
+               fig.width = 7.5,
+               fig.height = 4,
+               echo = FALSE,
+               results = FALSE,
+               message = FALSE,
+               warning = FALSE,
+               results = 'hide',
+               cache = TRUE,
+               cache.path = 'knitr-cache/')
+source("hake.r")
+@
+
+\title[git-course]{Pacific Hake example using knitr and \LaTeX}
+\author{Chris Grandin \& Andrew Edwards}
+\date{\today}
+
+\begin{document}
+%% Needed to remove 'Figure:' from figure captions:
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+
+\frame[plain]{
+\titlepage
+}
+
+\frame{\frametitle{Hake catch figure}
+<<catch-tac-plot>>=
+plot.dat(catch.tac, leg.y.loc = 520)
+@
+}
+
+\frame{\frametitle{Hake catch table}
+<<catch-tac-table, results='asis', echo=FALSE, out.width='0.9\\columnwidth'>>=
+make.catches.table(catch.tac,
+                   2006,
+                   2016,
+                   xcaption <- paste0("Recent commercial fishery catch (t). ",
+                                      "Tribal catches are included in the ",
+                                      "sector totals. Research catch includes ",
+                                      "landed catch associated with certain ",
+                                      "research-related activities. Catch ",
+                                      "associated with surveys and discarded ",
+                                      "bycatch in fisheries not targeting hake ",
+                                      "are not currently included in the model."),
+                   xlabel <- "tab:es-catches",
+                   font.size = 7,
+                   space.size = 8,
+                   placement = "H")
+@
+
+}
+
+\end{document}
