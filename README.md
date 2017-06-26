@@ -69,7 +69,8 @@ The **git clone** command creates a new folder that is automatically given the n
 Once you have got going with a repository, all you really need are: 
 
       git s                             <View status of the repository>
-      git add FILENAME                  <One-time command to add FILENAME (including path) to the list of files being tracked by git>
+      git add FILENAME                  <One-time command to add FILENAME (including path) to the
+                                         list of files being tracked by git>
       git com "MESSAGE"                 <Commit changes with descriptive MESSAGE>
 	  git push                          <Push your changes to GitHub>
 
@@ -83,7 +84,7 @@ For collaborating you need:
 	  git fetch cgrandin                <Fetch changes that cgrandin has made>
 	  git merge cgrandin/master         <Merge the fetched changes with your local repository>
 	  git merge c<TAB>                  <This will auto-complete the above command (if unique)>
-      git push                          <Remember to push after doing a merge, then check the Network Graph>
+      git push                          <Remember to push after doing a merge, then check Network Graph>
 
 Other useful commands are:
 
@@ -94,8 +95,9 @@ Other useful commands are:
 
 	  git rm --cached FILENAME          <Remove FILENAME from the git repo, but not from local directory>
 	  git rm FILENAME                   <Remove FILENAME from the git repo AND from local directory>
-	  git difftool <options>            <Compare changes using difftool; options can be branches, other repos you have
-                                         fetched but not merged, or leave blank to compare to latest commit>
+	  git difftool <options>            <Compare changes using difftool; options can be branches,
+                                         other repos you have fetched but not merged, or leave blank
+                                         to compare to latest commit>
 
       git log                           <View commit log>
       git help                          <List git commands>
