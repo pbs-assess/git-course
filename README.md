@@ -62,18 +62,18 @@ To start your own repository just click **New Repository** on your GitHub home p
 
 The **git clone** command creates a new folder that is automatically given the name of the repository.
 
-### The basic commands we use are:
+### The basic commands we use
 
 [//]: # (https://mislav.net/2010/07/git-tips/)
 
-      git help <command>                <Open a help page in your browser for the command>
+Once you have got going with a repository, all you really need are: 
 
       git s                             <View status of the repository>
-      git s -sb                         <View status of the repository in very concise form>
-      git s -u                          <Show all untracked files, not just directories>
-      git add FILENAME                  <Add FILENAME (including path) to the list of files being tracked by git>
+      git add FILENAME                  <One-time command to add FILENAME (including path) to the list of files being tracked by git>
       git com "MESSAGE"                 <Commit changes with descriptive MESSAGE>
 	  git push                          <Push your changes to GitHub>
+
+For collaborating you need:
 
       git remote add NAME URL           <One-time command to enable fetching and merging from
                                          NAME'S GitHub repo at URL, for example:>
@@ -83,6 +83,14 @@ The **git clone** command creates a new folder that is automatically given the n
 	  git fetch cgrandin                <Fetch changes that cgrandin has made>
 	  git merge cgrandin/master         <Merge the fetched changes with your local repository>
 	  git merge c<TAB>                  <This will auto-complete the above command (if unique)>
+      git push                          <Remember to push after doing a merge, then check the Network Graph>
+
+Other useful commands are:
+
+      git help <command>                <Open a help page in your browser for the command>
+
+      git s -sb                         <View status of the repository in very concise form>
+      git s -u                          <Show all untracked files, not just directories>
 
 	  git rm --cached FILENAME          <Remove FILENAME from the git repo, but not from local directory>
 	  git rm FILENAME                   <Remove FILENAME from the git repo AND from local directory>
