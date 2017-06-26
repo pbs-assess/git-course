@@ -46,15 +46,21 @@ In the order to be presented, the subdirectories are:
  
 ## Summary of most common commands
 
-### To fork and clone someone else's repository
+### To use someone else's repository or to create your own
 
-On the repository's GitHub page, click 'Fork'.
+On the repository's GitHub page, click 'Fork'. This puts a copy of the repository under your username on GitHub.
 
 Navigate to your GitHub version of the repo.
 
-To clone it onto your local machine, in git shell:
+To clone it onto your local machine, open your git shell, check you are in **C:/github** or wherever you are putting your GitHub work (remember no spaces in folder names), and type :
 
       git clone https://github.com/YOUR-GITHUB-USER-NAME/REPO-NAME
+
+(just copy and paste the http:// address from your web browser).
+
+To start your own repository just click **New Repository** on your GitHub home page, and do the above **git clone** command.
+
+The **git clone** command creates a new folder that is automatically given the name of the repository.
 
 ### The basic commands we use are:
 
