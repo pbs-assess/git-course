@@ -37,6 +37,8 @@ In the order to be presented, the subdirectories are:
 
 **beamer/hake-example/** - simple example of using knitr
 
+**beamer/git-forRworkshop/** - stealing slides from other presentations to give a background talk for PBS R workshop on 28th June 2017. 
+
 **exercise-files/** - contains files needed for exercises
 
 **content/** - contains **.gitconfig** needed for setup
