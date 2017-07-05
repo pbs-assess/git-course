@@ -154,3 +154,14 @@ Generally we try and work on different files so that there are no conflicts when
 
 A readable introduction to the general ideas of 'version control' is the manuscript <a href="https://arxiv.org/abs/1609.00037">Good Enough Practices in Scientific Computing</a>.
 
+## Putting on a course
+
+We (Chris and Andy) are willing to put another course if someone can do the logistics. Basically:
+
+ - Vancouver Island Conference Centre (VCC), Departure Bay Rooms A and B for two days (we need to be on a wireless network);
+ - Set up in a U-shape configuration with space for about 25 people, and about 20 attended which worked well; 
+ - We brought two projectors (ARRAD one and the one from Gloria's office, check the connections as one needs an HDMI cable and one has no HDMI connection);
+ - We brought a box of power bars from Groundfish (Malcolm's office) for everyone to plug into, plus a box of about six extension cords - there are plugs in the floors of the rooms, but I think we used some of the power bars and cords;
+ - We had VICC set up two projector screens ("Client's Own LCD Projector Package", includes audio visual cart and long VGA cable to the tables);
+ - Total bill from VICC was $856.80;
+ - We send out the **git-course-setup.pdf** file a couple of weeks beforehand - almost everyone had everything working fine so we could get going fairly quickly.
