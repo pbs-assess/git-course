@@ -110,6 +110,10 @@ Other useful commands are:
       git branch -d NAME                <Safely delete the branch called NAME>
       git branch -D NAME                <Forcibly delete the branch called NAME>
       git push origin --delete NAME     <Delete the branch NAME from the remote>
+      git reset --merge ORIG_HEAD       <Undo a merge
+      (or maybe any commit?) that you haven't pushed*>
+
+*See [here](https://stackoverflow.com/questions/2389361/undo-a-git-merge-that-hasnt-been-pushed-yet) for more details on **git reset** - the above command was one of the listed answers (and I think works for other commits).
 
 ### Some of those are aliases (from your .gitconfig file):
       git s                             git status
