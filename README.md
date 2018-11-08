@@ -4,18 +4,18 @@ Introductory course on **git** and **GitHub** by Chris Grandin and Andrew Edward
 
 Departure Bay Room A/B, Vancouver Island Conference Centre.
 
-Wednesday 21st and Thursday 22nd June, 9:00-4:30 both days.
+Tuesday November 27, 2018.
 
 Basically, **git** works on your computer and saves all versions of documents as you continually work on them ('version control'). **GitHub** is a copy of everything on a website that allows users to share code with each other.
 
 
 ## Setting up
 
-See the **git-course-setup.pdf** file that we email to you. 
+See the **git-course-setup.pdf** file that we email to you.
 
 You will then have all the files from this **git-course** repository on your computer.
 
-From the [GitHub glossary](https://help.github.com/articles/github-glossary/#repository): "A repository is the most basic element of GitHub. They're easiest to imagine as a project's folder. A repository contains all of the project files (including documentation), and stores each file's revision history. Repositories can have multiple collaborators and can be either public or private." 
+From the [GitHub glossary](https://help.github.com/articles/github-glossary/#repository): "A repository is the most basic element of GitHub. They're easiest to imagine as a project's folder. A repository contains all of the project files (including documentation), and stores each file's revision history. Repositories can have multiple collaborators and can be either public or private."
 
 ## Contents of repository
 
@@ -37,7 +37,7 @@ In the order to be presented, the subdirectories are:
 
 **beamer/hake-example/** - simple example of using knitr
 
-**beamer/git-forRworkshop/** - stealing slides from other presentations to give a background talk for PBS R workshop on 28th June 2017. 
+**beamer/git-forRworkshop/** - stealing slides from other presentations to give a background talk for PBS R workshop on 28th June 2017.
 
 **exercise-files/** - contains files needed for exercises
 
@@ -45,7 +45,7 @@ In the order to be presented, the subdirectories are:
 
 **.gitignore** - files to be ignored by Git
 
- 
+
 ## Summary of most common commands
 
 ### To use someone else's repository or to create your own
@@ -68,7 +68,7 @@ The **git clone** command creates a new folder that is automatically given the n
 
 [//]: # (https://mislav.net/2010/07/git-tips/)
 
-Once you have got going with a repository, all you really need are: 
+Once you have got going with a repository, all you really need are:
 
       git s                             <View status of the repository>
       git add FILENAME                  <One-time command to add FILENAME (including path) to the
@@ -132,19 +132,19 @@ When there is a conflict you will get a message. Then open the relevant file in 
      =======
      Line(s) of text/code which are trying to merge in, but conflict.
      >>>>>>> BRANCH-NAME
-  
+
 where BRANCH-NAME is the name of the branch (or remote) you are trying to merge in from the previously-issued command:
 
      git merge BRANCH-NAME
 
 Choose one of the line(s) of text/code to keep, or edit the line(s) to be something else entirely.
 
-Then remove the bracketing and separation lines 
+Then remove the bracketing and separation lines
 
      <<<...
      >>>...
      =======
-Once you are done fixing each conflicted file, you need to 
+Once you are done fixing each conflicted file, you need to
 
      git add FILENAME
 
@@ -163,7 +163,7 @@ A readable introduction to the general ideas of 'version control' is the manuscr
 We (Chris and Andy) are willing to put another course if someone can do the logistics. Basically:
 
  - Vancouver Island Conference Centre (VCC), Departure Bay Rooms A and B for two days (we need to be on a wireless network);
- - Set up in a U-shape configuration with space for about 25 people, and about 20 attended which worked well; 
+ - Set up in a U-shape configuration with space for about 25 people, and about 20 attended which worked well;
  - We brought two projectors (ARRAD one and the one from Gloria's office, check the connections as one needs an HDMI cable and one has no HDMI connection);
  - We brought a box of power bars from Groundfish (Malcolm's office) for everyone to plug into, plus a box of about six extension cords - there are plugs in the floors of the rooms, but I think we used some of the power bars and cords;
  - We had VICC set up two projector screens ("Client's Own LCD Projector Package", includes audio visual cart and long VGA cable to the tables);
