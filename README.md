@@ -25,7 +25,7 @@ From the [GitHub glossary](https://help.github.com/articles/github-glossary/#rep
 
 In the order to be presented, the subdirectories are:
 
-**beamer/git-setup/** - instructions for setting up prior to course
+**beamer/git-setup/** - instructions for setting up prior to course (filenames ending in `-17` are those from our two-day course in 2017).
 
 **beamer/git-outline/** - outline of course
 
