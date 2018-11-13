@@ -2,8 +2,6 @@
 
 Introductory course on **git** and **GitHub** by Chris Grandin and Andrew Edwards.
 
-**test**
-
 Departure Bay Room A/B, Vancouver Island Conference Centre.
 
 Tuesday November 27, 2018.
@@ -155,6 +153,26 @@ to confirm that's the one you want (that step is not completely obvious), then c
 See <https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line/> for an example.
 
 Generally we try and work on different files so that there are no conflicts when we merge.
+
+### If the GitHub repository changes user
+
+For example, we migrated this repo from `cgrandin/git-course` to `pbs-assess/git-course`. Then (if you already have the repo on our computer, but fetched from our forked version), you have to:
+
+```
+git remote rm origin
+git remote add origin https://github.com/pbs-assess/git-course
+```
+
+Then the first time you pull:
+
+```
+git pull origin master
+```
+
+and the first time you push (to origin, if you are a member of `pbs-assess`):
+```
+git push --set-upstream origin master
+```
 
 ## General introduction
 
