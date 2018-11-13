@@ -2,6 +2,8 @@
 
 Introductory course on **git** and **GitHub** by Chris Grandin and Andrew Edwards.
 
+**test**
+
 Departure Bay Room A/B, Vancouver Island Conference Centre.
 
 Wednesday 21st and Thursday 22nd June, 9:00-4:30 both days.
