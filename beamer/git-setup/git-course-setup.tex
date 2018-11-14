@@ -32,7 +32,10 @@
 
   ~\\
   We also include other programs that we need. Again, this is a {\red one-time
-    setup}, and please do it before the workshop to give time for troubleshooting.
+    setup}, and please do it before the workshop to give time for
+  troubleshooting. If you want to know what some of these tools do, see 
+  `Overview of tools to be introduced' at
+  \url{https://github.com/pbs-assess/TTTworkshop}.
 }
 
 \frame{\frametitle{What you will end up having installed}
@@ -49,6 +52,7 @@
     exactly what version). Also a few R packages are given here
   \item A way of running \LaTeX\ (such as Mik\TeX\ or Pro\TeX)
   \item A text editor that isn't Notepad
+  \item Pandoc (comes with RStudio)
   \ei
 We realise this may seem overwhelming, but once it's all set up then you'll have
 a very powerful workflow for collaboratively building complicated and
@@ -316,6 +320,20 @@ reproducible documents.
   [Andy uses \textbf{Xemacs} for everything (including running R) as it has many keyboard shortcuts
     and colours text and code based on the file extension; Chris uses a mixture
     of \textbf{Xemacs} and \textbf{RStudio}.]
+}
+
+\frame{\frametitle{Pandoc}
+  \bigskip
+  If you don't use \textbf{RStudio} you need to separately install
+  \textbf{Pandoc} from \url{https://github.com/jgm/pandoc/releases/tag/2.2.3.2}.
+  \bigskip
+
+  This is used in the conversion from \textbf{Rmarkdown} code to \textbf{.pdf}.
+  \bigskip
+
+  We (Andy) found it best to choose `install for all users' then click
+  `Advanced' before Install, as you can then choose the installation folder.
+  Double check it gets added to your PATH.
 }
 
 \frame{\frametitle{If you work closely with others who are taking the course}
