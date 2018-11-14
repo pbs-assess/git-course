@@ -101,10 +101,30 @@
 }
 \endgroup
 
+\frame{\frametitle{Committing and pushing}
+  ~\\
+  \lst{git com} and \lst{git push} are two of the commonly used commands.
+  ~\\
+  \bi
+  \item \lst{git com "<Message>"} commits your changes locally (Git has recorded
+    that you have made changes)
+  \item your \lst{<Message>} is what you write to describe the change  
+  \item \lst{git push} pushes them to your \gh\ site
+    \ei
+  Note that:
+  \bi
+  \item you still edit files in the usual way -- if you stop committing
+    the latest versions of your files will still be there
+  \item Git makes it easier to collaborate and to change to earlier versions of files
+  \ei
+}
+  
+
 \frame{\frametitle{Edit \emph{Readme.md}}
   Edit the \emph{Readme.md} file. Add some simple comments describing
-  the project such as: "A test repository for learning Git."\\
+  the project such as: ``A test repository for learning Git.''\\
   \bigskip
+  \pause
   Look over the changes, commit them, and push them to your \gh\
   repository:\\
   \lst{git s}\\
@@ -112,6 +132,7 @@
   \lst{git com "Initial edit of Readme.md"}\\
   \lst{git push}\\
   ~\\
+  \pause
   Refresh your \gh\ web page and you should see your text 
   (the \emph{Readme.md} file is what is shown on the main page
   of your repo).
