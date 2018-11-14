@@ -3,7 +3,7 @@
 %% \documentclass{beamer}
 \usepackage{../git-course}
 
-\title[git-course]{Setting up Git and \gh\ for the first time}
+\title[git-course]{Setting up Git and \gh\ (and more) for the first time}
 \author{Chris Grandin \& Andrew Edwards}
 
 \date{\coursedates}
@@ -28,8 +28,35 @@
 
   These instructions are adapted slightly from those we used for a course in
   2017, and we are unable to fully test them on a new computer. So if something
-  doesn't work then double check and then send us an email.
+  doesn't work then double check and then send Chris and Andy an email.
+
+  ~\\
+  We also include other programs that we need. Again, this is a {\red one-time
+    setup}, and please do it before the workshop to give time for troubleshooting.
 }
+
+\frame{\frametitle{What you will end up having installed}
+  \bigskip
+  These are programs/things you will need (instructions are below). Obviously
+  skip any that you already have working.
+  \bi
+  \item A \gh\ account
+  \item Git on your computer
+  \item Diffmerge or something similar for comparing changes to files
+  \item Markdown Pad 2 or Chrome extenstion (or similar) for viewing Markdown
+    files
+  \item R -- presumably a version not \emph{too} old (though it's hard for us to specify
+    exactly what version). Also a few R packages are given here
+  \item A way of running \LaTeX\ (such as Mik\TeX\ or Pro\TeX)
+  \item A text editor that isn't Notepad
+  \ei
+We realise this may seem overwhelming, but once it's all set up then you'll have
+a very powerful workflow for collaboratively building complicated and
+reproducible documents.
+}
+
+
+
 
 \frame{\frametitle{Get a \gh\ account}
   \bigskip
@@ -121,7 +148,7 @@
   \gh\ account name.
   \bi
     \item On the \gh\ webpage, sign into your account and navigate to:\\
-      \url{https://github.com/cgrandin/git-course}
+      \url{https://github.com/pbs-assess/git-course}
     \item Press the \emph{Fork} button. This will give you a copy of the
       git-course repository.
     \item Navigate to your new forked repository:\\
@@ -131,8 +158,9 @@
       repository, you can paste the URL into the \gs\ by pressing the right
       mouse button:\\
       \lst{git clone https://github.com/GITHUB-USER/git-course}
+    \item You now have the files for the GitHub course on your computer.
     \item MAC: Open terminal and change to the github directory:\\
-      \lst{cd ~/github}\\
+      \lst{cd ~/github}
       then run the clone command:\\
       \lst{git clone https://github.com/GITHUB-USER/git-course}
   \ei
@@ -206,13 +234,14 @@
 \frame{\frametitle{R and packages installation}
   Some exercises rely on having R installed with several packages we'll be
   using. We are assuming everyone has R installed.\\
-  Install the following packages in R:\\
+  Install the following packages in R (we'll need more during the workshop):\\
 
   \bigskip
 
   \bi
     \item \lst{knitr}
     \item \lst{xtable}
+    \item \lst{devtools}      
   \ei
 
   \bigskip
@@ -227,18 +256,31 @@
   R scripting front-end version 3.3.2 (2016-10-31)
 }
 
-\frame{\frametitle{\LaTeX\ installation}
-  Some exercises in the course rely on having \LaTeX\ installed. You will also
+\frame{\frametitle{\LaTeX\ installation -- Windows}
+  You will need \LaTeX\ installed (because it will correctly format Research
+  Documents, even though you won't need to learn \LaTeX). You will also
   be able to build all of these course presentations from code.
   \bi
-    \item On Windows, install Mik\TeX:\\
+  \item If you have Rtools installed you may already have Mik\TeX installed (see
+        last bullet point below to test it).
+  \item On Windows, if you have lots of disk space ($>1.6$Gb you can use)
+        then we think it's
+        best to install it using Pro\TeX since it includes all \LaTeX\ libraries:
+        \url{https://ctan.org/pkg/protext}\\
+   \item If disk space may be a problem then install Mik\TeX\ (you may just have
+     to install further libraries during the workshop):
       \bigskip
       \url{https://miktex.org/download}\\
       \bigskip
-      You can build this PDF (that you are reading) by entering the
+   \item You can build this PDF (that you are reading) by entering the
       \lst{beamer/git-setup} directory and double-click the \emph{build-pdf.bat}
-       file (close this PDF first).
-    \item On MAC, install Mac\TeX:\\
+      file (close this PDF first) or type \lst{pdflatex git-course-setup}.
+   \ei
+}      
+
+\frame{\frametitle{\LaTeX\ installation -- Mac}
+  \bi
+  \item On MAC, install Mac\TeX:\\
       \bigskip
       \url{http://www.tug.org/mactex/}\\
       \bigskip
@@ -258,7 +300,7 @@
   \bigskip
 
   We know that \textbf{Emacs}, \textbf{Xemacs}, \textbf{vim} are okay, as is
-  \textbf{RStudio} for \textbf{.r} files.
+  \textbf{RStudio} for \textbf{.r} (and other) files.
 
   \bigskip
 
@@ -271,12 +313,13 @@
 
   \bigskip
 
-  [We use \textbf{Xemacs} for everything as it has many keyboard shortcuts
-    and colours text and code based on the file extension.]
+  [Andy uses \textbf{Xemacs} for everything (including running R) as it has many keyboard shortcuts
+    and colours text and code based on the file extension; Chris uses a mixture
+    of \textbf{Xemacs} and \textbf{RStudio}.]
 }
 
 \frame{\frametitle{If you work closely with others who are taking the course}
-  We know that are at least a couple of groups of people (salmon/herring)
+  We expect that are at least a couple of groups of people (say, from a Region)
   who work closely together within each group.\\
   \bigskip
   If there is code etc.~that you work on together (or plan to) then make sure
@@ -310,14 +353,14 @@
   all that means.\\
   \bigskip
   To get a sneak peek at what is to come, take a look at the git-course
-  repository on \gh:\\
+  repository on \gh (and you should already have these files on your computer):\\
   \bigskip
-  \url{https://github.com/cgrandin/git-course}\\
+  \url{https://github.com/pbs-assess/git-course}\\
   \bigskip
   In particular, the network graph which shows all our commits from the
   beginning:\\
   \bigskip
-  \url{https://github.com/cgrandin/git-course/network}\\
+  \url{https://github.com/pbs-assess/git-course/network}\\
   \bigskip
   The network graph is an invaluable tool in keeping track of what is going
   on amongst you and you collaborators. We'll get into it more in the course.
