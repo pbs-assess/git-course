@@ -42,14 +42,16 @@
   \bi
     \item Once you have created the \lst{test} repository on \gh, copy
       the URL of the repository.
-    \item Open the \gs\ and run the following command to clone your repository:
+    \item Open the \gs\ and run the following command to \emph{clone} your repository:
       \lst{git clone URL}\\
       where \lst{URL} is the url of your newly created repository. You
       can paste the \lst{URL} into the command line (on Windows) by
       pressing the right mouse button.
   \ei
   \bigskip
-  You should now have a subdirectory called \lst{test}. In \gs, change
+  You should now have a subdirectory called \lst{github/test} on your computer.\\
+
+  In \gs, change
   to that directory:\\
   \lst{cd test}
 }
@@ -74,11 +76,14 @@
       paste it into your newly cloned directory. You can edit this to suit
       the project, as there is a different \emph{.gitignore} file for each
       project.
+    \pause
     \item Check the status of your repository: \lst{git status}
+    \pause
     \item You will see that the new file \emph{.gitignore} has not been
       staged for commit. It is an \emph{Untracked file}. You need to add any
       new files to be committed by using the \lst{git add} command:\\
       \lst{git add .gitignore}
+    \pause  
     \item Make a commit for the changes:\\
       \lst{git com "Added .gitignore"}\\
       The commit message should be a useful message saying what the commit
@@ -87,7 +92,9 @@
       command: \lst{git commit -a -m "Added .gitignore"}\\
       Aliases are found in your \lst{.gitconfig} file. You can make
       up your own as you see fit.
+    \pause
     \item Push the commit to \gh: \lst{git push}
+    \pause
     \item Check the \gh\ webpage and see your commit and that the file
       has been uploaded.
   \ei
