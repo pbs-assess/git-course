@@ -22,7 +22,7 @@
   We will go through the next 7-8 slides, demonstrating the basic commands.
   \\
   Then we'll start again with participants actually doing the commands.\\
-  
+
   }
 
 \section{Creating/Cloning}
@@ -64,7 +64,7 @@
   \bigskip
   This means that you don't have to repeatedly enter your \gh\ password.\\
   The command creates a credential file containing your account information:\\
-  \lst[escapechar="\\"]{C:\\Users\\YOUR-COMPUTER-USER-NAME\\.git-credentials}\\
+  \lst[escapechar="\\"]{C:\\Users\\USER-NAME\\.git-credentials}\\
 }
 
 \section{Committing new files}
@@ -83,7 +83,7 @@
       staged for commit. It is an \emph{Untracked file}. You need to add any
       new files to be committed by using the \lst{git add} command:\\
       \lst{git add .gitignore}
-    \pause  
+    \pause
     \item Make a commit for the changes:\\
       \lst{git com "Added .gitignore"}\\
       The commit message should be a useful message saying what the commit
@@ -108,7 +108,7 @@
   \bi
   \item \lst{git com "<Message>"} commits your changes locally (Git has recorded
     that you have made changes)
-  \item your \lst{<Message>} is what you write to describe the change  
+  \item your \lst{<Message>} is what you write to describe the change
   \item \lst{git push} pushes them to your \gh\ site
     \ei
   Note that:
@@ -118,7 +118,7 @@
   \item Git makes it easier to collaborate and to change to earlier versions of files
   \ei
 }
-  
+
 
 \frame{\frametitle{Edit \emph{Readme.md}}
   Edit the \emph{Readme.md} file. Add some simple comments describing
@@ -132,8 +132,7 @@
   \lst{git com "Initial edit of Readme.md"}\\
   \lst{git push}\\
   ~\\
-  \pause
-  Refresh your \gh\ web page and you should see your text 
+  Refresh your \gh\ web page and you should see your text
   (the \emph{Readme.md} file is what is shown on the main page
   of your repo).
 }
@@ -157,7 +156,7 @@
     \pause
     \item Keep an eye on (and refresh) your Network Graph at:\\
       \lst{https://github.com/YOUR-GITHUB-NAME/test/network}\\
-      to see it growing. You have to manually refresh (there can be a short 
+      to see it growing. You have to manually refresh (there can be a short
       delay until it updates).
   \en
 }
@@ -274,7 +273,7 @@
   We will take a closer look at this in the advanced section, as there
   are several things you can do once you go back to a previous commit.\\
   \bigskip
-  In practice you rarely actually revert back, but it's comforting to know 
+  In practice you rarely actually revert back, but it's comforting to know
   that you can.
 }
 
@@ -518,9 +517,9 @@
         (therefore commit frequently so each commit only has a few changes).
      \item See that you (or a collaborator) can add comments for each commit.
      \item In the comments (or when you do \lst{git com "..."}) you can include
-        a \lst{HASH} from any other commit. You only really need the first five 
+        a \lst{HASH} from any other commit. You only really need the first five
         digits to ensure uniqueness ($16^5 = 1,048,576$ possible combinations),
-        but if you use seven then \gh\ will create a link to that commit 
+        but if you use seven then \gh\ will create a link to that commit
         (see June 13th commits).
   \ei
 }
@@ -574,9 +573,9 @@
      keepaspectratio]
      {../git-motivation/figures/netWorkGraph1}\\
   The graph was for {\red Andy's repo}, so Andy is at the top.\\
-  Chris's name shows up because he had pushed commits that Andy did not 
+  Chris's name shows up because he had pushed commits that Andy did not
     yet have.\\
-  So the graph shows that Andy should get caught up before continuing on 
+  So the graph shows that Andy should get caught up before continuing on
     this project.\\
   This took three commands, resulting in:
   \includegraphics[
@@ -603,14 +602,14 @@
   It is ``{\red about code not ego}''.
   ~\\
 }
-  
+
 \frame{\frametitle{Understanding the Network Graph}
   \bi
-    
+
     \item Live version: \url{https://github.com/andrew-edwards/git-course/network}\\
     \item What about: \url{https://github.com/cgrandin/git-course/network}\\
     \item Andy's name (probably) doesn't show up.\\
-    \item But we both did work -- can see who did what by hovering 
+    \item But we both did work -- can see who did what by hovering
       over commits.\\
     \item It is ``{\red about code not ego}''.
   \ei
@@ -621,7 +620,7 @@
   \bi
     \item If I am at the top: my row shows every commit in {\red my repo}
     \item Next person: only commits in {\red his/her repo that are not in mine}
-    \item Next person: only commits in {\red his/her repo that are not in mine 
+    \item Next person: only commits in {\red his/her repo that are not in mine
       or second person's}
     \item Each commit is shown {\blue only once}\\
     \bigskip
@@ -828,11 +827,11 @@
     \item What's been happening recently?\\
     \item Scroll back to show some complexity.\\
     \item Click on \lst{cgrandin} on that graph, to see the graph of Chris's repo.\\
-    \item Andy does not show up on that because he has not committed anything 
+    \item Andy does not show up on that because he has not committed anything
       new (Chris has everything Andy has done).
     \item Click on `Contributors'.
-    \item Six of us have contributed, but because Chris is all caught 
-      up his graph doesn't list us.    
+    \item Six of us have contributed, but because Chris is all caught
+      up his graph doesn't list us.
   \ei
 }
 
@@ -842,7 +841,7 @@
       \url{https://github.com/smartell/iSCAM/network}\\
     \item What's been happening recently?\\
     \item Scroll back to show some complexity.\\
-    \item Click on \lst{cgrandin} on that graph, to see the graph of 
+    \item Click on \lst{cgrandin} on that graph, to see the graph of
       Chris's repo.\\
   \ei
 }
@@ -886,14 +885,14 @@
   where \lst{BRANCH-NAME} is the name of the branch you are trying to
   merge in from the previously-issued command:\\
   \lst{git merge BRANCH-NAME} ~~~e.g.~\lst{git merge cgrandin/master}\\
-  All you do is remove the bracketing lines (\lst{<<<...} and \lst{>>>...}), 
+  All you do is remove the bracketing lines (\lst{<<<...} and \lst{>>>...}),
   the \lst{=======} line,
   and choose one of the line(s) of text/code to keep, or edit the line(s)
   to be something else entirely. Once you are done fixing each conflicted file,
   you need to \lst{add}, \lst{commit} and \lst{push}, e.g.:\\
-  \lst{git add FILENAME}~~~(not quite sure why necessary, but \lst{git s} 
+  \lst{git add FILENAME}~~~(not quite sure why necessary, but \lst{git s}
     will remind you)\\
-  \lst{git com "Kept Dave's edits as more consistent with 
+  \lst{git com "Kept Dave's edits as more consistent with
   remaining text."}\\
   \lst{git push}
 }
@@ -929,7 +928,7 @@
 }
 
 \frame{\frametitle{\gh\ -- Add collaborators}
-  If your \gh\ repository is public, anyone can post an \emph{Issue} (explained 
+  If your \gh\ repository is public, anyone can post an \emph{Issue} (explained
     next). If you want someone to be able to:
   \bi
     \item set assignees to \emph{Issues}
@@ -964,19 +963,19 @@
   ~~\url{https://github.com/cgrandin/hake-assessment}\\
   ~\\
   The unresolved ones are all tagged (using \emph{Milestones}) with
-    `2018 assessment' -- not essential for finishing the 2017 assesssment but 
+    `2018 assessment' -- not essential for finishing the 2017 assesssment but
     we didn't want to forget about them.\\
   ~\\
   You can assign collaborators to deal with an \emph{Issue}, and add comments.\\
   ~\\
-  You automatically get emails when \emph{Issues} are created, commented on, 
+  You automatically get emails when \emph{Issues} are created, commented on,
     etc.\\
   Equivalently, a blue notification circle appears on the bell at the top right
     (though I think it disappears when you read the email).\\
   ~\\
   Emails are useful, but if you're actively using your \gh\ page you can just
    turn them off (someone will know how ...).\\
-  If you include the first seven digits of a commit \lst{HASH} it will become a 
+  If you include the first seven digits of a commit \lst{HASH} it will become a
    clickable link.
 }
 
