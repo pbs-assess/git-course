@@ -553,8 +553,6 @@
 }
 
 \section{Network Graph}
-
-
 \frame{\frametitle{Network Graph}
   \bi
      \item The Network Graph is a very useful visualization tool to keep
@@ -1095,6 +1093,23 @@
   \lst{git stash} instead.
 }
 
+\section{Summary}
+\frame{\frametitle{Summary}
+  95\% of the time, this is all you are doing:\\
+  \bigskip
+  Change some source code\\
+  \lst{git commit -a -m "My commit message"}\\
+  \lst{git push}\\
+  If server does not allow you to push:\\
+  \lst{git fetch}\\
+  \lst{git rebase}\\
+  If conflicts, fix them and:\\
+  \lst{git add CONFLICTED_FILE}\\
+  \lst{git rebase --resume}\\
+  \bigskip
+  Change some source code...\\
+  etc.
+}
 %% Git tower webpage:
 %% https://www.git-tower.com/learn/git/ebook/en/command-line
 
