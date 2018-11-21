@@ -73,7 +73,7 @@
 \frame{\frametitle{Copy and commit \emph{.gitignore}}
   \bi
     \item Copy the \emph{.gitignore} file from the git-course directory and
-      paste it into your newly cloned directory. You can edit this to suit
+      paste it into your new \lst{github/test} directory. You can edit this to suit
       the project, as there is a different \emph{.gitignore} file for each
       project.
     \pause
@@ -88,7 +88,7 @@
       \lst{git com "Added .gitignore"}\\
       The commit message should be a useful message saying what the commit
       encapsulates.\\
-      Note the git command \lst{com} is an alias for the more complex
+      Note the command \lst{com} is an alias for the more complex
       command: \lst{git commit -a -m "Added .gitignore"}\\
       Aliases are found in your \lst{.gitconfig} file. You can make
       up your own as you see fit.
@@ -103,7 +103,7 @@
 
 \frame{\frametitle{Committing and pushing}
   ~\\
-  \lst{git com} and \lst{git push} are two of the commonly used commands.
+  \lst{git commit} and \lst{git push} are two of the commonly used commands.
   ~\\
   \bi
   \item \lst{git com "<Message>"} commits your changes locally (Git has recorded
@@ -127,7 +127,7 @@
   \pause
   Look over the changes, commit them, and push them to your \gh\
   repository:\\
-  \lst{git s}\\
+  \lst{git status}\\
   \lst{git diff}\\
   \lst{git com "Initial edit of Readme.md"}\\
   \lst{git push}\\
@@ -680,7 +680,7 @@
           \url{https://github.com/cgrandin/git-course}.
       \ei
     \item To view all remotes you have set up:\\
-      \lst{git r}
+      \lst{git remote -v}
   \ei
 }
 
@@ -732,6 +732,8 @@
 
 \frame{\frametitle{Merging the fetched repository into yours}
   To merge the fetched repository's master branch into yours:\\
+  \lst{git rebase REMOTE-NAME/master}\\
+  OR\\
   \lst{git merge REMOTE-NAME/master}\\
   note that the merge will happen in the branch you are currently in, so make
   sure you are in the \lst{master} branch.\\
