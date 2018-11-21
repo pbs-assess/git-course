@@ -119,6 +119,55 @@
   \ei
 }
 
+\frame{\frametitle{Thoughts/hints regarding commit messages}
+  What to write in \lst{git com "COMMIT MESSAGE"}?\\
+  Ideally:
+  \bi
+    \item Want to describe \emph{what} and (sometimes \emph{why}) you did
+       something.
+    \item The \emph{how} is not needed since that will be explained by the
+       actual changes in the code.
+    \item Message should be informative for collaborators (including your future self).
+  \ei
+  {\red Bad}:\\
+  ~~\lst{git com "Tweaked function."}\\
+  {\blue Good}:\\
+  ~~\lst{git com "Allow plot.biomass() to use extra colours."}\\
+}
+
+\frame{\frametitle{Thoughts/hints regarding commit messages}
+  What to write in git commit messages?\\
+  \bigskip
+  \centering
+  \begin{figure}
+    \includegraphics[
+      width=\textwidth,
+      height=0.7\textheight,
+      keepaspectratio]
+      {../git-advanced/figures/git_commit_xkcd}
+  \end{figure}
+}
+
+\frame{\frametitle{Commits and history}
+  Git does not keep versions of code, it keeps \emph{commits}. The commits
+  are kept track of using a hash code, using \emph{Secure Hash Algorithm 1}
+  (SHA-1) which generates a hash key 40 digits long in hexadecimal. These are
+  what you see on \gh\ and in various places when you use \gs.\\
+  \bigskip
+  Several of these commits have pointers to them which have special names:
+  \bi
+    \item The \textbf{HEAD} which points to the commit you are currently on
+      in the \gs.
+    \item The \textbf{master} which is just the default branch when you set
+      up a repository on \gh.
+    \item The branch names that you have in your repository.
+  \ei
+  Once you've cloned a \gh\ repository, the \textbf{master} points to the initial
+  commit, and the \textbf{HEAD} points to the master.\\
+  \bigskip
+  The following slides use images from this website:
+  \url{https://marklodato.github.io/visual-git-guide/index-en.html?no-svg}
+}
 
 \frame{\frametitle{Edit \emph{Readme.md}}
   Edit the \emph{Readme.md} file. Add some simple comments describing
@@ -248,7 +297,7 @@
     \item Hover over the first commit on your Network Graph of your
       \lst{test} repo and note the first five digits of the \lst{HASH}.
     \item In \gs, do\\
-      \lst{git co <HASH>} ~~~~[\lst{co} is alias for \lst{checkout}]
+      \lst{git co HASH} ~~~~[\lst{co} is alias for \lst{checkout}]
     \item Look at File Explorer again -- your \lst{r-test} directory should
       have ... disappeared!!\\
       (If it hasn't then open it -- the test files, i.e. \lst{test1.r}
@@ -264,7 +313,7 @@
     \item \lst{git co master}
   \ei
   \bigskip
-  That's it. So you can {\red revert to any previous committed version of your
+  That's it. So you can {\red revert to any previous commit in your
     repository}.\\
   \bigskip
   Very reassuring, especially for complex code that you may mess up and just
@@ -367,6 +416,8 @@
       and see that you are in the \emph{master} branch by looking at the
       prompt.
     \item Create a new branch based off the branch you are currently on:\\
+      \lst{git checkout -b temp}\\
+      OR alias:\\
       \lst{git cb temp}\\
       You will be automatically placed in the new branch called
       \emph{temp}, and commits you make will now occur in that
@@ -403,6 +454,8 @@
           \emph{master}:\\
           \lst{git co master}
         \item Merge the branch into \emph{master}:\\
+          \lst{git rebase temp}\\
+          OR\\
           \lst{git merge temp}
       \en
     \item Notice that the file you created in the \emph{temp} branch
@@ -460,6 +513,10 @@
   The local branch will still exist, so if you want to delete that as well:\\
   \lst{git co master}\\
   \lst{git branch -d BRANCH-NAME}
+}
+
+\frame{\frametitle{A great way to learn visually}
+  \url{http://onlywei.github.io/explain-git-with-d3}
 }
 
 \section{Stashing}
