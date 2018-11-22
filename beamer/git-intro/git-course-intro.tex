@@ -19,11 +19,12 @@
 
 \frame{\frametitle{Basics}
   \bigskip
-  We will go through the next 7-8 slides, demonstrating the basic commands.
-  \\
+  We will go through the next 7-8 slides, demonstrating the basic commands.\\
   Then we'll start again with participants actually doing the commands.\\
-
-  }
+  \bigskip
+  We will use this website for some examples:
+  \url{http://onlywei.github.io/explain-git-with-d3}
+}
 
 \section{Creating/Cloning}
 \frame{\frametitle{Creating a new repository}
@@ -85,13 +86,9 @@
       \lst{git add .gitignore}
     \pause
     \item Make a commit for the changes:\\
-      \lst{git com "Added .gitignore"}\\
+      \lst{git commit -a -m "Added .gitignore"}\\
       The commit message should be a useful message saying what the commit
       encapsulates.\\
-      Note the command \lst{com} is an alias for the more complex
-      command: \lst{git commit -a -m "Added .gitignore"}\\
-      Aliases are found in your \lst{.gitconfig} file. You can make
-      up your own as you see fit.
     \pause
     \item Push the commit to \gh: \lst{git push}
     \pause
@@ -106,21 +103,17 @@
   \lst{git commit} and \lst{git push} are two of the commonly used commands.
   ~\\
   \bi
-  \item \lst{git com "<Message>"} commits your changes locally (Git has recorded
+  \item \lst{git commit -a -m "Message"} commits all your changes locally (Git has recorded
     that you have made changes)
-  \item your \lst{<Message>} is what you write to describe the change
+  \item your \lst{Message} is what you write to describe the change
   \item \lst{git push} pushes them to your \gh\ site
     \ei
-  Note that:
-  \bi
-  \item you still edit files in the usual way -- if you stop committing
-    the latest versions of your files will still be there
-  \item Git makes it easier to collaborate and to change to earlier versions of files
-  \ei
+  Note that you still edit files in the usual way -- if you stop committing
+  the latest versions of your files will still be there
 }
 
 \frame{\frametitle{Thoughts/hints regarding commit messages}
-  What to write in \lst{git com "COMMIT MESSAGE"}?\\
+  What to write in \lst{git commit -a -m "Message"}?\\
   Ideally:
   \bi
     \item Want to describe \emph{what} and (sometimes \emph{why}) you did
@@ -130,22 +123,9 @@
     \item Message should be informative for collaborators (including your future self).
   \ei
   {\red Bad}:\\
-  ~~\lst{git com "Tweaked function."}\\
+  ~~\lst{git commit -a -m "Tweaked function."}\\
   {\blue Good}:\\
-  ~~\lst{git com "Allow plot.biomass() to use extra colours."}\\
-}
-
-\frame{\frametitle{Thoughts/hints regarding commit messages}
-  What to write in git commit messages?\\
-  \bigskip
-  \centering
-  \begin{figure}
-    \includegraphics[
-      width=\textwidth,
-      height=0.7\textheight,
-      keepaspectratio]
-      {../git-advanced/figures/git_commit_xkcd}
-  \end{figure}
+  ~~\lst{git commit -a -m "Allow plot.biomass() to use extra colours."}\\
 }
 
 \frame{\frametitle{Commits and history}
@@ -164,9 +144,6 @@
   \ei
   Once you've cloned a \gh\ repository, the \textbf{master} points to the initial
   commit, and the \textbf{HEAD} points to the master.\\
-  \bigskip
-  The following slides use images from this website:
-  \url{https://marklodato.github.io/visual-git-guide/index-en.html?no-svg}
 }
 
 \frame{\frametitle{Edit \emph{Readme.md}}
@@ -178,7 +155,7 @@
   repository:\\
   \lst{git status}\\
   \lst{git diff}\\
-  \lst{git com "Initial edit of Readme.md"}\\
+  \lst{git commit -a -m "Initial edit of Readme.md"}\\
   \lst{git push}\\
   ~\\
   Refresh your \gh\ web page and you should see your text
@@ -193,26 +170,23 @@
     \pause
     \item Add the file to the repository using the git commands:\\
       \lst{git add simpleText.txt}\\
-      \lst{git com "Adding simpleText.txt"}\\
+      \lst{git commit -a -m "Adding simpleText.txt"}\\
       \lst{git push}
     \pause
     \item Do some editing of simpleText.txt (see instructions at start of
-      it), to get the hang of \lst{git com} and \lst{git push}.
+      it), to get the hang of \lst{git commit} and \lst{git push}.
     \pause
-    \item \lst{git com "<commit description>"} frequently and \lst{git push}
-      occasionally, while intermittently doing \lst{git s} and
+    \item \lst{git commit -a -m "Message"} frequently and \lst{git push}
+      occasionally, while intermittently doing \lst{git status} and
       \lst{git diff} to understand what's changing.
     \pause
-    \item Keep an eye on (and refresh) your Network Graph at:\\
-      \lst{https://github.com/YOUR-GITHUB-NAME/test/network}\\
-      to see it growing. You have to manually refresh (there can be a short
-      delay until it updates).
+    \item Keep an eye on your commits and Network Graph on the \gh\ website.
   \en
 }
 
 \frame{\frametitle{Adding multiple files at once -- slide 1}
   Often you add multiple files or a new directory with files in it. In
-  these cases, when you run \lst{git s}, you will see a large
+  these cases, when you run \lst{git status}, you will see a large
   listing of \emph{Untracked files}. Files can be added at once, by simply
   adding the whole directory.
   \bi
@@ -222,12 +196,12 @@
       \lst{test1.r}, \lst{test2.r}, etc. Put some example text
       in one or more of them if you want.
     \item On the command line, check the status:\\
-      \lst{git s}
+      \lst{git status}
     \item You will see a listing showing the \emph{r-test} directory in
       \emph{Untracked files}.
     \item To see that actual files to be committed instead of just the
       directory:\\
-      \lst{git s -u}
+      \lst{git status -u}
     \item To add all the new files in preparation for a commit,
       issue the command:\\
       \lst{git add r-test}
@@ -239,10 +213,10 @@
 \frame{\frametitle{Adding multiple files at once -- slide 2}
   \bi
     \item Check the status of the repository again:
-      \lst{git s}
+      \lst{git status}
     \item It will now show all files in \emph{Changes to be committed}
     \item Commit the changes:\\
-      \lst{git com "Added new files to r-test directory."}
+      \lst{git commit -a -m "Added new files to r-test directory."}
     \item Push the changes to \gh:\\
       \lst{git push}
     \item Check your \gh\ webpage and see your commit and that the files
@@ -261,7 +235,7 @@
   This is important as you will clutter up your repository and have to spend
   time cleaning it all up.\\
   \bigskip
-  Anytime you run the command \lst{git s} or \lst{git s -u} and
+  Anytime you run the command \lst{git status} or \lst{git status -u} and
   there are files listed that you don't want added to the repository, you
   should add them or a wildcard template encapsulating them to the
   \emph{.gitignore} file so that they are not added inadvertently.
@@ -271,17 +245,17 @@
   \bi
     \item You can rename any files the way you usually would (e.g. in File Explorer).
     \item Once you've renamed your files, check the repository status:\\
-      \lst{git s}\\
+      \lst{git status}\\
     \item You will see that the files you renamed have been automatically
       deleted from the repository and need to be added again. Do this the
       same way you add new files (\lst{git add filename}). You can also
       add a whole directory again and \gs\ is smart enough to only add the
       renamed files.
     \item Check the status again:\\
-      \lst{git s}\\
+      \lst{git status}\\
       It will show that the file(s) were renamed.
     \item Make a commit:\\
-      \lst{git com "Renamed files x, y, and z"}\\
+      \lst{git commit -a -m "Renamed files x, y, and z"}\\
     \item Push the commit:\\
       \lst{git push}
   \ei
@@ -291,13 +265,13 @@
   With Git you can revert back to any previous state of your repository.\\
   This is {\red very powerful}, though slightly {\red scary} at first.
   \bn
-    \item \lst{git s} to make sure you are all up-to-date
+    \item \lst{git status} to make sure you are all up-to-date
       (\lst{commit} and/or \lst{push} if necessary).
     \item In File Explorer (or whatever) look at your repository.
-    \item Hover over the first commit on your Network Graph of your
-      \lst{test} repo and note the first five digits of the \lst{HASH}.
+    \item Look at the commit tab on \gh\ for your \lst{test} repo and copy
+      the first five digits of the \lst{HASH} to the clipboard.
     \item In \gs, do\\
-      \lst{git co HASH} ~~~~[\lst{co} is alias for \lst{checkout}]
+      \lst{git checkout HASH}
     \item Look at File Explorer again -- your \lst{r-test} directory should
       have ... disappeared!!\\
       (If it hasn't then open it -- the test files, i.e. \lst{test1.r}
@@ -310,7 +284,7 @@
 \frame{\frametitle{Back to the latest version}
   Now, to get your files back to the most recent version you had committed:
   \bi
-    \item \lst{git co master}
+    \item \lst{git checkout master}
   \ei
   \bigskip
   That's it. So you can {\red revert to any previous commit in your
@@ -350,8 +324,8 @@
     \item Because of these structures, you can go back and {\red rebuild} any
       or all files at any \lst{commit}, and even have different directory
       structures at each commit.
-    \item Works best for ASCii (text) files, such as \lst{.r}, \lst{.txt},
-      \lst{.tex}, etc.
+    \item Works best for ASCii (text) files, such as \lst{.R}, \lst{.txt},
+      \lst{.Rmd}, \lst{.Rnw}, etc.
     \item Works for binary files, e.g. \lst{.RData} and \lst{.xls} files but
       you will not be able to do any useful merging with those files. You will
       lose the power that git provides.
@@ -364,7 +338,7 @@
   An example:
   \bi
   \item A collaborator had added \lst{.pdf}, \lst{.RData} and \lst{.docx} files
-     (plus \lst{.r} etc.), but these got updated when the code was run.
+     (plus \lst{.R} etc.), but these got updated when the code was run.
   \item Git has to save every version of each of these binary files even if just
     one word has been changed.
   \item I ended up with \lst{.git/objects/pack} being 2.8Gb.
@@ -417,8 +391,6 @@
       prompt.
     \item Create a new branch based off the branch you are currently on:\\
       \lst{git checkout -b temp}\\
-      OR alias:\\
-      \lst{git cb temp}\\
       You will be automatically placed in the new branch called
       \emph{temp}, and commits you make will now occur in that
       branch only.
@@ -426,19 +398,19 @@
       \lst{git branch}\\
       There is an asterisk next to the branch you are currently in.
     \item To switch to another branch, let's say back to \emph{master}:\\
-      \lst{git co master}\\
+      \lst{git checkout master}\\
   \ei
 }
 
 \frame{\frametitle{Make a commit in the new branch}
   \bi
     \item Make sure you are in the new branch:\\
-      \lst{git co temp}
+      \lst{git checkout temp}
     \item Create a new file called \lst{tester.txt}
     \item \lst{git add tester.txt}
-    \item \lst{git com "Added tester.txt"}
+    \item \lst{git commit -a -m "Added tester.txt"}
     \item Switch back to \emph{master}:\\
-      \lst{git co master}
+      \lst{git checkout master}
     \item Notice that the file you just added is gone. It only exists in
       the \emph{temp} branch at this point. You will need to merge that
       branch back in to the \emph{master} branch if you want to keep the
@@ -452,7 +424,7 @@
       \bn
         \item Change to the branch you want to merge into, typically
           \emph{master}:\\
-          \lst{git co master}
+          \lst{git checkout master}
         \item Merge the branch into \emph{master}:\\
           \lst{git rebase temp}\\
           OR\\
@@ -476,7 +448,7 @@
       \lst{git branch -d temp}\\
     \item To delete the branch you are currently in, switch to another branch
       first, (e.g. \emph{master}) and then delete the branch:\\
-      \lst{git co master}\\
+      \lst{git checkout master}\\
       \lst{git branch -d temp}\\
     \item If you have unmerged changes in the branch, you will not be allowed
       to delete it. If you want to forcibly delete it, discarding your changes,
@@ -493,7 +465,7 @@
 
   \lst{git --set-upstream origin BRANCH-NAME}\\
 
-  \gs\ is somewhat smart, so if you forget this command and instead type:\\
+  \gs\ is smart, so if you forget this command and instead type:\\
 
   \lst{git push}\\
 
@@ -511,12 +483,28 @@
   \lst{git push origin --delete BRANCH-NAME}\\
   \bigskip
   The local branch will still exist, so if you want to delete that as well:\\
-  \lst{git co master}\\
+  \lst{git checkout master}\\
   \lst{git branch -d BRANCH-NAME}
 }
 
-\frame{\frametitle{A great way to learn visually}
-  \url{http://onlywei.github.io/explain-git-with-d3}
+\frame{\frametitle{Exercise on collaborating on a single repository}
+  \bn
+\item Each group of four sitting together will collaborate. Each group
+  will choose one person to create the repository.
+    \item The chosen person will set up a new repository on \gh\ called
+      \lst{help-friends}
+    \item The chosen person copies \lst{git-course/exercise-files/helpFriends.txt}
+      into their new repository (on their computer).
+    \item \lst{add}, \lst{commit}, \lst{push}.
+      Check Network Graph.
+    \item The chosen person gives permission to the others to collaborate for their
+      repository on \gh.
+    \item The other three people then clone the repository using Person 1's URL.
+    \item Everyone does a few edits on their paragraph
+      (see \lst{helpFriends.txt}).
+    \item \lst{commit} a few times, \lst{push}.
+      Check Network Graph.
+  \en
 }
 
 \section{Stashing}
@@ -528,7 +516,7 @@
   \lst{git stash}\\
   then change branches, and do whatever you like. To get those changes back,
   switch back to master:\\
-  \lst{git co master}\\
+  \lst{git checkout master}\\
   and apply the stashed changes:\\
   \lst{git stash pop}\\
   Note that nothing is committed, this just lets you put on hold your work
@@ -552,10 +540,111 @@
   resolve conflicts in the same way as with remotes or other local branches.
 }
 
+\section{Collaborating}
+\frame{\frametitle{Remotes overview}
+  Once you have created a repository on \gh\ and uploaded some files, you may
+  want to start collaboration with others. To do this, send them the URL of
+  your \gh\ repository, and ask them to \emph{Fork} it on \gh. Once they have
+  done that and cloned your repository, everyone involved will need to add
+  each other's repository as a \emph{remote} so that all changes can be merged.\\
+  \bigskip
+  Adding remotes has to be done once for each project. Once you have added
+  someone, their remote information remains on your local computer. \gh\ has
+  some smart programming, which detects merges between remotes and will keep
+  track of the project and all its contributions.\\
+  \bigskip
+  The network graph is a great place to look at what has happened on a given
+  repository.
+}
+
+\frame{\frametitle{Adding remotes}
+  \bi
+    \item Once everyone has \emph{Forked} on \gh, you must add each person as
+      a \emph{remote}. They must also add everyone else as remotes. Everyone
+      must trade URLs, and add each other person like this:\\
+      \lst{git remote add REMOTE-NAME REMOTE-URL}\\
+      where:\\
+      \bi
+        \item \lst{REMOTE-NAME} is a name you make up that you will
+          remember. I use first initial followed by last name for everyone,
+          so they have the same syntax. e.g.: cgrandin, aedwards, rforrest.
+        \item \lst{REMOTE-URL} is the URL on \gh\ where the person's
+          repository can be found. e.g.:\\
+          \url{https://github.com/cgrandin/git-course}.
+      \ei
+    \item To view all remotes you have set up:\\
+      \lst{git remote -v}
+  \ei
+}
+
+\frame{\frametitle{Fetching overview}
+  Once you have set up your remotes, you can fetch other people's commits.
+  Before continuing work on your project, you should always check \gh, and
+  see if your collaborators have been working, and if so, what their commits
+  were. At this stage you get a general idea of what has been done since
+  you last looked at the repository. Once you have familiarized yourself with
+  the changes in a broad sense, you will want to merge them into yours.\\
+  \bigskip
+  Find the most recent commit on \gh's \emph{Network Graph}. It will have
+  one person's name associated with it. That is the person you will fetch
+  and merge in.\\
+  \bigskip
+  There may be some disarray in the network graph, but you can just merge
+  each person's repository into yours in succession if you wish, which
+  will clean up the network graph.
+}
+
+\frame{\frametitle{Fetching other people's changes}
+  To fetch someone's changes:\\
+  \bigskip
+  \lst{git fetch REMOTE-NAME}\\
+  \bigskip
+  where \lst{REMOTE-NAME} is one in the list of remotes you have set up.
+  This command fetches everything in the person's repository, including
+  all branches. Running this command does not affect your repository
+  in any way. The fetch stores the information in a cache, awaiting
+  your command to merge.
+}
+
+\frame{\frametitle{Comparing the fetched repository with yours}
+  Once you've fetched someone's repository, you can exactly see what has
+  changed compared to yours. This is called \emph{Diff-ing}.
+  \bi
+    \item To compare the changes in their master to yours (make sure you are in
+      the master branch in \gs):
+      \lst{git diff REMOTE-NAME/master}\\
+      or using the \emph{Difftool} if you have it set up:\\
+      \lst{git difftool REMOTE-NAME/master}
+    \item This will show you exactly what changes to each file you are about
+      to merge into your repository.
+    \item In general, I use \emph{diff} if there are only minor changes
+      and \emph{difftool} if there are more changes or if more than one file
+      has been changed.
+  \ei
+}
+
+\frame{\frametitle{Merging the fetched repository into yours}
+  To merge the fetched repository's master branch into yours:\\
+  \lst{git rebase REMOTE-NAME/master}\\
+  OR\\
+  \lst{git merge REMOTE-NAME/master}\\
+  note that the merge will happen in the branch you are currently in, so make
+  sure you are in the \lst{master} branch.\\
+
+  \bigskip
+
+  At this point, you will either be up-to-date, meaning there were no merge
+  conflicts, or you will have one or more merge conflicts. If you are
+  up-to-date, you need to push back to your repository to complete the merge
+  step:\\
+  \lst{git push}\\
+  If you have conflicts, you need to fix them before continuing work.
+}
+
 \section{Network Graph}
 \frame{\frametitle{Network Graph}
   \bi
-     \item The Network Graph is a very useful visualization tool to keep
+     \item The Network Graph is a useful visualization tool to keep
        track of your commits.
      \item Each \lst{commit} is shown as a point on the graph.
      \item Hover the mouse over a commit to see:
@@ -581,7 +670,7 @@
 
 \frame{\frametitle{Understanding the Network Graph}
   The Network Graph is useful when working alone, but especially so when
-  collaborating.\\
+  collaborating using forking.\\
   \bigskip
   Find it for any repo under \lst{Insights-Graphs-Network}.\\
   \bigskip
@@ -700,114 +789,12 @@
   \ei
 }
 
-
-
-\section{Collaborating}
-\frame{\frametitle{Remotes overview}
-  Once you have created a repository on \gh\ and uploaded some files, you may
-  want to start collaboration with others. To do this, send them the URL of
-  your \gh\ repository, and ask them to \emph{Fork} it on \gh. Once they have
-  done that and cloned your repository, everyone involved will need to add
-  each other's repository as a \emph{remote} so that all changes can be merged.\\
-  \bigskip
-  Adding remotes has to be done once for each project. Once you have added
-  someone, their remote information remains on your local computer. \gh\ has
-  some smart programming, which detects merges between remotes and will keep
-  track of the project and all its contributions.\\
-  \bigskip
-  The network graph is a great place to look at what has happened on a given
-  repository.
-}
-
-\frame{\frametitle{Adding remotes}
-  \bi
-    \item Once everyone has \emph{Forked} on \gh, you must add each person as
-      a \emph{remote}. They must also add everyone else as remotes. Everyone
-      must trade URLs, and add each other person like this:\\
-      \lst{git remote add REMOTE-NAME REMOTE-URL}\\
-      where:\\
-      \bi
-        \item \lst{REMOTE-NAME} is a name you make up that you will
-          remember. I use first initial followed by last name for everyone,
-          so they have the same syntax. e.g.: cgrandin, aedwards, rforrest.
-        \item \lst{REMOTE-URL} is the URL on \gh\ where the person's
-          repository can be found. e.g.:\\
-          \url{https://github.com/cgrandin/git-course}.
-      \ei
-    \item To view all remotes you have set up:\\
-      \lst{git remote -v}
-  \ei
-}
-
-\frame{\frametitle{Fetching overview}
-  Once you have set up your remotes, you can fetch other people's commits.
-  Before continuing work on your project, you should always check \gh, and
-  see if your collaborators have been working, and if so, what their commits
-  were. At this stage you get a general idea of what has been done since
-  you last looked at the repository. Once you have familiarized yourself with
-  the changes in a broad sense, you will want to merge them into yours.\\
-  \bigskip
-  Find the most recent commit on \gh's \emph{Network Graph}. It will have
-  one person's name associated with it. That is the person you will fetch
-  and merge in.\\
-  \bigskip
-  There may be some disarray in the network graph, but you can just merge
-  each person's repository into yours in succession if you wish, which
-  will clean up the network graph.
-}
-
-\frame{\frametitle{Fetching other people's changes}
-  To fetch someone's changes:\\
-  \bigskip
-  \lst{git fetch REMOTE-NAME}\\
-  \bigskip
-  where \lst{REMOTE-NAME} is one in the list of remotes you have set up.
-  This command fetches everything in the person's repository, including
-  all branches. Running this command does not affect your repository
-  in any way. The fetch stores the information in a cache, awaiting
-  your command to merge.
-}
-
-\frame{\frametitle{Comparing the fetched repository with yours}
-  Once you've fetched someone's repository, you can exactly see what has
-  changed compared to yours. This is called \emph{Diff-ing}.
-  \bi
-    \item To compare the changes in their master to yours (make sure you are in
-      the master branch in \gs):
-      \lst{git diff REMOTE-NAME/master}\\
-      or using the \emph{Difftool} if you have it set up:\\
-      \lst{git difftool REMOTE-NAME/master}
-    \item This will show you exactly what changes to each file you are about
-      to merge into your repository.
-    \item In general, I use \emph{diff} if there are only minor changes
-      and \emph{difftool} if there are more changes or if more than one file
-      has been changed.
-  \ei
-}
-
-\frame{\frametitle{Merging the fetched repository into yours}
-  To merge the fetched repository's master branch into yours:\\
-  \lst{git rebase REMOTE-NAME/master}\\
-  OR\\
-  \lst{git merge REMOTE-NAME/master}\\
-  note that the merge will happen in the branch you are currently in, so make
-  sure you are in the \lst{master} branch.\\
-
-  \bigskip
-
-  At this point, you will either be up-to-date, meaning there were no merge
-  conflicts, or you will have one or more merge conflicts. If you are
-  up-to-date, you need to push back to your repository to complete the merge
-  step:\\
-  \lst{git push}\\
-  If you have conflicts, you need to fix them before continuing work.
-}
-
 \frame{\frametitle{Demonstration of collaborating}
   \bi
     \item Chris to fork and clone Andy's \lst{test} repo.
     \item Both add each other as remotes.
-    \item Both do some edits (Andy create new files, Chris edit existing ones), keeping an eye on the evolving Network Graphs.
+    \item Both do some edits (Andy create new files, Chris edit existing ones),
+      keeping an eye on the evolving Network Graphs.
     \item For Andy to get Chris's updates, it will just be:
     \bi
       \item \lst{git fetch cgrandin}
@@ -819,7 +806,6 @@
   It's actually even easier because \lst{git} will autocomplete, so
     Andy can just do \lst{git fetch c<TAB>} etc.
 }
-
 
 \frame{\frametitle{Exercise on remotes and merging -- 1}
   \bn
@@ -836,7 +822,7 @@
       \lst{git remote add REMOTE-NAME REMOTE-URL}\\
       (run once for each team member other than yourself), e.g.:\\
       \lst{git remote add aedwards https://github.com/andrew-edwards/help-friends}
-    \item Run the command \lst{git r} to see your list of remotes. Make
+    \item Run the command \lst{git remote -v} to see your list of remotes. Make
       sure everyone in your group is on the list.
     \item Everyone does a few edits on their paragraph
       (see \lst{helpFriends.txt}).
@@ -877,32 +863,6 @@
   \en
 }
 
-\frame{\frametitle{Further understanding of Network Graphs}
-  \bi
-    \item For hake assessment:
-      \url{https://github.com/andrew-edwards/hake-assessment/network}\\
-    \item What's been happening recently?\\
-    \item Scroll back to show some complexity.\\
-    \item Click on \lst{cgrandin} on that graph, to see the graph of Chris's repo.\\
-    \item Andy does not show up on that because he has not committed anything
-      new (Chris has everything Andy has done).
-    \item Click on `Contributors'.
-    \item Six of us have contributed, but because Chris is all caught
-      up his graph doesn't list us.
-  \ei
-}
-
-\frame{\frametitle{Further understanding of Network Graphs}
-  \bi
-    \item A more complex graph:
-      \url{https://github.com/smartell/iSCAM/network}\\
-    \item What's been happening recently?\\
-    \item Scroll back to show some complexity.\\
-    \item Click on \lst{cgrandin} on that graph, to see the graph of
-      Chris's repo.\\
-  \ei
-}
-
 \frame{\frametitle{Exercise regarding this git-course repo}
   \bn
     \item Look at {\red your} Network Graph for this \lst{git-course} repo.
@@ -916,13 +876,10 @@
   \bi
     \item To delete someone as a remote:\\
       \lst{git remote rm REMOTE-NAME}\\
-      where \lst{REMOTE-NAME} is the name you made up when you added them.
     \item To rename a remote:\\
       \lst{git remote rename OLD-NAME NEW-NAME}\\
-      where \lst{OLD-NAME} is the name you made up when you added them and
-      \lst{NEW-NAME} is the name you want to change it to.
     \item To see your changes, use:\\
-      \lst{git r}
+      \lst{git remote -v}
   \ei
 }
 
@@ -949,7 +906,7 @@
   you need to \lst{add}, \lst{commit} and \lst{push}, e.g.:\\
   \lst{git add FILENAME}~~~(not quite sure why necessary, but \lst{git s}
     will remind you)\\
-  \lst{git com "Kept Dave's edits as more consistent with
+  \lst{git commit -a -m "Kept Dave's edits as more consistent with
   remaining text."}\\
   \lst{git push}
 }
@@ -980,7 +937,7 @@
   Once finished, click the X to close and the next conflicted file will pop
   up in a new session of DiffMerge. Once all conflicts have been resolved,
   issue a commit and push to complete to merge:\\
-  \lst{git com "Merge conflict resolved."}\\
+  \lst{git commit -a -m "Merge conflict resolved."}\\
   \lst{git push}
 }
 
@@ -1108,8 +1065,9 @@
   \lst{git rebase --resume}\\
   \bigskip
   Change some source code...\\
-  etc.
+  repeat.. \\
 }
+
 %% Git tower webpage:
 %% https://www.git-tower.com/learn/git/ebook/en/command-line
 
