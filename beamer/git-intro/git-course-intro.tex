@@ -487,6 +487,30 @@
   \lst{git branch -d BRANCH-NAME}
 }
 
+\section{Git Workflow}
+\frame{\frametitle{Git Workflow}
+  There are two ways to work using Git and \gh:
+
+  \bn
+    \item A project where people contribute to a main repository that is
+      considered the 'master copy'.
+      \bi
+        \item Don't fork, instead clone directly from the creator's repository.
+        \item Either all collaborators have push access to the main repository OR
+        \item Each collaborator sends a \emph{Pull request} to the creator on the
+          \gh\ site. They accept your pull request and your code is merged into
+          the 'master copy'.
+      \ei
+    \bigskip
+    \item A project where collaborators fork from an initial repository so that
+      each have a copy of the repository, none of which are the 'master copy'.
+      \bi
+        \item Fork a copy from the initial creator's repository.
+        \item Merge other people's remote repositories into yours using \gs.
+      \ei
+  \en
+}
+
 \frame{\frametitle{Exercise on collaborating on a single repository}
   \bn
 \item Each group of four sitting together will collaborate. Each group
@@ -1050,6 +1074,21 @@
   \lst{git stash} instead.
 }
 
+\section{Aliases}
+\frame{\frametitle{Aliases}
+  Are you getting tired of typing:\\
+  \lst{git commit -a -m "Message"} ?\\
+
+  You can make your own shorter commands in git using Aliases. These are defined in:\\
+  \bigskip
+  \lst[escapechar="\\"]{C:\\Users\\YOUR-USER-NAME\\.gitconfig}\\
+  \bigskip
+
+  So you can type something like:\\
+  \lst{git c "Message"}\\
+  instead.\\
+}
+
 \section{Summary}
 \frame{\frametitle{Summary}
   95\% of the time, this is all you are doing:\\
@@ -1063,6 +1102,7 @@
   If conflicts, fix them and:\\
   \lst{git add CONFLICTED_FILE}\\
   \lst{git rebase --resume}\\
+  \lst{git push}\\
   \bigskip
   Change some source code...\\
   repeat.. \\
