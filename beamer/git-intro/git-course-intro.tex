@@ -22,8 +22,6 @@
   We will go through the next 7-8 slides, demonstrating the basic commands.\\
   Then we'll start again with participants actually doing the commands.\\
   \bigskip
-  We will use this website for some examples:
-  \url{http://onlywei.github.io/explain-git-with-d3}
 }
 
 \section{Creating/Cloning}
@@ -496,10 +494,7 @@
       considered the 'master copy'.
       \bi
         \item Don't fork, instead clone directly from the creator's repository.
-        \item Either all collaborators have push access to the main repository OR
-        \item Each collaborator sends a \emph{Pull request} to the creator on the
-          \gh\ site. They accept your pull request and your code is merged into
-          the 'master copy'.
+        \item All collaborators require push access to the main repository
       \ei
     \bigskip
     \item A project where collaborators fork from an initial repository so that
@@ -507,6 +502,10 @@
       \bi
         \item Fork a copy from the initial creator's repository.
         \item Merge other people's remote repositories into yours using \gs.
+        \item Each collaborator can send a \emph{Pull request} to the creator on the
+          \gh\ site. They accept your pull request and your code is merged into
+          the 'master copy'.
+
       \ei
   \en
 }
@@ -524,53 +523,19 @@
     \item The chosen person gives permission to the others to collaborate for their
       repository on \gh.
     \item The other three people then clone the repository using Person 1's URL.
-    \item Everyone does a few edits on their paragraph
+    \item Everyone does a few edits on their paragraph number only.
       (see \lst{helpFriends.txt}).
     \item \lst{commit} a few times, \lst{push}.
-      Check Network Graph.
+    \item If server does not allow you to push: \lst{git fetch}, \lst{git rebase}, \lst{git push}
   \en
 }
 
-\section{Stashing}
-\frame{\frametitle{Stashing overview}
-  If you are in the middle of working on something, but you need to change
-  branches for some reason, you can \emph{stash} your changes and apply
-  them back later. Let's say you are working in the master branch. To
-  stash all changes in master:\\
-  \lst{git stash}\\
-  then change branches, and do whatever you like. To get those changes back,
-  switch back to master:\\
-  \lst{git checkout master}\\
-  and apply the stashed changes:\\
-  \lst{git stash pop}\\
-  Note that nothing is committed, this just lets you put on hold your work
-  in progress and come back to where you left off.\\
-  \bigskip
-  To make sure new files are included in the stash, you must have added them
-  using \lst{git add filename} before using the \lst{git stash} command.
-}
-
-\frame{\frametitle{Stashing -- make it into a branch}
-  If you leave a stash for awhile and have made commits since the stash,
-  then try to reapply it, you may get conflicts. The best way to apply a stash
-  if you have modified things since you stashed is to let git create a branch
-  for the stash, which you can then look at and edit if you wish before merging
-  back into your master or other working branch:\\
-  \bigskip
-  \lst{git stash branch BRANCH-NAME}\\
-  \bigskip
-  where \lst{BRANCH-NAME} is the name you want to call the new branch.
-  You can then merge this branch in as outlined in the merging slides and
-  resolve conflicts in the same way as with remotes or other local branches.
-}
-
 \section{Collaborating}
-\frame{\frametitle{Remotes overview}
-  Once you have created a repository on \gh\ and uploaded some files, you may
-  want to start collaboration with others. To do this, send them the URL of
-  your \gh\ repository, and ask them to \emph{Fork} it on \gh. Once they have
-  done that and cloned your repository, everyone involved will need to add
-  each other's repository as a \emph{remote} so that all changes can be merged.\\
+\frame{\frametitle{Collaborating using forking and remotes}
+  To do this, send collaborators the URL of your \gh\ repository, and ask them
+  to \emph{Fork} it on \gh. Once they have done that and cloned your
+  repository, everyone involved will need to add each other's repository as a
+  \emph{remote} so that all changes can be merged.\\
   \bigskip
   Adding remotes has to be done once for each project. Once you have added
   someone, their remote information remains on your local computer. \gh\ has
@@ -641,7 +606,7 @@
       \lst{git difftool REMOTE-NAME/master}
     \item This will show you exactly what changes to each file you are about
       to merge into your repository.
-    \item In general, I use \emph{diff} if there are only minor changes
+    \item In general, use \emph{diff} if there are only minor changes
       and \emph{difftool} if there are more changes or if more than one file
       has been changed.
   \ei
@@ -684,7 +649,7 @@
      \item Click on a commit to see the actual changes made for that commit
         (therefore commit frequently so each commit only has a few changes).
      \item See that you (or a collaborator) can add comments for each commit.
-     \item In the comments (or when you do \lst{git com "..."}) you can include
+     \item In the comments (or when you do \lst{git commmit -a -m "..."}) you can include
         a \lst{HASH} from any other commit. You only really need the first five
         digits to ensure uniqueness ($16^5 = 1,048,576$ possible combinations),
         but if you use seven then \gh\ will create a link to that commit
@@ -822,7 +787,7 @@
     \item For Andy to get Chris's updates, it will just be:
     \bi
       \item \lst{git fetch cgrandin}
-      \item \lst{git merge cgrandin/master}
+      \item \lst{git rebase cgrandin/master} OR \lst{git merge cgrandin/master}
       \item \lst{git push}
     \ei
   \ei
@@ -944,27 +909,6 @@
   \ei
 }
 
-\frame{\frametitle{Dealing with merge conflicts -- mergetool}
-  You can also use a mergetool such as DiffMerge to fix the conflicts. It is
-  easier in that it will open a new session for each conflict and place you
-  at the correct place. You won't have to see the bracketing markers and the
-  files will be edited by the mergetool to what you want. If you want to try
-  the mergetool, after a merge conflict message, run:\\
-  \lst{git mergetool}\\
-  \bi
-    \item The left panel is what is in the branch you are in when you called
-      the merge command.
-    \item The middle panel is what you will end up with once finished.
-    \item The right panel is what is in the branch you are trying to merge
-      in.
-  \ei
-  Once finished, click the X to close and the next conflicted file will pop
-  up in a new session of DiffMerge. Once all conflicts have been resolved,
-  issue a commit and push to complete to merge:\\
-  \lst{git commit -a -m "Merge conflict resolved."}\\
-  \lst{git push}
-}
-
 \frame{\frametitle{\gh\ -- Add collaborators}
   If your \gh\ repository is public, anyone can post an \emph{Issue} (explained
     next). If you want someone to be able to:
@@ -997,11 +941,11 @@
 }
 
 \frame{\frametitle{\gh\ -- Issues}
-  For hake we have over 281 closed \emph{Issues}:\\
+  For hake we have over 430 closed \emph{Issues}:\\
   ~~\url{https://github.com/cgrandin/hake-assessment}\\
   ~\\
-  The unresolved ones are all tagged (using \emph{Milestones}) with
-    `2018 assessment' -- not essential for finishing the 2017 assesssment but
+  Many of the unresolved ones are all tagged (using \emph{Milestones}) with
+    `2019 assessment' -- not essential for finishing the 2018 assesssment but
     we didn't want to forget about them.\\
   ~\\
   You can assign collaborators to deal with an \emph{Issue}, and add comments.\\
@@ -1074,6 +1018,39 @@
   \lst{git stash} instead.
 }
 
+\section{Stashing}
+\frame{\frametitle{Stashing overview}
+  If you are in the middle of working on something, but you need to change
+  branches for some reason, you can \emph{stash} your changes and apply
+  them back later. Let's say you are working in the master branch. To
+  stash all changes in master:\\
+  \lst{git stash}\\
+  then change branches, and do whatever you like. To get those changes back,
+  switch back to master:\\
+  \lst{git checkout master}\\
+  and apply the stashed changes:\\
+  \lst{git stash pop}\\
+  Note that nothing is committed, this just lets you put on hold your work
+  in progress and come back to where you left off.\\
+  \bigskip
+  To make sure new files are included in the stash, you must have added them
+  using \lst{git add filename} before using the \lst{git stash} command.
+}
+
+\frame{\frametitle{Stashing -- make it into a branch}
+  If you leave a stash for awhile and have made commits since the stash,
+  then try to reapply it, you may get conflicts. The best way to apply a stash
+  if you have modified things since you stashed is to let git create a branch
+  for the stash, which you can then look at and edit if you wish before merging
+  back into your master or other working branch:\\
+  \bigskip
+  \lst{git stash branch BRANCH-NAME}\\
+  \bigskip
+  where \lst{BRANCH-NAME} is the name you want to call the new branch.
+  You can then merge this branch in as outlined in the merging slides and
+  resolve conflicts in the same way as with remotes or other local branches.
+}
+
 \section{Aliases}
 \frame{\frametitle{Aliases}
   Are you getting tired of typing:\\
@@ -1108,7 +1085,9 @@
   repeat.. \\
 }
 
-%% Git tower webpage:
-%% https://www.git-tower.com/learn/git/ebook/en/command-line
+\frame{\frametitle{Visualization website}
+  Git Visualization website:
+  \url{http://onlywei.github.io/explain-git-with-d3}
+}
 
 \end{document}
