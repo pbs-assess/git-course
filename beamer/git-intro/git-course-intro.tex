@@ -514,6 +514,25 @@
   \en
 }
 
+
+\frame{\frametitle{Demonstration of collaborating}
+  \bi
+    \item Chris to fork and clone Andy's \lst{test} repo.
+    \item Both add each other as remotes.
+    \item Both do some edits (Andy create new files, Chris edit existing ones),
+      keeping an eye on the evolving Network Graphs.
+    \item For Andy to get Chris's updates, it will just be:
+    \bi
+      \item \lst{git fetch cgrandin}
+      \item \lst{git rebase cgrandin/master} OR \lst{git merge cgrandin/master}
+      \item \lst{git push}
+    \ei
+  \ei
+  \bigskip
+  It's actually even easier because \lst{git} will autocomplete, so
+    Andy can just do \lst{git fetch c<TAB>} etc.
+}
+
 \frame{\frametitle{Exercise on collaborating on a single repository}
   \bn
 \item Each group of four sitting together will collaborate. Each group
@@ -683,24 +702,6 @@
     \item \textbf{Think of it as a to-do list to show what other people have done
       that you need to catch up with}.
   \ei
-}
-
-\frame{\frametitle{Demonstration of collaborating}
-  \bi
-    \item Chris to fork and clone Andy's \lst{test} repo.
-    \item Both add each other as remotes.
-    \item Both do some edits (Andy create new files, Chris edit existing ones),
-      keeping an eye on the evolving Network Graphs.
-    \item For Andy to get Chris's updates, it will just be:
-    \bi
-      \item \lst{git fetch cgrandin}
-      \item \lst{git rebase cgrandin/master} OR \lst{git merge cgrandin/master}
-      \item \lst{git push}
-    \ei
-  \ei
-  \bigskip
-  It's actually even easier because \lst{git} will autocomplete, so
-    Andy can just do \lst{git fetch c<TAB>} etc.
 }
 
 \frame{\frametitle{Exercise on remotes and merging -- 1}
