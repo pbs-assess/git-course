@@ -20,6 +20,9 @@
 \frame{\frametitle{Basics}
   \bigskip
   We will go through the next 7-8 slides, demonstrating the basic commands.\\
+  ~\\
+  Some are only needed once per repository to get set up.\\
+  ~\\
   Then we'll start again with participants actually doing the commands.\\
   \bigskip
 }
@@ -56,7 +59,7 @@
 }
 
 \frame{\frametitle{Windows only: Storing your credentials}
-  When you are using the \gs\ for the first time, issue
+  When you are using the \gs\ for the \alert{very first time}, issue
   the following command:\\
   \bigskip
   \lst{git config --global credential.helper wincred}\\
@@ -1062,9 +1065,20 @@
   \lst[escapechar="\\"]{C:\\Users\\YOUR-USER-NAME\\.gitconfig}\\
   \bigskip
 
-  So you can type something like:\\
-  \lst{git c "Message"}\\
-  instead.\\
+  If you set up Git from scratch using our instructions you will already have
+  that file that includes some of Chris's aliases. These include:
+
+  \begin{table}
+    \begin{tabular}{ll}
+  \lst{git s}               & \lst{git status}\\
+  \lst{git com "MESSAGE"}   & \lst{git commit -a -m "MESSAGE"}\\
+  \lst{git r}               & \lst{git remote -v}\\
+  \lst{git cb BRANCH-NAME}  & \lst{git checkout -b BRANCH-NAME}\\
+  \lst{git co BRANCH-NAME}  &  \lst{git checkout BRANCH-NAME}
+    \end{tabular}
+  \end{table}
+These are on the readme file of this repo. Just remember (when Googling
+problems) that these are aliases.
 }
 
 \section{Summary}
@@ -1083,7 +1097,7 @@
   \lst{git push}\\
   \bigskip
   Change some source code...\\
-  repeat.. \\
+  repeat... \\
 }
 
 \frame{\frametitle{Visualization website}
