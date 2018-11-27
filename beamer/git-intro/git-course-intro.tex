@@ -502,14 +502,14 @@
       \ei
     \bigskip
     \item A project where collaborators fork from an initial repository so that
-      each have a copy of the repository, none of which are the 'master copy'.
+      each have a copy of the repository, none of which are the `master copy'.
       \bi
         \item Fork a copy from the initial creator's repository.
         \item Merge other people's remote repositories into yours using \gs.
         \item Each collaborator can send a \emph{Pull request} to the creator on the
           \gh\ site. They accept your pull request and your code is merged into
-          the 'master copy'.
-
+          the `master copy'.
+        \item This stops other people messing up your `master copy'.
       \ei
   \en
 }
@@ -585,7 +585,8 @@
 
 \frame{\frametitle{Understanding the Network Graph}
   The Network Graph is useful when working alone, but especially so when
-  collaborating using forking.\\
+  collaborating using forking (which we haven't really shown, so we'll
+  only talk about some of these slides).\\
   \bigskip
   Find it for any repo under \lst{Insights-Graphs-Network}.\\
   \bigskip
@@ -664,103 +665,6 @@
   ~\\
 }
 
-\frame{\frametitle{Understanding the Network Graph}
-  \bi
-
-    \item Live version: \url{https://github.com/andrew-edwards/git-course/network}\\
-    \item What about: \url{https://github.com/cgrandin/git-course/network}\\
-    \item Andy's name (probably) doesn't show up.\\
-    \item But we both did work -- can see who did what by hovering
-      over commits.\\
-    \item It is ``{\red about code not ego}''.
-  \ei
-}
-
-\frame{\frametitle{Understanding the Network Graph}
-  Paraphrasing from (slightly dated) \url{https://github.com/blog/39-say-hello-to-the-network-graph-visualizer}\\
-  \bi
-    \item If I am at the top: my row shows every commit in {\red my repo}
-    \item Next person: only commits in {\red his/her repo that are not in mine}
-    \item Next person: only commits in {\red his/her repo that are not in mine
-      or second person's}
-    \item Each commit is shown {\blue only once}\\
-    \bigskip
-    \item \textbf{Think of it as a to-do list to show what other people have done
-      that you need to catch up with}.
-  \ei
-}
-
-\frame{\frametitle{Understanding the Network Graph}
-  \bi
-    \item On your own network graph, you will always be on top.
-    \item Any names below you have changes in their repository which you
-      have not yet merged into yours.
-    \item When you merge someone's commits into yours, their name will
-      disappear from your network graph.
-    \item Once your name is the only one remaining, everyone's changes
-      have been completely merged into your repository.
-    \item All commits from all branches in the repository are shown on the
-      graph.
-    \item \textbf{Think of it as a to-do list to show what other people have done
-      that you need to catch up with}.
-  \ei
-}
-
-\frame{\frametitle{Exercise on remotes and merging -- 1}
-  \bn
-    \item Each group of four sitting together will collaborate. Each person
-      in the group gets a number: 1, 2, 3, or 4.
-    \item Person 1 will set up a new repository on \gh\ called
-      \lst{help-friends}
-    \item Person 1 copies \lst{git-course/exercise-files/helpFriends.txt}
-      into their new repository (on their computer).
-    \item \lst{add}, \lst{commit}, \lst{push}.
-      Check Network Graph.
-    \item Persons 2, 3 and 4 then fork and clone the repository.
-    \item All team members must add everyone else as a remote:\\
-      \lst{git remote add REMOTE-NAME REMOTE-URL}\\
-      (run once for each team member other than yourself), e.g.:\\
-      \lst{git remote add aedwards https://github.com/andrew-edwards/help-friends}
-    \item Run the command \lst{git remote -v} to see your list of remotes. Make
-      sure everyone in your group is on the list.
-    \item Everyone does a few edits on their paragraph
-      (see \lst{helpFriends.txt}).
-    \item \lst{commit} a few times, \lst{push}.
-      Check Network Graph.
-  \en
-}
-
-\frame{\frametitle{Exercise on remotes and merging -- 2}
-  \bn
-    \item Explore Network Graph (hover over the commits).
-    \item Whoever is furthest behind (not that it matters), \lst{fetch}
-      and \lst{merge} from the person who's furthest ahead:
-      \bi
-        \item \lst{git fetch REMOTE-NAME}
-        \item \lst{git diff REMOTE-NAME/master}
-        \item \lst{git merge REMOTE-NAME/master}
-        \item \lst{git push}
-        \item Check Network Graph (have to refresh).
-        \item Check your collaborator's Network Graph (helpful if you care whether
-          they have caught up with you).
-      \ei
-    \item Repeat step 2 until everyone is caught up.
-    \item Step 2 is essentially all you have to (ever) do to keep collaborating on this repo.
-  \en
-  Note that \gs\ auto-completes with \lst{<TAB>}, e.g. \lst{git merge <TAB>}
-}
-
-\frame{\frametitle{Exercise on remotes and merging -- 3}
-  \bn
-    \item Note that if person A has fetched and merged B's work, person C
-      can just fetch and merge from A (not from A and B -- A has already done that).
-    \item On your repo website, go to Code and navigate to and click on \emph{helpFriends.txt}.
-    \item See what Raw, Blame and History buttons do.
-    \item Your Network Graph acts as a to-do list. Each person you have not merged
-      with will be below you on the graph in a new slot. If there are no names below yours,
-      you have no unmerged commits and are up-to-date.
-  \en
-}
 
 \frame{\frametitle{Exercise regarding this git-course repo}
   \bn
@@ -1112,4 +1016,102 @@ problems) that these are aliases.
   step:\\
   \lst{git push}\\
   If you have conflicts, you need to fix them before continuing work.
+}
+
+\frame{\frametitle{Understanding the Network Graph}
+  \bi
+
+    \item Live version: \url{https://github.com/andrew-edwards/git-course/network}\\
+    \item What about: \url{https://github.com/cgrandin/git-course/network}\\
+    \item Andy's name (probably) doesn't show up.\\
+    \item But we both did work -- can see who did what by hovering
+      over commits.\\
+    \item It is ``{\red about code not ego}''.
+  \ei
+}
+
+\frame{\frametitle{Understanding the Network Graph}
+  Paraphrasing from (slightly dated) \url{https://github.com/blog/39-say-hello-to-the-network-graph-visualizer}\\
+  \bi
+    \item If I am at the top: my row shows every commit in {\red my repo}
+    \item Next person: only commits in {\red his/her repo that are not in mine}
+    \item Next person: only commits in {\red his/her repo that are not in mine
+      or second person's}
+    \item Each commit is shown {\blue only once}\\
+    \bigskip
+    \item \textbf{Think of it as a to-do list to show what other people have done
+      that you need to catch up with}.
+  \ei
+}
+
+\frame{\frametitle{Understanding the Network Graph}
+  \bi
+    \item On your own network graph, you will always be on top.
+    \item Any names below you have changes in their repository which you
+      have not yet merged into yours.
+    \item When you merge someone's commits into yours, their name will
+      disappear from your network graph.
+    \item Once your name is the only one remaining, everyone's changes
+      have been completely merged into your repository.
+    \item All commits from all branches in the repository are shown on the
+      graph.
+    \item \textbf{Think of it as a to-do list to show what other people have done
+      that you need to catch up with}.
+  \ei
+}
+
+\frame{\frametitle{Exercise on remotes and merging -- 1}
+  \bn
+    \item Each group of four sitting together will collaborate. Each person
+      in the group gets a number: 1, 2, 3, or 4.
+    \item Person 1 will set up a new repository on \gh\ called
+      \lst{help-friends}
+    \item Person 1 copies \lst{git-course/exercise-files/helpFriends.txt}
+      into their new repository (on their computer).
+    \item \lst{add}, \lst{commit}, \lst{push}.
+      Check Network Graph.
+    \item Persons 2, 3 and 4 then fork and clone the repository.
+    \item All team members must add everyone else as a remote:\\
+      \lst{git remote add REMOTE-NAME REMOTE-URL}\\
+      (run once for each team member other than yourself), e.g.:\\
+      \lst{git remote add aedwards https://github.com/andrew-edwards/help-friends}
+    \item Run the command \lst{git remote -v} to see your list of remotes. Make
+      sure everyone in your group is on the list.
+    \item Everyone does a few edits on their paragraph
+      (see \lst{helpFriends.txt}).
+    \item \lst{commit} a few times, \lst{push}.
+      Check Network Graph.
+  \en
+}
+
+\frame{\frametitle{Exercise on remotes and merging -- 2}
+  \bn
+    \item Explore Network Graph (hover over the commits).
+    \item Whoever is furthest behind (not that it matters), \lst{fetch}
+      and \lst{merge} from the person who's furthest ahead:
+      \bi
+        \item \lst{git fetch REMOTE-NAME}
+        \item \lst{git diff REMOTE-NAME/master}
+        \item \lst{git merge REMOTE-NAME/master}
+        \item \lst{git push}
+        \item Check Network Graph (have to refresh).
+        \item Check your collaborator's Network Graph (helpful if you care whether
+          they have caught up with you).
+      \ei
+    \item Repeat step 2 until everyone is caught up.
+    \item Step 2 is essentially all you have to (ever) do to keep collaborating on this repo.
+  \en
+  Note that \gs\ auto-completes with \lst{<TAB>}, e.g. \lst{git merge <TAB>}
+}
+
+\frame{\frametitle{Exercise on remotes and merging -- 3}
+  \bn
+    \item Note that if person A has fetched and merged B's work, person C
+      can just fetch and merge from A (not from A and B -- A has already done that).
+    \item On your repo website, go to Code and navigate to and click on \emph{helpFriends.txt}.
+    \item See what Raw, Blame and History buttons do.
+    \item Your Network Graph acts as a to-do list. Each person you have not merged
+      with will be below you on the graph in a new slot. If there are no names below yours,
+      you have no unmerged commits and are up-to-date.
+  \en
 }
