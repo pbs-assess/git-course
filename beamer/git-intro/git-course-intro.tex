@@ -517,20 +517,22 @@
 
 \frame{\frametitle{Demonstration of collaborating}
   \bi
-    \item Chris to fork and clone Andy's \lst{test} repo.
-    \item Both add each other as remotes.
-    \item Both do some edits (Andy create new files, Chris edit existing ones),
-      keeping an eye on the evolving Network Graphs.
-    \item For Andy to get Chris's updates, it will just be:
+    \item Andy to clone Chris's \lst{test} repo.
+    \item Chris gives Andy `push access' to his \lst{test} repo.
+    % \item Both add each other as remotes.
+    \item Both do some edits (Andy create new files, Chris edit existing ones).
+    %  keeping an eye on the evolving Network Graphs.
+    \item (This might not be 100\% right -- we'll update in the workshop):
+      For Andy to get Chris's updates (and vice versa), it will just be:
     \bi
-      \item \lst{git fetch cgrandin}
-      \item \lst{git rebase cgrandin/master} OR \lst{git merge cgrandin/master}
+      \item \lst{git fetch}
+      \item \lst{git rebase} OR \lst{git merge}
       \item \lst{git push}
     \ei
   \ei
-  \bigskip
-  It's actually even easier because \lst{git} will autocomplete, so
-    Andy can just do \lst{git fetch c<TAB>} etc.
+  %\bigskip
+  %It's actually even easier because \lst{git} will autocomplete, so
+  %  Andy can just do \lst{git fetch c<TAB>} etc.
 }
 
 \frame{\frametitle{Exercise on collaborating on a single repository}
