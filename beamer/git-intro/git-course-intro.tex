@@ -110,39 +110,6 @@
   the latest versions of your files will still be there
 }
 
-\frame{\frametitle{Thoughts/hints regarding commit messages}
-  What to write in \lst{git commit -a -m "Message"}?\\
-  Ideally:
-  \bi
-    \item Want to describe \emph{what} and (sometimes \emph{why}) you did
-       something.
-    \item The \emph{how} is not needed since that will be explained by the
-       actual changes in the code.
-    \item Message should be informative for collaborators (including your future self).
-  \ei
-  {\red Bad}:\\
-  ~~\lst{git commit -a -m "Tweaked function."}\\
-  {\blue Good}:\\
-  ~~\lst{git commit -a -m "Allow plot.biomass() to use extra colours."}\\
-}
-
-\frame{\frametitle{Commits and history}
-  Git does not keep versions of code, it keeps \emph{commits}. The commits
-  are kept track of using a hash code, using \emph{Secure Hash Algorithm 1}
-  (SHA-1) which generates a hash key 40 digits long in hexadecimal. These are
-  what you see on \gh\ and in various places when you use \gs.\\
-  \bigskip
-  Several of these commits have pointers to them which have special names:
-  \bi
-    \item The \textbf{HEAD} which points to the commit you are currently on
-      in the \gs.
-    \item The \textbf{master} which is just the default branch when you set
-      up a repository on \gh.
-    \item The branch names that you have in your repository.
-  \ei
-  Once you've cloned a \gh\ repository, the \textbf{master} points to the initial
-  commit, and the \textbf{HEAD} points to the master.\\
-}
 
 \frame{\frametitle{Edit \emph{Readme.md}}
   Edit the \emph{Readme.md} file. Add some simple comments describing
@@ -330,6 +297,40 @@
     \item Exceptions: Image files that aren't likely to change. There are some
       in the \lst{git-course} repository.
   \ei
+}
+
+\frame{\frametitle{Commits and history}
+  Git does not keep versions of code, it keeps \emph{commits}. The commits
+  are kept track of using a hash code, using \emph{Secure Hash Algorithm 1}
+  (SHA-1) which generates a hash key 40 digits long in hexadecimal. These are
+  what you see on \gh\ and in various places when you use \gs.\\
+  \bigskip
+  Several of these commits have pointers to them which have special names:
+  \bi
+    \item The \textbf{HEAD} which points to the commit you are currently on
+      in the \gs.
+    \item The \textbf{master} which is just the default branch when you set
+      up a repository on \gh.
+    \item The branch names that you have in your repository.
+  \ei
+  Once you've cloned a \gh\ repository, the \textbf{master} points to the initial
+  commit, and the \textbf{HEAD} points to the master.\\
+}
+
+\frame{\frametitle{Thoughts/hints regarding commit messages}
+  What to write in \lst{git commit -a -m "Message"}?\\
+  Ideally:
+  \bi
+    \item Want to describe \emph{what} and (sometimes \emph{why}) you did
+       something.
+    \item The \emph{how} is not needed since that will be explained by the
+       actual changes in the code.
+    \item Message should be informative for collaborators (including your future self).
+  \ei
+  {\red Bad}:\\
+  ~~\lst{git commit -a -m "Tweaked function."}\\
+  {\blue Good}:\\
+  ~~\lst{git commit -a -m "Allow plot.biomass() to use extra colours."}\\
 }
 
 \frame{\frametitle{Why you should not commit binary files}
