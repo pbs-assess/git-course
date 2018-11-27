@@ -749,9 +749,9 @@
     comments or endless emails that get overlooked.\\
   If an \emph{Issue} remains open you know that it hasn't been done.\\
   ~\\
-  Note that because Andy forked from Chris's repo, there is no \emph{Issues}
-    page under\\
-  ~~\url{https://github.com/andrew-edwards/git-course}\\
+  % Note that because Andy forked from Chris's repo, there is no \emph{Issues}
+  %  page under\\
+  % ~~\url{https://github.com/andrew-edwards/git-course}\\
 }
 
 \frame{\frametitle{\gh\ -- Issues}
@@ -773,6 +773,19 @@
    turn them off (someone will know how ...).\\
   If you include the first seven digits of a commit \lst{HASH} it will become a
    clickable link.
+}
+
+\frame{\frametitle{\gh\ -- Issues}
+  In your commit message you can refer to, say, Issue 41, using \#41.\\
+  ~\\
+  The commit then gets mentioned on the Issue page.
+  ~\\
+  Can even say something like\\
+  ~~\lst{git commit -a -m "Update catch figure, closes \#41."}\\
+  ~\\
+  This automatically closes the issue on \gh\, e.g.:\\
+  ~~\url{https://github.com/cgrandin/hake-assessment/commit/0e88ff58}
+    % bd6297cbdd6645a14219cf3d02edbae2}
 }
 
 \section{Undoing things}
