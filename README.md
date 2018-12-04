@@ -82,12 +82,14 @@ For collaborating you need:
                                          NAME'S GitHub repo at URL, e.g:>
 			
 	  git remote add pbs-assess https://github.com/pbs-assess/git-course
-                                        <(the first pbs-assess is an alias - could be anything>
+                                        <The first pbs-assess is an alias - could be anything>
 
       git r                             <Look at all remote data sources (URLs)>
-	  git fetch pbs-assess                <Fetch changes that pbs-assess has made>
-	  git merge pbs-assess/master         <Merge the fetched changes with your local repository>
-	  git merge c<TAB>                  <This will auto-complete the above command (if unique)>
+	  git fetch pbs-assess              <Fetch changes that pbs-assess has made>
+      git diff ..origin/master          <Compare your local repo with the fetched version
+                                         (useful before merging; difftool also works)>
+	  git merge pbs-assess/master       <Merge the fetched changes with your local repository>
+	  git merge p<TAB>                  <This will auto-complete the above command (if unique)>
       git push                          <Remember to push after doing a merge, then check Network Graph>
 
 Other useful commands are:
