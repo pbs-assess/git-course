@@ -79,12 +79,14 @@ Once you have got going with a repository, all you really need are:
 For collaborating you need:
 
       git remote add NAME URL           <One-time command to enable fetching and merging from
-                                         NAME'S GitHub repo at URL, for example:>
-	  git remote add cgrandin https://github.com/cgrandin/git-course
+                                         NAME'S GitHub repo at URL, e.g:>
+			
+	  git remote add pbs-assess https://github.com/pbs-assess/git-course
+                                        <(the first pbs-assess is an alias - could be anything>
 
       git r                             <Look at all remote data sources (URLs)>
-	  git fetch cgrandin                <Fetch changes that cgrandin has made>
-	  git merge cgrandin/master         <Merge the fetched changes with your local repository>
+	  git fetch pbs-assess                <Fetch changes that pbs-assess has made>
+	  git merge pbs-assess/master         <Merge the fetched changes with your local repository>
 	  git merge c<TAB>                  <This will auto-complete the above command (if unique)>
       git push                          <Remember to push after doing a merge, then check Network Graph>
 
