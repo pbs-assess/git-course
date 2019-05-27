@@ -1,0 +1,388 @@
+\documentclass[aspectratio=169]{beamer}
+%% For 4:3 aspect ratio:
+%% \documentclass{beamer}
+\usepackage{../git-course}
+
+\title[git-course]{Setting up Git and \gh\ (and more) for the first time}
+\author{Chris Grandin \& Andrew Edwards}
+
+%% \date{\coursedates}
+
+\begin{document}
+
+\frame[plain]{
+\titlepage
+}
+
+\frame{\frametitle{Getting started...}
+  Before you start using Git you need to set up your computer to use it, and
+  install a few other programs that are useful.
+
+  ~\\
+
+  This is a little time consuming but is a {\red one-time setup}
+  and once it is done, you will be able to easily create new projects or join
+  others in collaboration.
+
+  ~\\
+
+  These instructions are adapted slightly from those we used for a course in
+  2017, and we are unable to fully test them on a new computer. So if something
+  doesn't work then double check and then send Chris and Andy an email.
+
+  ~\\
+  We also include other programs that we need. Again, this is a {\red one-time
+    setup}, and please do it before the workshop to give time for
+  troubleshooting. If you want to know what some of these tools do, see
+  `Overview of tools to be introduced' at
+  \url{https://github.com/pbs-assess/TTTworkshop}.
+}
+
+\frame{\frametitle{What you will end up having installed}
+  \bigskip
+  These are programs/things you will need (instructions are below). Obviously
+  skip any that you already have working.
+  \bi
+  \item A \gh\ account
+  \item Git on your computer
+  \item R version 3.5.1 or later
+  \item RStudio version 1.2.1163 or later
+  \item tinytex (an R package)
+  \item A text editor that isn't Notepad
+  \ei
+We realise this may seem overwhelming, but once it's all set up then you'll have
+a very powerful workflow for collaboratively building complicated and
+reproducible documents.
+}
+
+
+
+
+\frame{\frametitle{Get a \gh\ account}
+  \bigskip
+  \bi
+    \item Sign up for \gh: \url{https://github.com}
+    \item Choose a user name that will make sense to other people,
+      e.g. \textbf{andrew-edwards} or \textbf{cgrandin}, not \textbf{fishman123}.
+    \item Attach a photo (headshot) to your profile. This makes it easy for
+      collaborators to identify you. (If you don't have one handy you can
+      attach it later -- please do so before the workshop).
+  \ei
+}
+
+\frame{\frametitle{Windows only: make sure you have .NET 4.5}
+  \bi
+  \item The Windows \gh\ desktop application requires Microsoft .NET 4.5. If
+    you have a .NET version less than 4.5 then upgrade it. Check your version
+    of .NET here:\\
+    \url{https://github.com/downloads/shanselman/SmallestDotNet/CheckForDotNet45.exe}
+  \item If you need to upgrade it 4.5:\\
+    \url{http://go.microsoft.com/fwlink/p/?LinkId=310158}
+  \ei
+}
+
+\frame{\frametitle{Install the Git application on your machine}
+  \bi
+    \item Windows:\\
+      \url{https://github-windows.s3.amazonaws.com/GitHubSetup.exe}\\
+      Note that some people have had issues trying to install on a DFO computer
+      without having admin privileges. If so, you may have to use a different
+      computer. It can also time out during installation due to a slow network
+      connection, so you may have to do this stage at home.
+    \item MAC:\\
+      Type \emph{git} on the command line. You will either see that it
+      is installed, or if you have OSX 10.9 or higher it will prompt you to
+      install it. If your OSX is less than 10.9, or for any other reason, you
+      can install git from here:\\
+      \url{https://git-scm.com/download/mac}
+    \item Linux:\\
+      You'll need the same tools. Sorry, we don't have a machine to test things
+      on, but if you're using Linux you presumably know how to install programs.
+  \ei
+}
+
+\frame{\frametitle{Configure the Git application}
+  \bi
+    \item Windows:
+      \bn
+    \item Create a \lst{github} directory, such as
+          \lst[escapechar="\\"]{C:\\github}. It is fine
+          to put it in a different path, but make sure there are no spaces
+          or special characters \emph{anywhere} in the full path.
+        \item Open the GitHub Desktop Application. Press the gear icon and
+          choose \emph{Options}.
+        \item In \emph{Configure Git}, fill in your name and the
+          email address you used for your GitHub account.
+        \item Change your \emph{Clone Path} to \lst[escapechar="\\"]{C:\\github}
+          (or whatever directory you created above).
+        \item Make sure that for \emph{Default Shell}, \emph{PowerShell} is
+          checked.
+        \item Click \emph{Save} and close the application.
+        \item Check the configuration by opening the \gs, (not the \gh\
+          application). The directory that it starts in should be
+          \lst[escapechar="\\"]{C:\\github} (or whatever directory you created
+          above).
+      \en
+      \item MAC:
+        \bn
+          \item Create the directory \lst[escapechar="\~"]{\~/github}.
+          \item Enjoy a beverage.
+        \en
+  \ei
+}
+
+\frame{\frametitle{Install the difftool}
+  The difftool will be used to examine differences between different
+  versions of files and also to simplify merging of branches and
+  collaborator's code. There are many programs that can be used but
+  for consistency we will use Diffmerge.\\
+  \bigskip
+
+  For both Windows and MAC, Install Diffmerge:\\
+  \bigskip
+  \url{https://sourcegear.com/diffmerge/downloads.php}\\
+  \bigskip
+  The configuration for directing git to use Diffmerge will be done in a
+  later step.
+}
+
+\frame{\frametitle{Cloning the git-course repository}
+  For these instructions, replace \lst{GITHUB-USER} with your
+  \gh\ account name.
+  \bi
+    \item On the \gh\ webpage, sign into your account and navigate to:\\
+      \url{https://github.com/pbs-assess/git-course}
+    \item Press the \emph{Fork} button. This will give you a copy of the
+      git-course repository.
+    \item Navigate to your new forked repository:\\
+      \lst{https://github.com/GITHUB-USER/git-course}
+    \item Copy the URL for your repository.
+    \item Windows: Open the \gs\ and run the following command to clone the
+      repository, you can paste the URL into the \gs\ by pressing the right
+      mouse button:\\
+      \lst{git clone https://github.com/GITHUB-USER/git-course}
+    \item You now have the files for the GitHub course on your computer.
+    \item MAC: Open terminal and change to the github directory:\\
+      \lst{cd ~/github}
+      then run the clone command:\\
+      \lst{git clone https://github.com/GITHUB-USER/git-course}
+  \ei
+}
+
+\frame{\frametitle{Copy the \emph{.gitconfig} file}
+  \bi
+    \item Git uses a configuration file for your account info, name to use
+      when committing, aliases for commands, and other things.
+    \item Open up the \emph{content} sub-directory in the \emph{git-course}
+      directory and copy the file \emph{.gitconfig}
+    \item For Windows, copy this file (overwrite the existing file) to:\\
+      \bigskip
+      \lst[escapechar="\\"]{C:\\Users\\YOUR-COMPUTER-USER-NAME\\.gitconfig}\\
+      \bigskip
+      where \lst{YOUR-COMPUTER-USER-NAME} is your user name on your
+      computer, not your \gh\ account name.
+      \bigskip
+    \item For MAC, copy this file (overwrite the existing file) to:\\
+      \bigskip
+      \lst[escapechar="\~"]{\~/.gitconfig}
+      \bigskip
+    \ei
+}
+
+\frame{\frametitle{Edit the \emph{.gitconfig} file}
+  \bi
+    \item Use your favourite editor to edit the file. Don't edit the one in the
+      \emph{git-course/content} directory.
+    \item Change the [user] settings to reflect your information.
+    \item Change the [difftool] and [diffmerge] directories so they point to
+      the location where you have DiffMerge.
+    \item For Windows the location should be:\\
+      \bigskip
+      \lst[escapechar="\\"]{C:\\Program Files\\SourceGear\\Common\\DiffMerge\\sgdm.exe}
+      \bigskip
+    \item For MAC the location should be:\\
+      \bigskip
+      \lst{/usr/local/bin/diffmerge}
+      \bigskip
+    \ei
+}
+
+\frame{\frametitle{MAC only: make your output pretty}
+  On the MAC, change to the \lst[escapechar="\~"]{\~/github} directory
+  and run the following command:\\
+  \bigskip
+  \lst{git config --global color.ui.auto}\\
+  \bigskip
+  This will make your git output colored in a similar way to the Windows
+  powershell version.
+}
+
+\frame{\frametitle{Markdown Pad}
+  Each project has an associated \lst{README.md} file that appears
+  on its \gh\ homepage. The extension \lst{.md} stands for Markdown
+  and is just an ASCii text file that contains simple formatting (such as
+  bold or italics). There are two options we have used to read markdown files,
+  choose one:\\
+
+  \bigskip
+
+  \bi
+    \item The Markdown Pad 2 editor/viewer which is easy to use:\\
+      \url{http://markdownpad.com}. Just get the free version.
+    \item The Chrome extension for markdown viewing:\\
+      \url{https://chrome.google.com/webstore/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk?hl=en}.
+  \ei
+}
+
+\frame{\frametitle{R and packages installation}
+  Some exercises rely on having R installed with several packages we'll be
+  using. We are assuming everyone has R installed.\\
+  Install the following packages in R (we'll need more during the workshop):\\
+
+  \bigskip
+
+  \bi
+    \item \lst{knitr}
+    \item \lst{xtable}
+    \item \lst{devtools}
+  \ei
+
+  \bigskip
+
+  Make sure the location of \lst{Rscript} is included in your
+  \textbf{PATH} environment variable. This is necessary to use the batch
+  files that build the slides using knitr/\LaTeX. To check if it is, type
+  the following into the \gs\ or any other command-line window:\\
+  \lst{Rscript --version}\\
+  and you should see something like this:\\
+  \bigskip
+  R scripting front-end version 3.3.2 (2016-10-31)
+}
+
+\frame{\frametitle{\LaTeX\ installation -- Windows}
+  You will need \LaTeX\ installed (because it will correctly format Research
+  Documents, even though you won't need to learn \LaTeX). You will also
+  be able to build all of these course presentations from code.
+  \bi
+  \item If you have Rtools installed you may already have Mik\TeX installed (see
+        last bullet point below to test it).
+  \item On Windows, if you have lots of disk space ($>1.6$Gb you can use)
+        then we think it's
+        best to install it using Pro\TeX since it includes all \LaTeX\ libraries:
+        \url{https://ctan.org/pkg/protext}\\
+   \item If disk space may be a problem then install Mik\TeX\ (you may just have
+     to install further libraries during the workshop):
+      \bigskip
+      \url{https://miktex.org/download}\\
+      \bigskip
+   \item You can build this PDF (that you are reading) by entering the
+      \lst{beamer/git-setup} directory and double-click the \emph{build-pdf.bat}
+      file (close this PDF first) or type \lst{pdflatex git-course-setup}.
+   \ei
+}
+
+\frame{\frametitle{\LaTeX\ installation -- Mac}
+  \bi
+  \item On MAC, install Mac\TeX:\\
+      \bigskip
+      \url{http://www.tug.org/mactex/}\\
+      \bigskip
+      Run the following two or three times (to ensure page numbers are accurate)
+      in the \lst{beamer/git-setup} directory (close this PDF first):\\
+      \lst{pdflatex git-course-setup.tex}
+  \ei
+  \bigskip
+}
+
+\frame{\frametitle{Text editor}
+  You must have a text editor that is aware of outside changes in a file. This
+  is necessary because if you have a file open in the editor and you download
+  an updated version of the file, you want the editor to ask you if you want
+  to use the updated version.\\
+
+  \bigskip
+
+  We know that \textbf{Emacs}, \textbf{Xemacs}, \textbf{vim} are okay, as is
+  \textbf{RStudio} for \textbf{.r} (and other) files.
+
+  \bigskip
+
+  \textbf{Notepad} is not okay. But you can download and install
+  \textbf{Notepad++} which is fine:
+
+  \bigskip
+
+  \url{https://notepad-plus-plus.org/download/v7.3.3.html}
+
+  \bigskip
+
+  [Andy uses \textbf{Xemacs} for everything (including running R) as it has many keyboard shortcuts
+    and colours text and code based on the file extension; Chris uses a mixture
+    of \textbf{Xemacs} and \textbf{RStudio}.]
+}
+
+\frame{\frametitle{Pandoc}
+  \bigskip
+  If you don't use \textbf{RStudio} you need to separately install
+  \textbf{Pandoc} from \url{https://github.com/jgm/pandoc/releases/tag/2.2.3.2}.
+  \bigskip
+
+  This is used in the conversion from \textbf{Rmarkdown} code to \textbf{.pdf}.
+  \bigskip
+
+  We (Andy) found it best to choose `install for all users' then click
+  `Advanced' before Install, as you can then choose the installation folder.
+  Double check it gets added to your PATH.
+}
+
+\frame{\frametitle{If you work closely with others who are taking the course}
+  We expect that are at least a couple of groups of people (say, from a Region)
+  who work closely together within each group.\\
+  \bigskip
+  If there is code etc.~that you work on together (or plan to) then make sure
+  one person has it and we will get you going with that in the course
+  (especially as you'll be together but often work in different locations --
+  when in the same room together it will be easy to plan how you should set
+  up directory structure etc.).\\
+  \bigskip
+  Ideally the code could be made public, but if not we can work around this.\\
+  \bigskip
+  We will be providing example text and code to work on in the course.
+}
+
+\frame{\frametitle{To keep notes}
+  Our slides are fairly detailed, but you may want to also take some notes.\\
+  \bigskip
+  If so, create a file \lst{git-course/myNotes.*} the usual way {\red on
+    your computer}, where \lst{*} is \lst{txt},
+  \lst{doc}, \lst{docx} or whatever you want to write in.\\
+  \bigskip
+  This file will remain private on your computer and not be shared (even if you
+  end up making some amazing changes to our files that you want to share with
+  everyone else).
+  \bigskip
+}
+
+\frame{\frametitle{You're ready...}
+  That's it! You should have everything set up to create new repositories, fork
+  collaborator's repositories, commit changes, push your commits, create
+  branches, and view differences. During the course you'll understand what
+  all that means.\\
+  \bigskip
+  To get a sneak peek at what is to come, take a look at the git-course
+  repository on \gh (and you should already have these files on your computer):\\
+  \bigskip
+  \url{https://github.com/pbs-assess/git-course}\\
+  \bigskip
+  In particular, the network graph which shows all our commits from the
+  beginning:\\
+  \bigskip
+  \url{https://github.com/pbs-assess/git-course/network}\\
+  \bigskip
+  The network graph is an invaluable tool in keeping track of what is going
+  on amongst you and you collaborators. We'll get into it more in the course.
+
+  See you soon.
+}
+
+\end{document}
