@@ -1,4 +1,4 @@
-# git-course
+# git-course yadayada
 
 Introductory course on **git** and **GitHub** by Chris Grandin and Andrew Edwards.
 
