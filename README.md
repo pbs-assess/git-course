@@ -2,6 +2,8 @@
 
 Introductory course on **git** and **GitHub** by Chris Grandin and Andrew Edwards.
 
+This course motivated parts of the stand-alone e-book [Building Skills in Quantitative Biology](quantitative-biology.ca). The book is written to be worked through alone, whereas these materials are for a taught workshop.
+
 Departure Bay Room A/B, Vancouver Island Conference Centre.
 
 Tuesday November 27, 2018.
